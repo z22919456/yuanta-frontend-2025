@@ -17,11 +17,10 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination:
-          // 'https://w3test.yuantafutures.com.tw/2024StockFuture/api/:path*',
-          // 'https://www.yuantafutures.com.tw/2024StockFuture/api/:path*',
-          // 'http://192.168.0.216:5000/api/:path*',
-          'http://10.211.55.3:5000/api/:path*',
+        destination: 'https://w3test.yuantafutures.com.tw/2024CNY/api/:path*',
+        // 'http://192.168.0.216:5000/api/:path*',
+        // 'http://10.211.55.3:5000/api/:path*'
+        // 'https://www.yuantafutures.com.tw/2024CNY/api/:path*',
       },
     ];
   },

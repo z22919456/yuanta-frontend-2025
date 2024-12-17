@@ -29,7 +29,7 @@ const locations = [
   {
     value: 'taipei',
     label: '台北',
-    date: '10/8(二) 14:00-16:00',
+    date: '114/1/8(三) 14:30-16:00',
     location: '犇亞會議中心（2樓201）',
     address: '台北市復興北路99號2樓201廳',
   },
@@ -85,11 +85,9 @@ const formSchema = z.object({
       message: '必須同意此條款同意，才能報名',
     }),
   }),
-  locations: z
-    .array(z.enum(['taipei', 'hsinchu', 'taichung', 'tainan', 'kaohsiung']))
-    .min(1, {
-      message: '請選擇報名地區',
-    }),
+  locations: z.array(z.enum(['taipei', 'kaohsiung'])).min(1, {
+    message: '請選擇報名地區',
+  }),
   captcha: z.string({
     required_error: '請輸入驗證碼',
   }),
