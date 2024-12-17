@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "ignorePatterns": ["node_modules", "src/components/ui/**/*.(tsx|ts)"],
+  "rules": {
+    "tailwindcss/classnames-order": "off"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "extends": ["plugin:prettier/recommended"]
+    }
+  ]
+}

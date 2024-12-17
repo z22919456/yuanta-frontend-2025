@@ -1,0 +1,6 @@
+src/components/ui/**/*
+pnpm*
+/.next/
+/out/**/*
+/build/**/*
+node_modules
