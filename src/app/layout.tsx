@@ -43,6 +43,7 @@ export default function RootLayout({
       <GoogleTagManager gtmId="GTM-KSVRB2H" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-default relative overflow-x-clip antialiased`}
+        monica-locale="zh_TW"
       >
         <NextTopLoader />
         <Navbar />

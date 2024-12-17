@@ -1,0 +1,505 @@
+'use client';
+
+import Captcha from '@/components/captcha';
+import ErrorDialog from '@/components/error-dialog';
+import { Button } from '@/components/ui/button';
+import { Checkbox } from '@/components/ui/checkbox';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { LoaderCircle } from 'lucide-react';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
+import SuccessDialog from './success-dialog';
+
+type LocationValue = 'taipei' | 'hsinchu' | 'taichung' | 'tainan' | 'kaohsiung';
+
+const locations = [
+  {
+    value: 'taipei',
+    label: '台北',
+    date: '10/8(二) 14:00-16:00',
+    location: '犇亞會議中心（2樓201）',
+    address: '台北市復興北路99號2樓201廳',
+  },
+  // {
+  //   value: 'hsinchu',
+  //   label: '新竹',
+  //   date: '9/26（四）19:00-20:30',
+  //   location: '元大期貨 新竹分公司',
+  //   address: '新竹市光復路一段373號B1之1',
+  // },
+  // {
+  //   value: 'taichung',
+  //   label: '台中',
+  //   date: '10/11（五）14:30-16:00',
+  //   location: '台中商旅',
+  //   address: '台中市西屯區台灣大道三段593號',
+  // },
+  // {
+  //   value: 'tainan',
+  //   label: '台南',
+  //   date: '10/7（一）18:30-20:00',
+  //   location: '元大期貨 台南分公司',
+  //   address: '台南市民生路一段165號5樓會議室',
+  // },
+  {
+    value: 'kaohsiung',
+    label: '高雄',
+    date: '114/1/10(三) 19:00-21:00',
+    location: '思博客商務中心',
+    address: '高雄市新興區民生一路56號B1-1',
+  },
+] as const;
+
+const formSchema = z.object({
+  name: z.string().min(2, {
+    message: '請輸入真實姓名',
+  }),
+  phone: z.string().regex(/^09[0-9]{8}$/, {
+    message: '手機格式錯誤',
+  }),
+  email: z.string().email({
+    message: '請輸入正確的 Email',
+  }),
+  // isCustomer: z.enum(['true', 'false'], {
+  //   required_error: '請選擇是否為元大期貨客戶',
+  // }),
+  customerType: z.enum(['NotCustomer', 'GotAccount', 'GotIBAccount'], {
+    required_error: '請選擇是否為元大期貨客戶',
+  }),
+  introducer: z.string().max(5, { message: '請勿超過5個字' }).optional(),
+  agreeToTerms: z.literal(true, {
+    errorMap: () => ({
+      message: '必須同意此條款同意，才能報名',
+    }),
+  }),
+  locations: z
+    .array(z.enum(['taipei', 'hsinchu', 'taichung', 'tainan', 'kaohsiung']))
+    .min(1, {
+      message: '請選擇報名地區',
+    }),
+  captcha: z.string({
+    required_error: '請輸入驗證碼',
+  }),
+});
+
+const EventForm = () => {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: '',
+      phone: '',
+      email: '',
+      locations: [],
+      introducer: '',
+      customerType: undefined,
+      agreeToTerms: undefined,
+      captcha: '',
+    },
+  });
+
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [captchaKey, setCaptchaKey] = useState(Date.now());
+  const [isLoading, setIsLoading] = useState(false);
+
+  const onErrorDialogClose = () => {
+    setIsError(false);
+    setErrorMessage('');
+  };
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    const date = {
+      ...values,
+      locations: values.locations.map((l) => ({
+        city: l,
+      })),
+    };
+    setIsLoading(true);
+    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/event`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      credentials: 'include',
+      body: JSON.stringify(date),
+    })
+      .then((res) => {
+        if (res.ok) {
+          setIsSuccess(true);
+          form.reset();
+        } else return res.json();
+      })
+      .then((data) => {
+        if (data) {
+          let message = '';
+          Object.keys(data).forEach((key) => {
+            message += `${data[key]} `;
+          });
+          setErrorMessage(message);
+          setIsError(true);
+        }
+      })
+      .catch(() => setIsError(true))
+      .finally(() => {
+        setCaptchaKey(Date.now());
+        setIsLoading(false);
+      });
+  }
+  return (
+    <div className="">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="mb-0 w-auto space-y-8 xl:mx-0"
+          id="form"
+        >
+          {/* <ScrollArea className="h-auto min-h-96 xl:h-[calc(100vh-25rem)]"> */}
+          <div className="space-y-8 xl:container">
+            {/* 說明 */}
+            <div>
+              <p>
+                本活動歡迎對論壇課程主題有興趣的產業人士參加，採現場聆聽及線上參與兩種方式。
+              </p>
+              <p>請確實填寫聯絡資訊。</p>
+            </div>
+            <div className="block space-y-8 lg:flex lg:space-x-5 lg:space-y-0">
+              <div className="w-full space-y-8 lg:w-1/2">
+                {/* 姓名 */}
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>姓名(真實姓名)</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="請輸入真實姓名"
+                          type="text"
+                          {...field}
+                        />
+                      </FormControl>
+                      {/* <FormDescription>
+                請輸入真實姓名
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* 手機 */}
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>手機號碼</FormLabel>
+                      <FormControl>
+                        <Input placeholder="0912345678" type="tel" {...field} />
+                      </FormControl>
+                      {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* Email */}
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>E-mail</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="example@yuanta.com.tw"
+                          type="email"
+                          {...field}
+                        />
+                      </FormControl>
+                      {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* Email */}
+                <FormField
+                  control={form.control}
+                  name="introducer"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>介紹人</FormLabel>
+                      <FormControl>
+                        <Input
+                          placeholder="請輸入介紹人（非必填）"
+                          type="introducer"
+                          {...field}
+                        />
+                      </FormControl>
+                      {/* <FormDescription>
+                This is your public display name.
+              </FormDescription> */}
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* 是否為元大期貨客戶 */}
+                <FormField
+                  control={form.control}
+                  name="customerType"
+                  render={({ field }) => (
+                    <FormItem className="space-y-3">
+                      <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
+                        是否為元大期貨客戶
+                      </h3>
+                      <FormControl>
+                        <RadioGroup
+                          onValueChange={field.onChange}
+                          defaultValue={field.value}
+                          value={field.value}
+                          className="flex flex-col space-y-1"
+                        >
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="GotAccount" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              是，我在元大期貨有帳戶
+                            </FormLabel>
+                          </FormItem>
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="GotIBAccount" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              是，我在元大證券IB期貨戶
+                            </FormLabel>
+                          </FormItem>
+                          <FormItem className="flex items-center space-x-3 space-y-0">
+                            <FormControl>
+                              <RadioGroupItem value="NotCustomer" />
+                            </FormControl>
+                            <FormLabel className="font-normal">
+                              否，尚未有元大期貨有帳戶
+                            </FormLabel>
+                          </FormItem>
+                        </RadioGroup>
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                {/* 上課方式 */}
+                <div>
+                  <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
+                    上課方式
+                  </h3>
+                  <div className="mt-3 flex items-center space-x-2">
+                    <Checkbox checked={true} aria-readonly />
+                    <Label>實體現場! 名額有限手刀搶下</Label>
+                  </div>
+                  <p className="">(如實體已滿，將有專人聯繫發送線上連結)</p>
+                  <p className="text-red-500">
+                    *如期望<span className="underline">線上參與</span>
+                    ，請參考下方注意事項
+                  </p>
+                </div>
+              </div>
+
+              {/* 報名地點 */}
+              <FormField
+                control={form.control}
+                name="locations"
+                render={({ field }) => {
+                  const locationChange =
+                    (value: LocationValue) => (checked: boolean) => {
+                      if (checked) {
+                        field.onChange([...(field.value || []), value]);
+                      } else {
+                        field.onChange(field.value.filter((v) => v !== value));
+                      }
+                    };
+                  return (
+                    <div className="block space-y-3 lg:w-1/2 xl:flex xl:flex-col">
+                      <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
+                        報名地區/時間/地址
+                      </h3>
+                      <FormControl>
+                        <div className="block h-full space-y-3 xl:flex xl:flex-col xl:justify-around xl:space-y-0">
+                          {locations.map((location) => (
+                            <FormItem
+                              className="flex flex-row items-start space-x-3 space-y-0"
+                              key={location.value}
+                            >
+                              <FormControl>
+                                <Checkbox
+                                  checked={field.value?.includes(
+                                    location.value
+                                  )}
+                                  onCheckedChange={locationChange(
+                                    location.value
+                                  )}
+                                />
+                              </FormControl>
+                              <div className="space-y-1 leading-none">
+                                <FormLabel className="cursor-pointer">
+                                  {location.label}
+                                  <span className="text-gray-500">
+                                    {' '}
+                                    {location.date}
+                                  </span>
+
+                                  <FormDescription className="text-yuan-blue-800 mt-2 font-normal">
+                                    地點：{location.location}
+                                    <br />
+                                    地址：{location.address}
+                                  </FormDescription>
+                                </FormLabel>
+                              </div>
+                            </FormItem>
+                          ))}
+                        </div>
+                      </FormControl>
+                      <FormMessage />
+                    </div>
+                  );
+                }}
+              />
+            </div>
+            {/* 隱私權保護聲明及個人資料保護法告知事項 */}
+            <FormField
+              control={form.control}
+              name="agreeToTerms"
+              render={({ field }) => (
+                <div>
+                  <h3 className="relative mb-3 rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
+                    隱私權保護聲明及個人資料保護法告知事項
+                  </h3>
+
+                  <p className="mb-4">
+                    您所提供的資料，我們僅會基於您的申請事項之目的及範圍，於業務所需執行期間，在本公司所在地區以合理方式，蒐集、處理、利用您所留下之姓名、電話等個人資料，而在您點選「確認送出」時表示您對前述內容及本公司之隱私權保護聲明及個人資料保護法告知事項已充分瞭解並同意。
+                  </p>
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value === true}
+                        onCheckedChange={field.onChange}
+                      />
+                    </FormControl>
+                    <div className="space-y-1">
+                      <FormLabel>
+                        我同意隱私權保護聲明及個人資料保護法告知事項 
+                      </FormLabel>
+                      <p className="mb-1 text-red-500">*必填</p>
+                    </div>
+                  </FormItem>
+                  <FormMessage />
+                </div>
+              )}
+            />
+            {/* 驗證碼 */}
+            <FormField
+              control={form.control}
+              name="captcha"
+              render={({ field }) => (
+                <FormItem>
+                  <div className="flex w-96 space-x-3">
+                    <FormControl>
+                      <Input
+                        placeholder="請輸入驗證碼"
+                        type="text"
+                        {...field}
+                      />
+                    </FormControl>
+                    <Captcha captchaKey={captchaKey} />
+                  </div>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            {/* 提交按鈕 */}
+            <div className="text-center">
+              <Button
+                type="submit"
+                size="default"
+                disabled={isLoading}
+                className="h-auto p-1 shadow-lg"
+              >
+                <div className="flex size-full items-center justify-center rounded-full border-2 border-blue-200 px-8 py-2 text-xl md:text-3xl lg:px-12 lg:py-3 lg:text-4xl">
+                  免費報名 GO
+                  <span className="">
+                    {isLoading && <LoaderCircle className="animate-spin" />}
+                  </span>
+                </div>
+              </Button>
+            </div>
+
+            {/* 注意事項 */}
+            <hr className="border" />
+            <div>
+              <h3 className="mb-3 text-xl font-medium">注意事項</h3>
+              <ol className="ml-6 list-decimal">
+                <li>主辦單位保留議程變動之權利。</li>
+                <li>
+                  活動全程免費，因應市場、法令變動或其他不可抗力、不可歸責主辦單位之事由（例如天災、疫情），主辦單位保有修改、終止、延期本活動之權利，並於網頁公告，不另行通知。
+                </li>
+                <li>
+                  於活動兩日前，將有專人聯繫，或發送論壇課程相關內容資訊，至您報名填寫之E-mail信箱，屆時請留意相關訊息，我們期待與您相見。
+                </li>
+                <li>
+                  如實體已滿，於活動前兩日內，有專人聯繫發送線上連結，屆時請留意相關訊息。
+                </li>
+                <li>
+                  如有活動問題，週一至週五08:00-17:00 洽活動承辦小組 蘇小姐(
+                  <a href="tel:0227116000">02-2711-6000#7213</a>)
+                </li>
+                <li>
+                  如期望線上參與，週一至週五08:00-17:00洽想報名地區的分公司索取連結。
+                  <p>
+                    經紀部(台北)：<a href="tel:0227176000">(02) 2717-6000</a>
+                    <br />
+                    新竹分公司：<a href="tel:036662558">(03) 666-2558</a>
+                    <br />
+                    台中分公司：<a href="tel:0437033368">(04) 3703-3368</a>
+                    <br />
+                    台南分公司：<a href="tel:062355999">(06) 235-5999</a>
+                    <br />
+                    高雄分公司：<a href="tel:072157777">(07) 215-7777</a>
+                  </p>
+                </li>
+              </ol>
+            </div>
+          </div>
+          {/* <ScrollBar /> */}
+          {/* </ScrollArea> */}
+        </form>
+      </Form>
+      <SuccessDialog
+        open={isSuccess}
+        onOpenChange={() => setIsSuccess(false)}
+      />
+      <ErrorDialog
+        open={isError}
+        onOpenChange={onErrorDialogClose}
+        message={errorMessage}
+      />
+    </div>
+  );
+};
+
+export default EventForm;

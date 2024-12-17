@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="bg-gradient-2 relative z-50 w-full font-light text-white">
+    <footer className="relative z-50 w-full bg-[#0E0227] font-light text-white">
       <div className="container">
         <p className="py-5 text-sm">
           期權及槓桿保證金契約各類型交易，皆具高財務槓桿特性，交易人可能承受極大的損失亦或有極大獲利，且需承擔交易上及其他損失之風險（該風險可能極為重大）；又使用電子式交易，仍可能面臨斷線、斷電、網路壅塞等不確定因素，致使買賣指令無法即時傳送或延遲。以上風險甚為簡要，對所有投資風險及影響市場行情之因素無法逐一詳述，交易人應依自身之財務狀況、經驗、目標及其他相關情況，審慎評估此類交易是否合宜，交易人也應確認完全瞭解個別契約、交易及合約權利義務特性及所暴露損失風險的特性及範圍後為之。且本公司將不負責工具或任何交易所產生的任何損失。元大期貨
