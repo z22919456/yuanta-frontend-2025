@@ -24,6 +24,10 @@ export default {
       },
     },
     extend: {
+      borderWidth: {
+        '5': '5px',
+        '6': '6px',
+      },
       colors: {
         y: {
           wall: {
@@ -51,8 +55,8 @@ export default {
           slider: {
             'nav-bg': '#8D1D26',
           },
-          't-base': '#4D4B4B',
-          border: '#472600',
+          t: { base: '#4D4B4B', main: '#472600' },
+          bo: '#472600',
           secondary: '#E03232',
           bg: '#ffeedb',
         },
@@ -103,7 +107,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)',
       },
       backgroundImage: {
-        'gradient-to-r': 'linear-gradient(to right, #FFFFE4, #FFB75D, #FFFFE4)',
+        'gradient-band': 'linear-gradient(to right, #FFB75D, #FFFFE4, #FFB75D)',
         'gradient-main': 'linear-gradient(to bottom, #D84029, #FF792F)',
       },
     },

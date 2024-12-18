@@ -73,3 +73,52 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.main-title {
+  @apply text-y-t-main relative;
+  &::after {
+    content: attr(data-stroke);
+    z-index: -1;
+    text-stroke: 5px white;
+    white-space: pre-wrap;
+    -webkit-text-stroke: 5px white;
+    color: transparent;
+    @apply absolute -left-0 top-0 size-full;
+  }
+}
+
+.stroke-text[data-stroke] {
+  position: relative;
+  z-index: 0;
+  &::before {
+    content: attr(data-stroke);
+    position: absolute;
+    whitespace: nowrap;
+    width: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    -webkit-text-stroke: 10px white;
+    text-stroke: 10px white;
+    z-index: -1;
+  }
+}
+
+.stroke-text > h1 {
+  position: relative;
+  text: center !important;
+  z-index: 0;
+  &::before {
+    content: attr(data-stroke);
+    position: absolute;
+    whitespace: nowrap;
+    text: center;
+    width: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    -webkit-text-stroke: 10px white;
+    text-stroke: 10px white;
+    z-index: -1;
+  }
+}
