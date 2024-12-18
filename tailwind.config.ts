@@ -25,6 +25,37 @@ export default {
     },
     extend: {
       colors: {
+        y: {
+          wall: {
+            DEFAULT: '#bb000d',
+            bo: '#75000A',
+          },
+          card: {
+            DEFAULT: '#FFFAF4',
+            header: '#AB1700',
+          },
+          tab: {
+            bo: '#513411',
+            bg: '#ffc2c2',
+            t: '#513510',
+            active: {
+              bg: '#d73b39',
+              bo: '#feaa48',
+              t: '#ffffff',
+            },
+          },
+          footer: {
+            bg: '#393939',
+            bg2: '#585858',
+          },
+          slider: {
+            'nav-bg': '#8D1D26',
+          },
+          't-base': '#4D4B4B',
+          border: '#472600',
+          secondary: '#E03232',
+          bg: '#ffeedb',
+        },
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -70,6 +101,10 @@ export default {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+      },
+      backgroundImage: {
+        'gradient-to-r': 'linear-gradient(to right, #FFFFE4, #FFB75D, #FFFFE4)',
+        'gradient-main': 'linear-gradient(to bottom, #D84029, #FF792F)',
       },
     },
   },
