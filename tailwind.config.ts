@@ -43,9 +43,9 @@ export default {
             header: '#AB1700',
           },
           tab: {
-            bo: '#513411',
+            t: '#513411',
             bg: '#ffc2c2',
-            t: '#513510',
+            bo: '#513510',
             active: {
               bg: '#d73b39',
               bo: '#feaa48',

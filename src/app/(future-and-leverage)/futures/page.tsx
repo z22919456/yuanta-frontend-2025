@@ -3,10 +3,13 @@ import envelopeImg from '@/app/(future-and-leverage)/assets/envelope.png';
 import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
 import Image from 'next/image';
 import Card, { CardHeader } from '../components/card';
+import InfoTabs from '../components/InfoTabs';
 import ProductCard from '../components/product-card';
 import ProductSwiper from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
 import Wall, { WallContent } from '../components/wall';
+import WhichOne from '../components/WhichOne';
+import Step from './components/Step';
 import { products, products2 } from './data';
 
 const Page = () => {
@@ -117,7 +120,7 @@ const Page = () => {
                 <CardHeader>
                   <h2 className="font-default text-xl">
                     我己經達到地{' '}
-                    <span className="text-y-t-light text-2xl font-extrabold">
+                    <span className="text-2xl font-extrabold text-y-t-light">
                       {' '}
                       ???{' '}
                     </span>{' '}
@@ -176,8 +179,16 @@ const Page = () => {
 
         {/* 期貨選擇權  投資新趨勢*/}
         <Wall title="期貨選擇權 投資新趨勢">
+          <WallContent className="mb-4">
+            <div className="mx-auto w-full max-w-3xl p-4">
+              <InfoTabs />
+            </div>
+          </WallContent>
           <WallContent>
-            <></>
+            <WhichOne />
+            <p className="text-yuan-red -mb-2 mt-2 text-right text-xs font-bold">
+              * 期貨交易一定有風險，交易前請謹慎做好風險管理
+            </p>
           </WallContent>
         </Wall>
 
@@ -191,8 +202,11 @@ const Page = () => {
         {/* 工欲善其事  必先利其器*/}
         <Wall title="工欲善其事 必先利其器 如何快速下單？">
           <WallContent>
-            <></>
+            <Step />
           </WallContent>
+          <p className="-mb-3 text-sm font-normal text-white">
+            ＊截圖僅為操作步驟示例，非推介相關標的，交易人下單前應審慎評估並自負風險。
+          </p>
         </Wall>
       </div>
     </main>
