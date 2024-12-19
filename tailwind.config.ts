@@ -24,6 +24,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        title: 'var(--font-title)',
+        default: 'var(--font-default)',
+      },
       borderWidth: {
         '5': '5px',
         '6': '6px',
@@ -55,7 +59,7 @@ export default {
           slider: {
             'nav-bg': '#8D1D26',
           },
-          t: { base: '#4D4B4B', main: '#472600' },
+          t: { base: '#4D4B4B', main: '#472600', light: '#FFD400' },
           bo: '#472600',
           secondary: '#E03232',
           bg: '#ffeedb',

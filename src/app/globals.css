@@ -70,55 +70,64 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background font-medium text-y-t-base;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title;
   }
 }
 
 .main-title {
   @apply text-y-t-main relative;
+  @apply [--stroke-color:theme('colors.white')];
+  word-break: keep-all;
+
   &::after {
     content: attr(data-stroke);
     z-index: -1;
-    text-stroke: 5px white;
-    white-space: pre-wrap;
-    -webkit-text-stroke: 5px white;
+    word-break: keep-all;
+    text-stroke: 5px var(--stroke-color);
+    -webkit-text-stroke: 5px var(--stroke-color);
     color: transparent;
     @apply absolute -left-0 top-0 size-full;
   }
 }
 
-.stroke-text[data-stroke] {
-  position: relative;
-  z-index: 0;
+.main-title-secondary {
+  @apply text-y-t-light relative z-10;
+  @apply [--stroke-color:theme('colors.y.t.main')];
+  word-break: keep-all;
+
+  &::after {
+    content: attr(data-stroke);
+    z-index: -1;
+    word-break: keep-all;
+    text-stroke: 5px var(--stroke-color);
+    -webkit-text-stroke: 5px var(--stroke-color);
+    color: transparent;
+    @apply absolute -left-0 top-0 size-full;
+  }
+
   &::before {
     content: attr(data-stroke);
-    position: absolute;
-    whitespace: nowrap;
-    width: 105%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    -webkit-text-stroke: 10px white;
-    text-stroke: 10px white;
     z-index: -1;
+    word-break: keep-all;
+    text-stroke: 5px theme('colors.y.tab.active.bo');
+    -webkit-text-stroke: 5px theme('colors.y.tab.active.bo');
+    color: transparent;
+    @apply absolute -left-0 top-1 size-full;
   }
 }
 
-.stroke-text > h1 {
-  position: relative;
-  text: center !important;
-  z-index: 0;
-  &::before {
-    content: attr(data-stroke);
-    position: absolute;
-    whitespace: nowrap;
-    text: center;
-    width: 105%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    -webkit-text-stroke: 10px white;
-    text-stroke: 10px white;
-    z-index: -1;
-  }
+/* Swiper Pagination */
+
+.swiper-pagination {
+  --swiper-pagination-bottom: -5px;
+  --swiper-pagination-color: theme('colors.y.secondary');
+  --swiper-pagination-bullet-inactive-color: theme('colors.y.secondary');
 }
