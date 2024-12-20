@@ -158,7 +158,7 @@ const EventForm = () => {
       });
   }
   return (
-    <div className="">
+    <div className="p-5">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -166,15 +166,8 @@ const EventForm = () => {
           id="form"
         >
           {/* <ScrollArea className="h-auto min-h-96 xl:h-[calc(100vh-25rem)]"> */}
-          <div className="space-y-8 xl:container">
-            {/* 說明 */}
-            <div>
-              <p>
-                本活動歡迎對論壇課程主題有興趣的產業人士參加，採現場聆聽及線上參與兩種方式。
-              </p>
-              <p>請確實填寫聯絡資訊。</p>
-            </div>
-            <div className="block space-y-8 lg:flex lg:space-x-5 lg:space-y-0">
+          <div className="space-y-8">
+            <div className="block space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
               <div className="w-full space-y-8 lg:w-1/2">
                 {/* 姓名 */}
                 <FormField
@@ -256,14 +249,42 @@ const EventForm = () => {
                     </FormItem>
                   )}
                 />
+                {/* 上課方式 */}
+                <div>
+                  <h3
+                    className="main-title-secondary text-3xl"
+                    data-stroke="上課方式"
+                  >
+                    上課方式
+                  </h3>
+                  <div className="mb-1 mt-3 flex items-center space-x-2">
+                    <Checkbox checked={true} aria-readonly />
+                    <Label className="text-lg font-semibold">
+                      實體現場! 名額有限手刀搶下
+                    </Label>
+                  </div>
+                  <p className="text-base">
+                    (如實體已滿，將有專人聯繫發送線上連結)
+                  </p>
+                  <p className="text-base text-red-500">
+                    *如期望<span className="underline">線上參與</span>
+                    ，請參考下方注意事項
+                  </p>
+                </div>
+              </div>
+              {/* 分欄 */}
+              <div className="block space-y-10 lg:w-1/2 xl:flex xl:flex-col">
                 {/* 是否為元大期貨客戶 */}
                 <FormField
                   control={form.control}
                   name="customerType"
                   render={({ field }) => (
                     <FormItem className="space-y-3">
-                      <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
-                        是否為元大期貨客戶
+                      <h3
+                        className="main-title-secondary text-3xl"
+                        data-stroke="是否為元大&#8203;期貨客戶"
+                      >
+                        是否為元大&#8203;期貨客戶
                       </h3>
                       <FormControl>
                         <RadioGroup
@@ -276,7 +297,7 @@ const EventForm = () => {
                             <FormControl>
                               <RadioGroupItem value="GotAccount" />
                             </FormControl>
-                            <FormLabel className="font-normal">
+                            <FormLabel className="font-medium">
                               是，我在元大期貨有帳戶
                             </FormLabel>
                           </FormItem>
@@ -284,7 +305,7 @@ const EventForm = () => {
                             <FormControl>
                               <RadioGroupItem value="GotIBAccount" />
                             </FormControl>
-                            <FormLabel className="font-normal">
+                            <FormLabel className="font-medium">
                               是，我在元大證券IB期貨戶
                             </FormLabel>
                           </FormItem>
@@ -292,7 +313,7 @@ const EventForm = () => {
                             <FormControl>
                               <RadioGroupItem value="NotCustomer" />
                             </FormControl>
-                            <FormLabel className="font-normal">
+                            <FormLabel className="font-medium">
                               否，尚未有元大期貨有帳戶
                             </FormLabel>
                           </FormItem>
@@ -302,82 +323,75 @@ const EventForm = () => {
                     </FormItem>
                   )}
                 />
-                {/* 上課方式 */}
-                <div>
-                  <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
-                    上課方式
-                  </h3>
-                  <div className="mt-3 flex items-center space-x-2">
-                    <Checkbox checked={true} aria-readonly />
-                    <Label>實體現場! 名額有限手刀搶下</Label>
-                  </div>
-                  <p className="">(如實體已滿，將有專人聯繫發送線上連結)</p>
-                  <p className="text-red-500">
-                    *如期望<span className="underline">線上參與</span>
-                    ，請參考下方注意事項
-                  </p>
-                </div>
-              </div>
+                {/* 報名地點 */}
+                <FormField
+                  control={form.control}
+                  name="locations"
+                  render={({ field }) => {
+                    const locationChange =
+                      (value: LocationValue) => (checked: boolean) => {
+                        if (checked) {
+                          field.onChange([...(field.value || []), value]);
+                        } else {
+                          field.onChange(
+                            field.value.filter((v) => v !== value)
+                          );
+                        }
+                      };
+                    return (
+                      <>
+                        <h3
+                          className="main-title-secondary text-3xl"
+                          data-stroke="報名地區/時間/地址"
+                        >
+                          報名地區/時間/地址
+                        </h3>
+                        <FormControl>
+                          <div className="block h-full space-y-3 xl:flex xl:flex-col xl:justify-around xl:space-y-0">
+                            {locations.map((location) => (
+                              <FormItem
+                                key={location.value}
+                                className="rounded-lg bg-y-card p-3"
+                              >
+                                <FormLabel className="w-full">
+                                  <div className="flex flex-row items-start space-x-3 space-y-0">
+                                    <FormControl>
+                                      <Checkbox
+                                        checked={field.value?.includes(
+                                          location.value
+                                        )}
+                                        onCheckedChange={locationChange(
+                                          location.value
+                                        )}
+                                      />
+                                    </FormControl>
+                                    <div className="space-y-1 leading-none">
+                                      <FormLabel className="cursor-pointer text-y-tab-t">
+                                        {location.label}
+                                        <span className="">
+                                          {' '}
+                                          {location.date}
+                                        </span>
 
-              {/* 報名地點 */}
-              <FormField
-                control={form.control}
-                name="locations"
-                render={({ field }) => {
-                  const locationChange =
-                    (value: LocationValue) => (checked: boolean) => {
-                      if (checked) {
-                        field.onChange([...(field.value || []), value]);
-                      } else {
-                        field.onChange(field.value.filter((v) => v !== value));
-                      }
-                    };
-                  return (
-                    <div className="block space-y-3 lg:w-1/2 xl:flex xl:flex-col">
-                      <h3 className="relative rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
-                        報名地區/時間/地址
-                      </h3>
-                      <FormControl>
-                        <div className="block h-full space-y-3 xl:flex xl:flex-col xl:justify-around xl:space-y-0">
-                          {locations.map((location) => (
-                            <FormItem
-                              className="flex flex-row items-start space-x-3 space-y-0"
-                              key={location.value}
-                            >
-                              <FormControl>
-                                <Checkbox
-                                  checked={field.value?.includes(
-                                    location.value
-                                  )}
-                                  onCheckedChange={locationChange(
-                                    location.value
-                                  )}
-                                />
-                              </FormControl>
-                              <div className="space-y-1 leading-none">
-                                <FormLabel className="cursor-pointer">
-                                  {location.label}
-                                  <span className="text-gray-500">
-                                    {' '}
-                                    {location.date}
-                                  </span>
-
-                                  <FormDescription className="text-yuan-blue-800 mt-2 font-normal">
-                                    地點：{location.location}
-                                    <br />
-                                    地址：{location.address}
-                                  </FormDescription>
+                                        <FormDescription className="mt-2 font-medium text-y-t-base">
+                                          地點：{location.location}
+                                          <br />
+                                          地址：{location.address}
+                                        </FormDescription>
+                                      </FormLabel>
+                                    </div>
+                                  </div>
                                 </FormLabel>
-                              </div>
-                            </FormItem>
-                          ))}
-                        </div>
-                      </FormControl>
-                      <FormMessage />
-                    </div>
-                  );
-                }}
-              />
+                              </FormItem>
+                            ))}
+                          </div>
+                        </FormControl>
+                        <FormMessage />
+                      </>
+                    );
+                  }}
+                />
+              </div>
             </div>
             {/* 隱私權保護聲明及個人資料保護法告知事項 */}
             <FormField
@@ -385,11 +399,14 @@ const EventForm = () => {
               name="agreeToTerms"
               render={({ field }) => (
                 <div>
-                  <h3 className="relative mb-3 rounded-lg bg-blue-100 px-5 py-4 text-center text-2xl font-bold text-blue-800">
-                    隱私權保護聲明及個人資料保護法告知事項
+                  <h3
+                    className="main-title-secondary mb-3 text-3xl"
+                    data-stroke="隱私權保護聲明及&#8203;個人資料保護法&#8203;告知事項"
+                  >
+                    隱私權保護聲明及&#8203;個人資料保護法&#8203;告知事項
                   </h3>
 
-                  <p className="mb-4">
+                  <p className="mb-4 text-base">
                     您所提供的資料，我們僅會基於您的申請事項之目的及範圍，於業務所需執行期間，在本公司所在地區以合理方式，蒐集、處理、利用您所留下之姓名、電話等個人資料，而在您點選「確認送出」時表示您對前述內容及本公司之隱私權保護聲明及個人資料保護法告知事項已充分瞭解並同意。
                   </p>
                   <FormItem className="flex flex-row items-start space-x-3 space-y-0">
@@ -433,25 +450,26 @@ const EventForm = () => {
             {/* 提交按鈕 */}
             <div className="text-center">
               <Button
-                type="submit"
-                size="default"
-                disabled={isLoading}
-                className="h-auto p-1 shadow-lg"
+                size="rounded"
+                className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-7 py-6 text-2xl font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
               >
-                <div className="flex size-full items-center justify-center rounded-full border-2 border-blue-200 px-8 py-2 text-xl md:text-3xl lg:px-12 lg:py-3 lg:text-4xl">
-                  免費報名 GO
-                  <span className="">
-                    {isLoading && <LoaderCircle className="animate-spin" />}
-                  </span>
-                </div>
+                免費報名 GO
+                <span className="">
+                  {isLoading && <LoaderCircle className="animate-spin" />}
+                </span>
               </Button>
             </div>
 
             {/* 注意事項 */}
-            <hr className="border" />
+            <hr className="border-2 border-[#F9E1C2]" />
             <div>
-              <h3 className="mb-3 text-xl font-medium">注意事項</h3>
-              <ol className="ml-6 list-decimal">
+              <h3
+                className="main-title-secondary mb-3 text-3xl"
+                data-stroke="注意事項"
+              >
+                注意事項
+              </h3>
+              <ol className="ml-4 list-decimal text-base">
                 <li>主辦單位保留議程變動之權利。</li>
                 <li>
                   活動全程免費，因應市場、法令變動或其他不可抗力、不可歸責主辦單位之事由（例如天災、疫情），主辦單位保有修改、終止、延期本活動之權利，並於網頁公告，不另行通知。

@@ -83,7 +83,7 @@ body {
 }
 
 .main-title {
-  @apply text-y-t-main relative;
+  @apply relative text-y-t-main;
   @apply [--stroke-color:theme('colors.white')];
   word-break: keep-all;
 
@@ -99,7 +99,7 @@ body {
 }
 
 .main-title-secondary {
-  @apply text-y-t-light relative z-10;
+  @apply relative z-10 text-y-t-light;
   @apply [--stroke-color:theme('colors.y.t.main')];
   word-break: keep-all;
 
@@ -120,7 +120,8 @@ body {
     text-stroke: 5px theme('colors.y.tab.active.bo');
     -webkit-text-stroke: 5px theme('colors.y.tab.active.bo');
     color: transparent;
-    @apply absolute -left-0 top-1 size-full;
+    top: 0.125rem;
+    @apply absolute -left-0 size-full;
   }
 }
 

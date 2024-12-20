@@ -1,6 +1,6 @@
+import Coin from '@/assets/coin.svg';
+import Roof from '@/assets/roof.svg';
 import { cn } from '@/lib/utils';
-import Coin from './coin.svg';
-import Roof from './roof.svg';
 
 type WallProps = {
   children?: React.ReactNode;
@@ -18,7 +18,7 @@ const Wall = ({ children, title }: WallProps) => {
             <div className="flex items-center justify-between">
               <Coin className="ml-5 mr-2 w-5" />
               <h1
-                className="main-title font-title my-[0.125rem] text-4xl"
+                className="main-title my-[0.125rem] font-title text-4xl"
                 data-stroke={title}
               >
                 {title}

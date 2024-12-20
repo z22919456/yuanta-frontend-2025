@@ -2,14 +2,7 @@ import p1 from './images/曾崇銘.png';
 import p4 from './images/陳冠豪.png';
 import p2 from './images/顏博士.png';
 
-export const teacherData = [
-  {
-    name: '曾崇銘 經理',
-    title: '通路暨顧問事業部',
-    description:
-      '現任元大期貨通路暨顧問事業部，持有期貨營業員、證券營業員、期貨分析師（CFTA）、中國及香港從業資格。著作：《股市的科學煉金術：程式交易全圖解》（合著）。',
-    img: p1,
-  },
+export const taipeiTeacherData = [
   {
     name: '顏承暉 博士',
     title: '元大投顧',
@@ -18,17 +11,27 @@ export const teacherData = [
     img: p2,
   },
   {
-    name: '奧丁 老師',
-    title: '特別來賓',
+    name: '曾崇銘 經理',
+    title: '通路暨顧問事業部',
     description:
-      '本名 謝長青，現任理周教育學苑講師，股市經歷20年以上之專職交易人，擅長期貨與選擇權交易、股票選股及交易，【著作】期貨聖典山川戰法全書、股票聖典山川戰法全書。',
-    img: p4,
+      '現任元大期貨通路暨顧問事業部，持有期貨營業員、證券營業員、期貨分析師（CFTA）、中國及香港從業資格。著作：《股市的科學煉金術：程式交易全圖解》（合著）。',
+    img: p1,
   },
+];
+
+export const kaohsiungTeacherData = [
   {
     name: '陳冠豪 分析師',
     title: '元大期貨',
     description:
       '現任元大期貨高雄分公司副理，具有期貨分析師（CFTA）執照，擅長總經分析與期貨籌碼。',
+    img: p4,
+  },
+  {
+    name: '奧丁 老師',
+    title: '特別來賓',
+    description:
+      '本名 謝長青，現任理周教育學苑講師，股市經歷20年以上之專職交易人，擅長期貨與選擇權交易、股票選股及交易，【著作】期貨聖典山川戰法全書、股票聖典山川戰法全書。',
     img: p4,
   },
 ];

@@ -1,20 +1,20 @@
 import airPodsImg from '@/app/(future-and-leverage)/assets/airpods.png';
 import envelopeImg from '@/app/(future-and-leverage)/assets/envelope.png';
 import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
+import Card, { CardHeader } from '@/components/card';
+import Wall, { WallContent } from '@/components/wall';
 import Image from 'next/image';
-import Card, { CardHeader } from '../components/card';
 import InfoTabs from '../components/InfoTabs';
 import ProductCard from '../components/product-card';
 import ProductSwiper from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
-import Wall, { WallContent } from '../components/wall';
 import WhichOne from '../components/WhichOne';
 import Step from './components/Step';
 import { products, products2 } from './data';
 
 const Page = () => {
   return (
-    <main className="min-h-screen bg-gradient-main pt-[64px]">
+    <main className="min-h-screen bg-gradient-main pb-5 pt-[64px]">
       <div className="container">
         {/* 五告蘋安啦！ */}
         <Wall title="五告蘋安啦！">
