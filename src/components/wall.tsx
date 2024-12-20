@@ -10,8 +10,8 @@ type WallProps = {
 const Wall = ({ children, title }: WallProps) => {
   return (
     <div className="relative px-5">
-      <Roof className="absolute bottom-[calc(100%-4px)] left-0 w-full" />
-      <div className="relative mb-5 mt-28 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-5 pt-7">
+      <Roof className="relative bottom-[calc(100%-4px)] left-0 z-10 w-full scale-110" />
+      <div className="relative mb-12 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-5 pt-7">
         {/* title */}
         {title && (
           <div className="absolute -top-1 left-1/2 z-10 mx-auto -translate-x-1/2 border-4 border-y-bo bg-gradient-band pt-1 text-center md:w-[30rem]">

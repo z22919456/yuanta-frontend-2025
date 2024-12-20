@@ -12,11 +12,11 @@ import Image from 'next/image';
 
 const Banner = () => {
   return (
-    <div className="relative h-[30rem]">
-      <div className="container relative h-[30rem]">
-        <div className="absolute -bottom-20 z-10 flex items-end px-20">
-          <Image src={moneyGod1} alt="moneyGod1" className="w-3/12" />
-          <div className="flex w-9/12 items-end">
+    <div className="relative">
+      <div className="container relative h-[38rem]">
+        <div className="absolute -bottom-16 z-20 flex items-end px-20">
+          <Image src={moneyGod1} alt="moneyGod1" className="w-[27%]" />
+          <div className="flex items-end">
             <Image src={moneyGod2} alt="moneyGod2" className="w-1/4" />
             <Image src={moneyGod3} alt="moneyGod3" className="w-1/4" />
             <Image src={moneyGod4} alt="moneyGod4" className="w-1/4" />
@@ -26,17 +26,17 @@ const Banner = () => {
         <Image
           src={title}
           alt="title"
-          className="absolute -top-20 left-1/2 w-9/12 -translate-x-1/2"
+          className="absolute -top-16 left-1/2 w-11/12 -translate-x-1/2"
         />
         <Image
           src={moneyLeft}
           alt="moneyLeft"
-          className="absolute -left-20 top-20"
+          className="absolute -left-44 top-28 z-10"
         />
         <Image
           src={moneyRight}
           alt="moneyRight"
-          className="absolute -right-20 top-10"
+          className="absolute -right-24 top-20"
         />
       </div>
 
@@ -48,7 +48,7 @@ const Banner = () => {
       <Image
         src={cloudLeft}
         alt="cloudLeft"
-        className="absolute -left-48 bottom-32 max-w-[35vw]"
+        className="absolute -left-48 bottom-40 max-w-[35vw]"
       />
       <Image
         src={cloudRight}
@@ -58,7 +58,7 @@ const Banner = () => {
       <Image
         src={cloudRight}
         alt="cloudRight"
-        className="absolute -right-48 bottom-32 max-w-[35vw]"
+        className="absolute -right-48 bottom-40 max-w-[35vw]"
       />
     </div>
   );
