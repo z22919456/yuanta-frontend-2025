@@ -1,5 +1,5 @@
 import { products } from '@/app/(future-and-leverage)/futures/data';
-import Card, { CardHeader } from './card';
+import Card, { CardHeader } from '@/components/card';
 
 type Props = {
   product: (typeof products)[0];
