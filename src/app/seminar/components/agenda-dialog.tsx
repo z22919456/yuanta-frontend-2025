@@ -2,7 +2,7 @@ import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
-  DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
@@ -22,9 +22,9 @@ const AgendaDialog = () => {
         </Button>
       </DialogTrigger>
       <DialogContent className="max-h-screen w-screen lg:max-w-[90vw]">
-        <DialogHeader className="text-yuan-blue-800 text-xl font-medium">
+        <DialogTitle className="font-default text-2xl font-bold">
           論壇時程表
-        </DialogHeader>
+        </DialogTitle>
         <ScrollArea className="max-h-[calc(100vh-5rem)]">
           {/* <ScrollBar /> */}
           {/* <div className="h-[calc(100vh-5rem)] overflow-y-scroll"> */}
