@@ -3,12 +3,14 @@ import Wall, { WallContent } from '@/components/wall';
 import Image from 'next/image';
 import freeImg from './assets/free.png';
 import AgendaDialog from './components/agenda-dialog';
+import Banner from './components/banner';
 import EventForm from './components/event-form';
 import { kaohsiungTeacherData, taipeiTeacherData } from './teacher';
 
 const Page = () => {
   return (
     <main className="min-h-screen bg-gradient-main pb-5 pt-[64px]">
+      <Banner />
       <div className="container">
         <Wall title="想為2025年 鋪上投資之路嗎？">
           <WallContent className="space-y-5 px-8 pt-24">
