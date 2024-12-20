@@ -168,7 +168,13 @@ const EventForm = () => {
           {/* <ScrollArea className="h-auto min-h-96 xl:h-[calc(100vh-25rem)]"> */}
           <div className="space-y-8">
             <div className="block space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
-              <div className="w-full space-y-8 lg:w-1/2">
+              <div className="w-full space-y-4 lg:w-1/2">
+                <h3
+                  className="main-title-secondary text-3xl"
+                  data-stroke="基本資料"
+                >
+                  基本資料
+                </h3>
                 {/* 姓名 */}
                 <FormField
                   control={form.control}

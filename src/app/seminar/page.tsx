@@ -18,9 +18,10 @@ const Page = () => {
               </p>
               <h2
                 className="main-title-secondary relative block text-5xl"
-                data-stroke="百萬師資陣容 免費參加"
+                data-stroke="百萬師資陣容  免費參加"
               >
-                百萬師資陣容 免費參加
+                百萬師資陣容 <span className="text-[#FF7700]">免費</span>
+                參加
               </h2>
             </div>
             {/* 台北場 */}
@@ -114,10 +115,11 @@ const Page = () => {
             />
             <div className="order-1 flex w-full shrink flex-col justify-between space-y-5 font-extrabold md:order-2 md:w-6/12 md:space-y-0 md:px-5 lg:w-1/2">
               <h3
-                className="main-title-secondary text-4xl"
+                className="main-title-secondary text-4xl font-normal"
                 data-stroke="3大重點不可錯過！"
               >
-                <span className="text-y-tab-active-bo">3大</span>重點不可錯過！
+                <span className="text-[#FF7700]">3大</span>
+                重點不可錯過！
               </h3>
               {/*  */}
               <div className="relative ml-4 bg-white py-3">
