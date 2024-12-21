@@ -1,6 +1,7 @@
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
 import Image from 'next/image';
+import { Suspense } from 'react';
 import freeImg from './assets/free.png';
 import AgendaDialog from './components/agenda-dialog';
 import Banner from './components/banner';
@@ -147,7 +148,9 @@ const Page = () => {
         </Wall>
         <Wall title="報名入口">
           <WallContent className="space-y-4 text-left">
-            <EventForm />
+            <Suspense>
+              <EventForm />
+            </Suspense>
           </WallContent>
         </Wall>
       </div>
