@@ -1,6 +1,6 @@
-import p1 from './images/曾崇銘.png';
-import p4 from './images/陳冠豪.png';
-import p2 from './images/顏博士.png';
+import p1 from './images/p1.png';
+import p4 from './images/p2.png';
+import p2 from './images/p3.png';
 
 export const taipeiTeacherData = [
   {
