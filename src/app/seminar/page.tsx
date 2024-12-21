@@ -13,13 +13,13 @@ const Page = () => {
       <Banner />
       <div className="container">
         <Wall title="想為2025年 鋪上投資之路嗎？">
-          <WallContent className="space-y-5 px-8 pt-24">
+          <WallContent className="space-y-5 px-2 !pt-16 sm:!pt-20 md:px-8 lg:!pt-28">
             <div className="mx-auto w-fit">
-              <p className="text-left font-title text-lg leading-3 text-y-tab-bo">
+              <p className="text-center font-title text-lg leading-3 text-y-tab-bo md:text-left">
                 \僅兩場/
               </p>
               <h2
-                className="main-title-secondary relative block text-5xl"
+                className="main-title-secondary relative block text-3xl sm:text-4xl md:text-5xl"
                 data-stroke="百萬師資陣容  免費參加"
               >
                 百萬師資陣容 <span className="text-[#FF7700]">免費</span>
@@ -27,10 +27,10 @@ const Page = () => {
               </h2>
             </div>
             {/* 台北場 */}
-            <Card>
+            <Card className="x-2">
               <CardHeader className="bg-[#007CC9]">
                 <h3
-                  className="main-title-secondary relative mb-1 block text-3xl"
+                  className="main-title-secondary relative mb-1 block text-2xl md:text-3xl"
                   data-stroke="01.08 台北"
                 >
                   01.08 台北
@@ -116,13 +116,13 @@ const Page = () => {
               className="order-2 w-full shrink pb-0 md:order-1 md:w-6/12 md:pb-12 md:pr-3 lg:w-1/2 lg:pb-0"
             />
             <div className="order-1 flex w-full shrink flex-col justify-between space-y-5 font-extrabold md:order-2 md:w-6/12 md:space-y-0 md:px-5 lg:w-1/2">
-              <h3
-                className="main-title-secondary text-4xl font-normal"
+              <h2
+                className="main-title-secondary relative block text-3xl font-normal md:text-4xl lg:text-5xl"
                 data-stroke="3大重點不可錯過！"
               >
                 <span className="text-[#FF7700]">3大</span>
                 重點不可錯過！
-              </h3>
+              </h2>
               {/*  */}
               <div className="relative ml-4 bg-white py-3">
                 <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">

@@ -170,7 +170,7 @@ const EventForm = () => {
             <div className="block space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
               <div className="w-full space-y-4 lg:w-1/2">
                 <h3
-                  className="main-title-secondary text-3xl"
+                  className="main-title-secondary text-2xl md:text-3xl"
                   data-stroke="基本資料"
                 >
                   基本資料
@@ -258,7 +258,7 @@ const EventForm = () => {
                 {/* 上課方式 */}
                 <div>
                   <h3
-                    className="main-title-secondary text-3xl"
+                    className="main-title-secondary text-2xl md:text-3xl"
                     data-stroke="上課方式"
                   >
                     上課方式
@@ -287,7 +287,7 @@ const EventForm = () => {
                   render={({ field }) => (
                     <FormItem className="space-y-3">
                       <h3
-                        className="main-title-secondary text-3xl"
+                        className="main-title-secondary text-2xl md:text-3xl"
                         data-stroke="是否為元大&#8203;期貨客戶"
                       >
                         是否為元大&#8203;期貨客戶
@@ -347,7 +347,7 @@ const EventForm = () => {
                     return (
                       <>
                         <h3
-                          className="main-title-secondary text-3xl"
+                          className="main-title-secondary text-2xl md:text-3xl"
                           data-stroke="報名地區/時間/地址"
                         >
                           報名地區/時間/地址
@@ -406,7 +406,7 @@ const EventForm = () => {
               render={({ field }) => (
                 <div>
                   <h3
-                    className="main-title-secondary mb-3 text-3xl"
+                    className="main-title-secondary text-2xl md:text-3xl"
                     data-stroke="隱私權保護聲明及&#8203;個人資料保護法&#8203;告知事項"
                   >
                     隱私權保護聲明及&#8203;個人資料保護法&#8203;告知事項
@@ -439,11 +439,12 @@ const EventForm = () => {
               name="captcha"
               render={({ field }) => (
                 <FormItem>
-                  <div className="flex w-96 space-x-3">
+                  <div className="flex flex-wrap space-x-3">
                     <FormControl>
                       <Input
                         placeholder="請輸入驗證碼"
                         type="text"
+                        className="mb-3 max-w-xs"
                         {...field}
                       />
                     </FormControl>
@@ -470,7 +471,7 @@ const EventForm = () => {
             <hr className="border-2 border-[#F9E1C2]" />
             <div>
               <h3
-                className="main-title-secondary mb-3 text-3xl"
+                className="main-title-secondary mb3 text-2xl md:text-3xl"
                 data-stroke="注意事項"
               >
                 注意事項

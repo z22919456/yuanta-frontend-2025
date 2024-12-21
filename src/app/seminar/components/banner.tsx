@@ -13,53 +13,68 @@ import Image from 'next/image';
 const Banner = () => {
   return (
     <div className="relative">
-      <div className="container relative h-[38rem]">
-        <div className="absolute -bottom-16 z-20 flex items-end px-20">
-          <Image src={moneyGod1} alt="moneyGod1" className="w-[27%]" />
-          <div className="flex items-end">
-            <Image src={moneyGod2} alt="moneyGod2" className="w-1/4" />
-            <Image src={moneyGod3} alt="moneyGod3" className="w-1/4" />
-            <Image src={moneyGod4} alt="moneyGod4" className="w-1/4" />
-            <Image src={moneyGod5} alt="moneyGod5" className="w-1/4" />
-          </div>
-        </div>
+      <div className="container relative w-full pt-[65%] sm:pt-[70%] lg:h-[38rem] lg:pt-0">
         <Image
           src={title}
           alt="title"
-          className="absolute -top-16 left-1/2 w-11/12 -translate-x-1/2"
+          className="absolute -top-12 left-1/2 w-full -translate-x-[48%] lg:-top-16 lg:w-11/12"
+        />
+        <div className="absolute -bottom-1 flex items-end px-3 lg:-bottom-16 lg:z-20 lg:px-20">
+          <div className="grid grid-cols-[repeat(2,20.75fr)_27fr_repeat(2,20.75fr)] items-end md:grid-cols-[27fr_repeat(4,20.75fr)]">
+            <Image
+              src={moneyGod1}
+              alt="moneyGod1"
+              className="order-3 md:order-1"
+            />
+            <Image
+              src={moneyGod2}
+              alt="moneyGod2"
+              className="order-1 md:order-2"
+            />
+            <Image
+              src={moneyGod3}
+              alt="moneyGod3"
+              className="order-2 md:order-3"
+            />
+            <Image src={moneyGod4} alt="moneyGod4" className="order-4" />
+            <Image src={moneyGod5} alt="moneyGod5" className="order-5" />
+          </div>
+        </div>
+        <div className="hidden lg:block">
+          <Image
+            src={moneyLeft}
+            alt="moneyLeft"
+            className="absolute -left-44 top-28 z-10"
+          />
+          <Image
+            src={moneyRight}
+            alt="moneyRight"
+            className="absolute -right-24 top-20"
+          />
+        </div>
+      </div>
+      <div className="hidden lg:block">
+        <Image
+          src={cloudLeft}
+          alt="cloudLeft"
+          className="absolute -bottom-20 left-0 max-w-[35vw]"
         />
         <Image
-          src={moneyLeft}
-          alt="moneyLeft"
-          className="absolute -left-44 top-28 z-10"
+          src={cloudLeft}
+          alt="cloudLeft"
+          className="absolute -left-48 bottom-40 max-w-[35vw]"
         />
         <Image
-          src={moneyRight}
-          alt="moneyRight"
-          className="absolute -right-24 top-20"
+          src={cloudRight}
+          alt="cloudRight"
+          className="absolute -bottom-20 right-0 max-w-[35vw]"
+        />
+        <Image
+          src={cloudRight}
+          alt="cloudRight"
+          className="absolute -right-48 bottom-40 max-w-[35vw]"
         />
       </div>
-
-      <Image
-        src={cloudLeft}
-        alt="cloudLeft"
-        className="absolute -bottom-20 left-0 max-w-[35vw]"
-      />
-      <Image
-        src={cloudLeft}
-        alt="cloudLeft"
-        className="absolute -left-48 bottom-40 max-w-[35vw]"
-      />
-      <Image
-        src={cloudRight}
-        alt="cloudRight"
-        className="absolute -bottom-20 right-0 max-w-[35vw]"
-      />
-      <Image
-        src={cloudRight}
-        alt="cloudRight"
-        className="absolute -right-48 bottom-40 max-w-[35vw]"
-      />
     </div>
   );
 };
