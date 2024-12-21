@@ -16,9 +16,11 @@ import {
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import useLocalStorage from '@/hooks/use-local-storage';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoaderCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import SuccessDialog from './success-dialog';
@@ -94,6 +96,11 @@ const formSchema = z.object({
 });
 
 const EventForm = () => {
+  const searchParams = useSearchParams();
+  const [introducer, setIntroducer] = useLocalStorage(
+    'introducer',
+    searchParams.get('introducer')
+  );
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -107,6 +114,18 @@ const EventForm = () => {
       captcha: '',
     },
   });
+
+  useEffect(() => {
+    if (searchParams.has('introducer')) {
+      setIntroducer(searchParams.get('introducer'));
+    }
+  }, [searchParams, setIntroducer]);
+
+  useEffect(() => {
+    if (introducer) {
+      form.setValue('introducer', introducer);
+    }
+  }, [introducer, form]);
 
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
