@@ -158,7 +158,7 @@ const EventForm = () => {
       });
   }
   return (
-    <div className="p-5">
+    <div className="p-0 sm:p-5">
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
