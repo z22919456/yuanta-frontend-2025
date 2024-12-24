@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 import { RefreshCcw } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
-const CAPTCHA_API = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/captcha`;
+const CAPTCHA_API = `${process.env.NEXT_PUBLIC_API_URL}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/captcha`;
 
 type CaptchaProps = {
   className?: string;

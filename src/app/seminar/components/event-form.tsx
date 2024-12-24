@@ -146,14 +146,17 @@ const EventForm = () => {
       })),
     };
     setIsLoading(true);
-    fetch(`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/event`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      credentials: 'include',
-      body: JSON.stringify(date),
-    })
+    fetch(
+      `${process.env.NEXT_PUBLIC_API_URL || ''}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/event`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        credentials: 'include',
+        body: JSON.stringify(date),
+      }
+    )
       .then((res) => {
         if (res.ok) {
           setIsSuccess(true);
