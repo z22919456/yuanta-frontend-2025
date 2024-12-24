@@ -48,7 +48,7 @@ const Page = () => {
                       <Image
                         src={teacher.img}
                         alt={teacher.name}
-                        className="w-24 rounded-full border-4 border-y-wall"
+                        className="w-24 rounded-full border-4 border-y-wall bg-white"
                       />
                       <div className="w-full text-left font-extrabold">
                         <h4 className="font-default text-lg leading-tight">
