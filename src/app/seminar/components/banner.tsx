@@ -8,7 +8,7 @@ import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
 import moneyLeft from '@/assets/banner/seminar/money_left.png';
 import moneyRight from '@/assets/banner/seminar/money_right.png';
 import title from '@/assets/banner/seminar/title.png';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 
 const Banner = () => {
   return (

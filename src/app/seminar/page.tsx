@@ -1,6 +1,6 @@
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import { Suspense } from 'react';
 import freeImg from './assets/free.png';
 import AgendaDialog from './components/agenda-dialog';

@@ -1,5 +1,5 @@
 import Logo from '@/assets/logo.png';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import Link from 'next/link';
 import MediaLinks from './media-links';
 import Menu from './menu';

@@ -1,7 +1,7 @@
 import LightBulbImg from '@/app/(future-and-leverage)/assets/light.png';
 import WhichOneImg from '@/app//(future-and-leverage)/assets/which_one.png';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import ListWithBlock from './listWithBlock';
 
 const WhichOne = () => {

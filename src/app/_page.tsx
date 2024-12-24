@@ -16,14 +16,14 @@ import moneyGod4 from '@/assets/banner/seminar/money_god4.png';
 import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
 import Coin from '@/assets/coin.svg';
 import { cn } from '@/lib/utils';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 
 export default function Home() {
   return (
     <main className="relative min-h-screen w-screen pt-[64px]">
       {/* bg */}
-      <div className="bg-gradient-home-red absolute left-0 top-0 -z-10 h-full w-1/2"></div>
-      <div className="bg-gradient-home-blue absolute right-0 top-0 -z-10 h-full w-1/2"></div>
+      <div className="absolute left-0 top-0 -z-10 h-full w-1/2 bg-gradient-home-red"></div>
+      <div className="absolute right-0 top-0 -z-10 h-full w-1/2 bg-gradient-home-blue"></div>
       {/* banner */}
       <div className="relative">
         <div className="container w-full">
@@ -186,7 +186,7 @@ const Card = ({ children, primary = false, number }: CardProps) => (
     >
       <div
         className={cn(
-          'bg-gradient-triangle relative z-10 -ml-3 -mt-3 flex size-20 items-center justify-center rounded-tl-lg',
+          'relative z-10 -ml-3 -mt-3 flex size-20 items-center justify-center rounded-tl-lg bg-gradient-triangle',
           primary && '-ml-4 -mt-4'
         )}
       >
