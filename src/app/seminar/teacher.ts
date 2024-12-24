@@ -1,6 +1,7 @@
 import p1 from './assets/p1.png';
 import p4 from './assets/p2.png';
 import p2 from './assets/p3.png';
+import p3 from './assets/p4.png';
 
 export const taipeiTeacherData = [
   {
@@ -32,6 +33,6 @@ export const kaohsiungTeacherData = [
     title: '特別來賓',
     description:
       '本名 謝長青，現任理周教育學苑講師，股市經歷20年以上之專職交易人，擅長期貨與選擇權交易、股票選股及交易，【著作】期貨聖典山川戰法全書、股票聖典山川戰法全書。',
-    img: p4,
+    img: p3,
   },
 ];
