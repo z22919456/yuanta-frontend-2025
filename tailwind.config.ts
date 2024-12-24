@@ -113,6 +113,11 @@ export default {
       backgroundImage: {
         'gradient-band': 'linear-gradient(to right, #FFB75D, #FFFFE4, #FFB75D)',
         'gradient-main': 'linear-gradient(to bottom, #D84029, #FF792F)',
+        'gradient-main2': 'linear-gradient(to bottom, #D84029, #FF792F)',
+        'gradient-home-blue': 'linear-gradient(to right, #005ABC, #002956)',
+        'gradient-home-red': 'linear-gradient(to right, #D84029, #F2732C)',
+        'gradient-triangle':
+          'linear-gradient(135deg, #910612 50%, transparent 50%)',
       },
     },
   },
