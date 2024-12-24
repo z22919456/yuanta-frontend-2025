@@ -28,35 +28,35 @@ const Banner = () => {
               priority
               src={moneyGod1}
               alt="moneyGod1"
-              className="order-3 md:order-1"
+              className="animate-swing order-3 origin-bottom md:order-1"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod2}
               alt="moneyGod2"
-              className="order-1 md:order-2"
+              className="animate-swing order-1 origin-bottom md:order-2"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod3}
               alt="moneyGod3"
-              className="order-2 md:order-3"
+              className="animate-swing order-2 origin-bottom md:order-3"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod4}
               alt="moneyGod4"
-              className="order-4"
+              className="animate-swing order-4 origin-bottom"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod5}
               alt="moneyGod5"
-              className="order-5"
+              className="animate-swing order-5 origin-bottom"
             />
           </div>
         </div>
