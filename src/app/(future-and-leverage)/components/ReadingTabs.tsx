@@ -1,6 +1,6 @@
 import read1Img from '@/app/(future-and-leverage)/assets/read1.png';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import { readContexts } from '../futures/data';
 
 const ReadingTabs = () => {

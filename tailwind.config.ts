@@ -120,6 +120,17 @@ export default {
           'linear-gradient(135deg, #910612 50%, transparent 50%)',
       },
     },
+    keyframes: {
+      swing: {
+        '0%': { transform: 'rotate(-8deg)' },
+        '50%': { transform: 'rotate(8deg)' },
+        '100%': { transform: 'rotate(-8deg)' },
+      },
+    },
+    // 添加自定義動畫
+    animation: {
+      swing: 'swing 5s ease-in-out infinite',
+    },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],
 } satisfies Config;

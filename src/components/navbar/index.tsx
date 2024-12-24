@@ -1,5 +1,5 @@
 import Logo from '@/assets/logo.png';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import Link from 'next/link';
 import MediaLinks from './media-links';
 import Menu from './menu';
@@ -39,11 +39,13 @@ const Navbar = () => {
       <div className="fixed z-50 w-full bg-white px-5 py-3 shadow-md md:px-7 md:py-4">
         <nav className="container flex items-center justify-between">
           <h1 className="">
-            <Link href="/" className="">
+            <Link href="/seminar" className="">
               <Image
                 src={Logo}
                 className="w-28 cursor-pointer md:w-44"
                 alt="Logo"
+                placeholder="empty"
+                priority
               />
             </Link>
           </h1>

@@ -17,7 +17,7 @@ import { cn } from '@/lib/utils';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@radix-ui/react-tabs';
 import { AnimatePresence, motion } from 'framer-motion';
 import { CircleChevronLeft, CircleChevronRight } from 'lucide-react';
-import Image from 'next/image';
+import Image from 'next-image-export-optimizer';
 import { useState } from 'react';
 import ListWithBlock from '../../components/listWithBlock';
 
