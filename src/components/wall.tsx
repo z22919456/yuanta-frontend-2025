@@ -3,6 +3,7 @@ import roofDesktopImg from '@/assets/roof/roof_desktop.png';
 import roofMobileImg from '@/assets/roof/roof_mobile.png';
 import roofTabletImg from '@/assets/roof/roof_tablet.png';
 import { cn } from '@/lib/utils';
+import FadeInOnScroll from './animation-container/fade-in-on-scroll';
 
 type WallProps = {
   children?: React.ReactNode;
@@ -11,7 +12,7 @@ type WallProps = {
 
 const Wall = ({ children, title }: WallProps) => {
   return (
-    <div className="relative px-0 lg:px-5">
+    <FadeInOnScroll className="relative px-0 lg:px-5">
       <picture className="relative bottom-[calc(100%-4px)] left-0 z-10 h-32 w-52">
         <source media="(min-width: 1080px)" srcSet={roofDesktopImg.src} />
         <source media="(min-width: 768px)" srcSet={roofTabletImg.src} />
@@ -39,7 +40,7 @@ const Wall = ({ children, title }: WallProps) => {
         {/* Content */}
         {children}
       </div>
-    </div>
+    </FadeInOnScroll>
   );
 };
 

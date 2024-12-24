@@ -1,3 +1,4 @@
+import BounceOnScroll from '@/components/animation-container/bounce-on-scroll';
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
 import Image from 'next-image-export-optimizer';
@@ -28,82 +29,86 @@ const Page = () => {
               </h2>
             </div>
             {/* 台北場 */}
-            <Card className="x-2">
-              <CardHeader className="bg-[#007CC9]">
-                <h3
-                  className="main-title-secondary relative mb-1 block text-2xl md:text-3xl"
-                  data-stroke="01.08 台北"
-                >
-                  01.08 台北
-                </h3>
-                <p className="mb-1 text-lg">犇亞會議中心</p>
-              </CardHeader>
-              <div className="flex flex-wrap px-3 md:px-0 [&_>div:first-child]:border-b-4 md:[&_>div:first-child]:border-b-0 md:[&_>div:first-child]:border-r-4">
-                {taipeiTeacherData.map((teacher, i) => (
-                  <div
-                    className="w-full border-[#F9E1C2] py-5 md:my-8 md:w-1/2 md:p-8 md:py-0"
-                    key={i}
+            <BounceOnScroll>
+              <Card className="x-2">
+                <CardHeader className="bg-[#007CC9]">
+                  <h3
+                    className="main-title-secondary relative mb-1 block text-2xl md:text-3xl"
+                    data-stroke="01.08 台北"
                   >
-                    <div className="mb-3 flex items-center space-x-3">
-                      <Image
-                        src={teacher.img}
-                        alt={teacher.name}
-                        className="w-24 rounded-full border-4 border-y-wall bg-white"
-                      />
-                      <div className="w-full text-left font-extrabold">
-                        <h4 className="font-default text-lg leading-tight">
-                          {teacher.title}
-                          <br />
-                          {teacher.name}
-                        </h4>
+                    01.08 台北
+                  </h3>
+                  <p className="mb-1 text-lg">犇亞會議中心</p>
+                </CardHeader>
+                <div className="flex flex-wrap px-3 md:px-0 [&_>div:first-child]:border-b-4 md:[&_>div:first-child]:border-b-0 md:[&_>div:first-child]:border-r-4">
+                  {taipeiTeacherData.map((teacher, i) => (
+                    <div
+                      className="w-full border-[#F9E1C2] py-5 md:my-8 md:w-1/2 md:p-8 md:py-0"
+                      key={i}
+                    >
+                      <div className="mb-3 flex items-center space-x-3">
+                        <Image
+                          src={teacher.img}
+                          alt={teacher.name}
+                          className="w-24 rounded-full border-4 border-y-wall bg-white"
+                        />
+                        <div className="w-full text-left font-extrabold">
+                          <h4 className="font-default text-lg leading-tight">
+                            {teacher.title}
+                            <br />
+                            {teacher.name}
+                          </h4>
+                        </div>
+                      </div>
+                      <div className="text-left">
+                        <p>{teacher.description}</p>
                       </div>
                     </div>
-                    <div className="text-left">
-                      <p>{teacher.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+                  ))}
+                </div>
+              </Card>
+            </BounceOnScroll>
 
             {/* 高雄場 */}
-            <Card>
-              <CardHeader className="bg-[#EE7F00]">
-                <h3
-                  className="main-title-secondary relative mb-1 block text-3xl"
-                  data-stroke="01.10 高雄"
-                >
-                  01.10 高雄
-                </h3>
-                <p className="mb-1 text-lg">思博客商務中心</p>
-              </CardHeader>
-              <div className="flex flex-wrap px-3 md:px-0 [&_>div:first-child]:border-b-4 md:[&_>div:first-child]:border-b-0 md:[&_>div:first-child]:border-r-4">
-                {kaohsiungTeacherData.map((teacher, i) => (
-                  <div
-                    className="w-full border-[#F9E1C2] py-5 md:my-8 md:w-1/2 md:p-8 md:py-0"
-                    key={i}
+            <BounceOnScroll>
+              <Card>
+                <CardHeader className="bg-[#EE7F00]">
+                  <h3
+                    className="main-title-secondary relative mb-1 block text-3xl"
+                    data-stroke="01.10 高雄"
                   >
-                    <div className="mb-3 flex items-center space-x-3">
-                      <Image
-                        src={teacher.img}
-                        alt={teacher.name}
-                        className="w-24 rounded-full border-4 border-y-wall"
-                      />
-                      <div className="w-full text-left font-extrabold">
-                        <h4 className="font-default text-lg leading-tight">
-                          {teacher.title}
-                          <br />
-                          {teacher.name}
-                        </h4>
+                    01.10 高雄
+                  </h3>
+                  <p className="mb-1 text-lg">思博客商務中心</p>
+                </CardHeader>
+                <div className="flex flex-wrap px-3 md:px-0 [&_>div:first-child]:border-b-4 md:[&_>div:first-child]:border-b-0 md:[&_>div:first-child]:border-r-4">
+                  {kaohsiungTeacherData.map((teacher, i) => (
+                    <div
+                      className="w-full border-[#F9E1C2] py-5 md:my-8 md:w-1/2 md:p-8 md:py-0"
+                      key={i}
+                    >
+                      <div className="mb-3 flex items-center space-x-3">
+                        <Image
+                          src={teacher.img}
+                          alt={teacher.name}
+                          className="w-24 rounded-full border-4 border-y-wall"
+                        />
+                        <div className="w-full text-left font-extrabold">
+                          <h4 className="font-default text-lg leading-tight">
+                            {teacher.title}
+                            <br />
+                            {teacher.name}
+                          </h4>
+                        </div>
+                      </div>
+                      <div className="text-left">
+                        <p>{teacher.description}</p>
                       </div>
                     </div>
-                    <div className="text-left">
-                      <p>{teacher.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+                  ))}
+                </div>
+              </Card>
+            </BounceOnScroll>
             <div className="text-center">
               <AgendaDialog />
             </div>
@@ -125,23 +130,33 @@ const Page = () => {
                 重點不可錯過！
               </h2>
               {/*  */}
-              <div className="relative ml-4 bg-white py-3">
+              <div className="relative ml-4 bg-white py-3 pl-7">
                 <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                   <span className="-rotate-45 font-title text-2xl">1</span>
                 </p>
-                <p>2025年全球經濟趨勢</p>
+                <p>
+                  <strong className="text-xl text-[#FF7700]">2025年</strong>
+                  全球經濟趨勢
+                </p>
               </div>
-              <div className="relative ml-4 bg-white py-3">
+              <div className="relative ml-4 bg-white py-3 pl-7">
                 <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                   <span className="-rotate-45 font-title text-2xl">2</span>
                 </p>
-                <p>川普2.0大解析市場展望</p>
+                <p>
+                  <strong className="text-xl text-[#FF7700]">川普2.0</strong>
+                  大解析市場展望
+                </p>
               </div>
-              <div className="relative ml-4 bg-white py-3">
+              <div className="relative ml-4 bg-white py-3 pl-7">
                 <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                   <span className="-rotate-45 font-title text-2xl">3</span>
                 </p>
-                <p>從當沖到波段交易全攻略</p>
+                <p>
+                  從<strong className="text-xl text-[#FF7700]">當沖</strong>到
+                  <strong className="text-xl text-[#FF7700]">波段</strong>
+                  交易全攻略
+                </p>
               </div>
             </div>
           </WallContent>
