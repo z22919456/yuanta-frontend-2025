@@ -44,6 +44,8 @@ const Navbar = () => {
                 src={Logo}
                 className="w-28 cursor-pointer md:w-44"
                 alt="Logo"
+                placeholder="empty"
+                priority
               />
             </Link>
           </h1>

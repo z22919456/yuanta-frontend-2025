@@ -16,7 +16,13 @@ const Wall = ({ children, title }: WallProps) => {
       <picture className="relative bottom-[calc(100%-4px)] left-0 z-10 h-32 w-52">
         <source media="(min-width: 1080px)" srcSet={roofDesktopImg.src} />
         <source media="(min-width: 768px)" srcSet={roofTabletImg.src} />
-        <img src={roofMobileImg.src} alt="roof" className="w-full scale-110" />
+        <img
+          src={roofMobileImg.src}
+          alt="roof"
+          className="w-full scale-110"
+          loading="eager"
+          fetchPriority="high"
+        />
       </picture>
       {/*  */}
       <div className="relative mb-12 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-3 pt-3 sm:px-4 sm:pt-6 lg:px-5 lg:pt-7 [&_>div:nth-child(2)]:pt-8 md:[&_>div:nth-child(2)]:pt-10 lg:[&_>div:nth-child(2)]:pt-16">

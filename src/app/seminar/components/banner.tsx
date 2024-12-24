@@ -15,6 +15,8 @@ const Banner = () => {
     <div className="relative">
       <div className="container relative w-full pt-[65%] sm:pt-[70%] lg:h-[38rem] lg:pt-0">
         <Image
+          placeholder="empty"
+          priority
           src={title}
           alt="title"
           className="absolute -top-12 left-1/2 w-full -translate-x-[48%] lg:-top-16 lg:w-11/12"
@@ -22,31 +24,53 @@ const Banner = () => {
         <div className="absolute -bottom-1 flex items-end px-3 lg:-bottom-16 lg:z-20 lg:px-20">
           <div className="grid grid-cols-[repeat(2,20.75fr)_27fr_repeat(2,20.75fr)] items-end md:grid-cols-[27fr_repeat(4,20.75fr)]">
             <Image
+              placeholder="empty"
+              priority
               src={moneyGod1}
               alt="moneyGod1"
               className="order-3 md:order-1"
             />
             <Image
+              placeholder="empty"
+              priority
               src={moneyGod2}
               alt="moneyGod2"
               className="order-1 md:order-2"
             />
             <Image
+              placeholder="empty"
+              priority
               src={moneyGod3}
               alt="moneyGod3"
               className="order-2 md:order-3"
             />
-            <Image src={moneyGod4} alt="moneyGod4" className="order-4" />
-            <Image src={moneyGod5} alt="moneyGod5" className="order-5" />
+            <Image
+              placeholder="empty"
+              priority
+              src={moneyGod4}
+              alt="moneyGod4"
+              className="order-4"
+            />
+            <Image
+              placeholder="empty"
+              priority
+              src={moneyGod5}
+              alt="moneyGod5"
+              className="order-5"
+            />
           </div>
         </div>
         <div className="hidden lg:block">
           <Image
+            placeholder="empty"
+            priority
             src={moneyLeft}
             alt="moneyLeft"
             className="absolute -left-44 top-28 z-10"
           />
           <Image
+            placeholder="empty"
+            priority
             src={moneyRight}
             alt="moneyRight"
             className="absolute -right-24 top-20"
@@ -55,21 +79,29 @@ const Banner = () => {
       </div>
       <div className="hidden lg:block">
         <Image
+          placeholder="empty"
+          priority
           src={cloudLeft}
           alt="cloudLeft"
           className="absolute -bottom-20 left-0 max-w-[35vw]"
         />
         <Image
+          placeholder="empty"
+          priority
           src={cloudLeft}
           alt="cloudLeft"
           className="absolute -left-48 bottom-40 max-w-[35vw]"
         />
         <Image
+          placeholder="empty"
+          priority
           src={cloudRight}
           alt="cloudRight"
           className="absolute -bottom-20 right-0 max-w-[35vw]"
         />
         <Image
+          placeholder="empty"
+          priority
           src={cloudRight}
           alt="cloudRight"
           className="absolute -right-48 bottom-40 max-w-[35vw]"
