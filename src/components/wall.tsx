@@ -8,12 +8,16 @@ import FadeInOnScroll from './animation-container/fade-in-on-scroll';
 type WallProps = {
   children?: React.ReactNode;
   title?: string;
+  id?: string;
 };
 
-const Wall = ({ children, title }: WallProps) => {
+const Wall = ({ children, title, id }: WallProps) => {
   return (
     <FadeInOnScroll className="relative px-0 lg:px-5">
-      <picture className="relative bottom-[calc(100%-4px)] left-0 z-10 h-32 w-52">
+      <picture
+        className="relative bottom-[calc(100%-4px)] left-0 z-10 h-32 w-52"
+        id={id}
+      >
         <source media="(min-width: 1080px)" srcSet={roofDesktopImg.src} />
         <source media="(min-width: 768px)" srcSet={roofTabletImg.src} />
         <img

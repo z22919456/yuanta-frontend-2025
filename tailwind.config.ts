@@ -126,10 +126,15 @@ export default {
         '50%': { transform: 'rotate(8deg)' },
         '100%': { transform: 'rotate(-8deg)' },
       },
+      pulse: {
+        '0%, 100%': { backgroundColor: '#D84029' },
+        '50%': { backgroundColor: '#910612' },
+      },
     },
     // 添加自定義動畫
     animation: {
       swing: 'swing 5s ease-in-out infinite',
+      pulse: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],

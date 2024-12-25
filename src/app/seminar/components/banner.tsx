@@ -13,14 +13,19 @@ import Image from 'next-image-export-optimizer';
 const Banner = () => {
   return (
     <div className="relative">
-      <div className="container relative w-full pt-[65%] sm:pt-[70%] lg:h-[38rem] lg:pt-0">
-        <Image
-          placeholder="empty"
-          priority
-          src={title}
-          alt="title"
-          className="absolute -top-12 left-1/2 w-full -translate-x-[48%] lg:-top-16 lg:w-11/12"
-        />
+      <div className="container relative w-full pt-[68%] sm:pt-[70%] lg:h-[38rem] lg:pt-0">
+        <div className="absolute left-1/2 top-0 w-full -translate-x-[48%] -translate-y-[18%] lg:w-11/12">
+          <Image
+            placeholder="empty"
+            priority
+            src={title}
+            alt="title"
+            className="w-full"
+          />
+          <button className="sm:xl animate-pulse absolute left-[53%] top-[58.4%] z-20 flex h-[9.2%] w-[23%] items-center justify-center rounded-full border-2 border-y-tab-active-bo text-center font-bold text-white shadow-xl hover:border-y-tab-t hover:!bg-y-tab-bg hover:text-y-tab-t md:border-4 md:text-3xl lg:text-4xl">
+            <a href="#form_top">免費報名</a>
+          </button>
+        </div>
         <div className="absolute -bottom-1 flex items-end px-3 lg:-bottom-16 lg:z-20 lg:px-20">
           <div className="grid grid-cols-[repeat(2,20.75fr)_27fr_repeat(2,20.75fr)] items-end md:grid-cols-[27fr_repeat(4,20.75fr)]">
             <Image
@@ -28,35 +33,35 @@ const Banner = () => {
               priority
               src={moneyGod1}
               alt="moneyGod1"
-              className="animate-swing order-3 origin-bottom md:order-1"
+              className="order-3 origin-bottom animate-swing md:order-1"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod2}
               alt="moneyGod2"
-              className="animate-swing order-1 origin-bottom md:order-2"
+              className="order-1 origin-bottom animate-swing md:order-2"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod3}
               alt="moneyGod3"
-              className="animate-swing order-2 origin-bottom md:order-3"
+              className="order-2 origin-bottom animate-swing md:order-3"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod4}
               alt="moneyGod4"
-              className="animate-swing order-4 origin-bottom"
+              className="order-4 origin-bottom animate-swing"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGod5}
               alt="moneyGod5"
-              className="animate-swing order-5 origin-bottom"
+              className="order-5 origin-bottom animate-swing"
             />
           </div>
         </div>
