@@ -161,7 +161,7 @@ const Page = () => {
             </div>
           </WallContent>
         </Wall>
-        <Wall title="報名入口">
+        <Wall title="報名入口" id="form_top">
           <WallContent className="space-y-4 text-left">
             <Suspense>
               <EventForm />
