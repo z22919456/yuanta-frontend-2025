@@ -80,74 +80,75 @@ body {
   h6 {
     @apply font-title;
   }
-}
 
-.main-title {
-  @apply relative text-y-t-main;
-  @apply [--stroke-color:theme('colors.white')];
-  word-break: keep-all;
-
-  &::after {
-    content: attr(data-stroke);
-    z-index: -1;
+  .main-title {
+    @apply relative text-y-t-main;
+    @apply [--stroke-color:theme('colors.white')];
+    @apply [--stroke-width:5px];
     word-break: keep-all;
-    text-stroke: 5px var(--stroke-color);
-    -webkit-text-stroke: 5px var(--stroke-color);
-    color: transparent;
-    @apply absolute -left-0 top-0 size-full;
-  }
-}
 
-.main-title-secondary {
-  @apply relative z-10 text-y-t-light;
-  @apply [--stroke-color:theme('colors.y.t.main')];
-  word-break: keep-all;
-
-  &::after {
-    content: attr(data-stroke);
-    z-index: -1;
-    word-break: keep-all;
-    text-stroke: 5px var(--stroke-color);
-    -webkit-text-stroke: 5px var(--stroke-color);
-    color: transparent;
-    @apply absolute -left-0 top-0 size-full;
+    &::after {
+      content: attr(data-stroke);
+      z-index: -1;
+      word-break: keep-all;
+      text-stroke: var(--stroke-width) var(--stroke-color);
+      -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
+      color: transparent;
+      @apply absolute -left-0 top-0 size-full;
+    }
   }
 
-  &::before {
-    content: attr(data-stroke);
-    z-index: -1;
+  .main-title-secondary {
+    @apply relative z-10 text-y-t-light;
+    @apply [--stroke-color:theme('colors.y.t.main')];
     word-break: keep-all;
-    text-stroke: 5px theme('colors.y.tab.active.bo');
-    -webkit-text-stroke: 5px theme('colors.y.tab.active.bo');
-    color: transparent;
-    top: 0.125rem;
-    @apply absolute -left-0 size-full;
+
+    &::after {
+      content: attr(data-stroke);
+      z-index: -1;
+      word-break: keep-all;
+      text-stroke: 5px var(--stroke-color);
+      -webkit-text-stroke: 5px var(--stroke-color);
+      color: transparent;
+      @apply absolute -left-0 top-0 size-full;
+    }
+
+    &::before {
+      content: attr(data-stroke);
+      z-index: -1;
+      word-break: keep-all;
+      text-stroke: 5px theme('colors.y.tab.active.bo');
+      -webkit-text-stroke: 5px theme('colors.y.tab.active.bo');
+      color: transparent;
+      top: 0.125rem;
+      @apply absolute -left-0 size-full;
+    }
   }
-}
 
-.shadow-number {
-  @apply relative z-10 text-4xl text-[#FFF2B2];
-  @apply [--stroke-color:theme('colors.y.t.main')];
-  word-break: keep-all;
-
-  &::after {
-    content: attr(data-stroke);
-    z-index: -1;
+  .shadow-number {
+    @apply relative z-10 text-4xl text-[#FFF2B2];
+    @apply [--stroke-color:theme('colors.y.t.main')];
     word-break: keep-all;
-    text-stroke: 8px var(--stroke-color);
-    -webkit-text-stroke: 8px var(--stroke-color);
-    color: transparent;
-    @apply absolute -left-0 top-0 size-full;
-  }
 
-  &::before {
-    content: attr(data-stroke);
-    z-index: -1;
-    word-break: keep-all;
-    text-stroke: 5px #47260088;
-    -webkit-text-stroke: 5px #47260088;
-    color: transparent;
-    @apply absolute -left-0 top-1 size-full;
+    &::after {
+      content: attr(data-stroke);
+      z-index: -1;
+      word-break: keep-all;
+      text-stroke: 8px var(--stroke-color);
+      -webkit-text-stroke: 8px var(--stroke-color);
+      color: transparent;
+      @apply absolute -left-0 top-0 size-full;
+    }
+
+    &::before {
+      content: attr(data-stroke);
+      z-index: -1;
+      word-break: keep-all;
+      text-stroke: 5px #47260088;
+      -webkit-text-stroke: 5px #47260088;
+      color: transparent;
+      @apply absolute -left-0 top-1 size-full;
+    }
   }
 }
 

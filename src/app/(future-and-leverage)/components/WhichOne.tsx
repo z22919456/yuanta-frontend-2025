@@ -34,8 +34,8 @@ const WhichOne = () => {
 
           {/* Content 1 */}
           <TabsContent className="mt-5 rounded-2xl" value="futures_trade">
-            <div className="m-0 p-0 md:rounded-2xl md:bg-white/80 md:p-3">
-              <div className="space-y-5 rounded-md p-2 py-0 md:border md:border-y-tab-active-bg md:p-6">
+            <div className="m-0 rounded-2xl bg-white/80 p-3">
+              <div className="space-y-5 rounded-md border border-y-tab-active-bg p-3 md:p-6">
                 <ListWithBlock
                   className="block grid-cols-2 gap-x-12 gap-y-4 md:grid md:space-y-0"
                   list={[
@@ -45,7 +45,7 @@ const WhichOne = () => {
                     '目標是短期投機',
                   ]}
                 />
-                <p className="text-left text-xl font-bold text-y-tab-active-bo md:text-2xl">
+                <p className="text-left text-xl font-bold text-[#EE7F00] md:text-2xl">
                   如果喜歡更高的風險回報並對市場變化有敏銳的洞察力，期貨可能更適合你。
                 </p>
               </div>
@@ -54,8 +54,8 @@ const WhichOne = () => {
 
           {/* Content 2 */}
           <TabsContent className="mt-5 rounded-2xl" value="options_trade">
-            <div className="m-0 p-0 md:rounded-2xl md:bg-white/80 md:p-3">
-              <div className="space-y-5 rounded-md p-2 py-0 md:border md:border-y-tab-active-bg md:p-6">
+            <div className="m-0 rounded-2xl bg-white/80 p-3">
+              <div className="space-y-5 rounded-md border border-y-tab-active-bg p-3 md:p-6">
                 <ListWithBlock
                   list={[
                     '風險承受能力中等或較低',
@@ -64,7 +64,7 @@ const WhichOne = () => {
                     '目標是保護或增加收益',
                   ]}
                 />
-                <p className="text-left text-xl font-bold text-y-tab-active-bo md:text-2xl">
+                <p className="text-left text-xl font-bold text-[#EE7F00] md:text-2xl">
                   如果傾向於控制風險、保持靈活性，並且希望有更大的策略選擇空間，選擇權可能是更好的選擇。
                 </p>
               </div>

@@ -7,11 +7,12 @@ import FadeInOnScroll from './animation-container/fade-in-on-scroll';
 
 type WallProps = {
   children?: React.ReactNode;
-  title?: string;
+  title?: string | React.ReactNode;
+  titleClassName?: string;
   id?: string;
 };
 
-const Wall = ({ children, title, id }: WallProps) => {
+const Wall = ({ children, title, id, titleClassName }: WallProps) => {
   return (
     <FadeInOnScroll className="relative px-0 lg:px-5">
       <picture
@@ -29,14 +30,17 @@ const Wall = ({ children, title, id }: WallProps) => {
         />
       </picture>
       {/*  */}
-      <div className="relative mb-12 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-3 pt-3 sm:px-4 sm:pt-6 lg:px-5 lg:pt-7 [&_>div:nth-child(2)]:pt-8 md:[&_>div:nth-child(2)]:pt-10 lg:[&_>div:nth-child(2)]:pt-16">
+      <div className="relative mb-12 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-3 pt-3 sm:px-4 sm:pt-6 lg:px-5 lg:pt-7 [&_>div:nth-child(2)]:pt-10 md:[&_>div:nth-child(2)]:pt-12 lg:[&_>div:nth-child(2)]:pt-16">
         {/* title */}
         {title && (
           <div className="absolute -top-1 left-1/2 z-10 mx-auto -translate-x-1/2 border-4 border-y-bo bg-gradient-band pt-1 text-center md:w-[30rem]">
             <div className="flex items-center justify-between">
               <Coin className="ml-3 mr-2 w-5 md:ml-5 md:mr-2" />
               <h1
-                className="main-title my-[0.125rem] font-title text-lg leading-tight sm:text-2xl md:text-3xl lg:text-4xl lg:leading-normal"
+                className={
+                  'main-title my-1 mb-[0.375rem] font-title text-lg leading-tight sm:text-2xl md:text-3xl lg:text-4xl' +
+                  (titleClassName ? ` ${titleClassName}` : '')
+                }
                 data-stroke={title}
               >
                 {title}
@@ -63,7 +67,7 @@ export const WallContent = ({ children, className }: WallContentProps) => {
   return (
     <div
       className={cn(
-        'rounded-lg border-2 border-y-bo bg-y-bg p-3 pt-10 text-center text-lg md:border-4 md:p-5',
+        'rounded-lg border-2 border-y-bo bg-y-bg p-3 text-center text-lg md:border-4 md:p-5',
         className
       )}
     >

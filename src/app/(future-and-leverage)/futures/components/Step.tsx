@@ -257,7 +257,7 @@ const Step = () => {
   };
 
   return (
-    <div className="-mb-5 space-y-8 pt-14">
+    <div className="-mb-6 space-y-8 pt-14 md:-mb-5">
       <motion.div
         className="mx-auto mb-5 max-w-[700px]"
         whileInView={{ opacity: 1, y: 0 }}
@@ -316,16 +316,16 @@ const Step = () => {
                 {/* Container */}
                 <div
                   className={
-                    '-mx-2 mt-5 min-h-60 w-full rounded-2xl bg-white/80 p-3 sm:mx-0 md:w-full'
+                    '-mx-5 mt-5 min-h-60 rounded-2xl bg-white/80 p-3 sm:mx-0 md:w-full'
                   }
                 >
-                  <div className="relative flex h-52 items-center space-y-5 p-5 text-lg text-gray-800 md:h-60 md:p-5 md:text-2xl lg:p-10">
+                  <div className="relative flex min-h-52 w-full items-center space-y-5 p-2 pb-7 text-lg text-gray-800 md:h-60 md:p-5 md:text-2xl lg:p-10">
                     <div className="mb-3 w-full font-medium">
                       <AnimatePresence>
                         <Info currentStep={step} />
                       </AnimatePresence>
                     </div>
-                    <p className="absolute bottom-0 right-0 text-xs text-gray-600">
+                    <p className="absolute bottom-0 right-0 text-left text-xs text-gray-600">
                       *此教學為基本下單，其他細節請洽所屬營業員。
                     </p>
                   </div>

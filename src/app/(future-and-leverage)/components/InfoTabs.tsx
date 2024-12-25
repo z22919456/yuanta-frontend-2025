@@ -1,4 +1,5 @@
 import read1Img from '@/app/(future-and-leverage)/assets/read1.png';
+import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from 'next-image-export-optimizer';
 import { infoContexts } from '../futures/data';
@@ -12,30 +13,35 @@ const InfoTabs = () => {
   ] as const;
   return (
     <Tabs defaultValue="whatIsFutures" className="w-full">
-      <TabsList className="mb-4 grid w-full grid-cols-4">
-        <TabsTrigger value="whatIsFutures">什麼是期貨</TabsTrigger>
-        <TabsTrigger value="whyFutures">
-          <p>
-            為什麼
-            <br className="" />
-            選擇
-            <span className="text-yuan-red font-semibold text-y-secondary group-data-[state=active]:text-y-tab-bg">
-              期貨
-            </span>
-          </p>
-        </TabsTrigger>
-        <TabsTrigger value="whatIsOptions">什麼是選擇權</TabsTrigger>
-        <TabsTrigger value="whyOptions">
-          <p>
-            為什麼
-            <br className="" />
-            選擇
-            <span className="text-yuan-red group-[]: font-semibold text-y-secondary group-data-[state=active]:text-y-tab-bg">
-              選擇權
-            </span>
-          </p>
-        </TabsTrigger>
-      </TabsList>
+      <ScrollArea>
+        <div className="w-[650px] md:w-auto">
+          <TabsList className="mb-4 grid w-full grid-cols-4">
+            <TabsTrigger value="whatIsFutures">什麼是期貨</TabsTrigger>
+            <TabsTrigger value="whyFutures">
+              <p>
+                為什麼
+                <br className="" />
+                選擇
+                <span className="text-yuan-red font-semibold text-y-secondary group-data-[state=active]:text-y-tab-bg">
+                  期貨
+                </span>
+              </p>
+            </TabsTrigger>
+            <TabsTrigger value="whatIsOptions">什麼是選擇權</TabsTrigger>
+            <TabsTrigger value="whyOptions">
+              <p>
+                為什麼
+                <br className="" />
+                選擇
+                <span className="text-yuan-red group-[]: font-semibold text-y-secondary group-data-[state=active]:text-y-tab-bg">
+                  選擇權
+                </span>
+              </p>
+            </TabsTrigger>
+          </TabsList>
+        </div>
+        <ScrollBar orientation="horizontal" />
+      </ScrollArea>
 
       <TabsContent
         value="research"

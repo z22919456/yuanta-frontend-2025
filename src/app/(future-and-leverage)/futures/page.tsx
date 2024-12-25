@@ -4,11 +4,14 @@ import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
 import Image from 'next-image-export-optimizer';
+import flowerImg from '../assets/flower.png';
 import InfoTabs from '../components/InfoTabs';
 import ProductCard from '../components/product-card';
 import ProductSwiper from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
 import WhichOne from '../components/WhichOne';
+import ComparisonTable from './components/comparison-table';
+import Start from './components/start.svg';
 import Step from './components/Step';
 import { products, products2 } from './data';
 
@@ -106,7 +109,7 @@ const Page = () => {
         </Wall>
 
         {/* 步行萬里，滿額送禮 */}
-        <Wall title="步行萬里，滿額送禮">
+        <Wall title="步行萬里 滿額送禮" titleClassName="whitespace-nowrap">
           <WallContent className="space-y-4">
             <p>
               活動期間，不論新舊戶累積交易達指定口數門檻，即可獲得指定好禮！ 
@@ -139,6 +142,64 @@ const Page = () => {
                     齊聚五燈獎
                   </h2>
                 </CardHeader>
+
+                <div className="space-y-5 p-5">
+                  {/* 五種交易類型 */}
+                  <Image
+                    src={flowerImg}
+                    alt="金屬｜能源｜匯率｜指數｜債券"
+                    className="mx-auto w-4/5"
+                  />
+
+                  <div className="text-left">
+                    <p>
+                      活動期間，交易跨美盤(CME) 商品種類，加碼再送指定好禮！ 
+                    </p>
+                    <p>
+                      <small>(每ID限領乙次)</small>
+                    </p>
+                  </div>
+
+                  {/* 188口 */}
+                  <Card>
+                    <CardHeader className="bg-[#007CC9]">
+                      <h3
+                        className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px]"
+                        data-stroke="美盤188口以上"
+                      >
+                        美盤188口以上
+                      </h3>
+                      <div className="mt-1 flex justify-center space-x-2">
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                      </div>
+                    </CardHeader>
+                    <p className="font-default">交易三類商品</p>
+                    <p className="font-title text-y-tab-active-bg">贈1,000元</p>
+                  </Card>
+
+                  {/* 288口 */}
+                  <Card>
+                    <CardHeader className="bg-[#007CC9]">
+                      <h3
+                        className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px]"
+                        data-stroke="美盤288口以上"
+                      >
+                        美盤288口以上
+                      </h3>
+                      <div className="mt-1 flex justify-center space-x-2">
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                        <Start className="size-5" />
+                      </div>
+                    </CardHeader>
+                    <p className="font-default">交易五類商品</p>
+                    <p className="font-title text-y-tab-active-bg">贈1,500元</p>
+                  </Card>
+                </div>
               </Card>
             </div>
           </WallContent>
@@ -171,7 +232,7 @@ const Page = () => {
         {/* 交易外期請先參閱 */}
         <Wall title="交易外期請先參閱">
           <WallContent>
-            <div className="mx-auto w-full max-w-3xl p-4">
+            <div className="mx-auto w-full max-w-3xl p-0 md:p-4">
               <ReadingTabs />
             </div>
           </WallContent>
@@ -179,14 +240,14 @@ const Page = () => {
 
         {/* 期貨選擇權  投資新趨勢*/}
         <Wall title="期貨選擇權 投資新趨勢">
-          <WallContent className="mb-4">
-            <div className="mx-auto w-full max-w-3xl p-4">
+          <WallContent className="mb-4 !pt-16 md:!pt-10">
+            <div className="mx-auto w-full max-w-3xl p-0 md:p-4">
               <InfoTabs />
             </div>
           </WallContent>
           <WallContent>
             <WhichOne />
-            <p className="text-yuan-red -mb-2 mt-2 text-right text-xs font-bold">
+            <p className="text-yuan-red -mb-2 mt-2 text-left text-xs font-bold sm:text-right">
               * 期貨交易一定有風險，交易前請謹慎做好風險管理
             </p>
           </WallContent>
@@ -194,8 +255,8 @@ const Page = () => {
 
         {/* 春節不打烊外  還有很多優勢*/}
         <Wall title="春節不打烊外 還有很多優勢">
-          <WallContent>
-            <></>
+          <WallContent className="!pt-16 md:!pt-24">
+            <ComparisonTable />
           </WallContent>
         </Wall>
 

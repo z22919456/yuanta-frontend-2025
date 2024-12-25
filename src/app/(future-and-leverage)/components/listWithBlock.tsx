@@ -15,7 +15,7 @@ const ListWithBlock = ({ list, className }: Props) => {
     >
       {list.map((item, index) => (
         <li
-          className="relative text-left text-gray-800 before:absolute before:-left-8 before:top-1 before:text-base before:text-y-secondary before:content-['██'] md:before:-left-10"
+          className="relative text-left text-gray-800 before:absolute before:-left-8 before:top-1 before:text-base before:text-y-secondary before:content-['█'] md:before:-left-10"
           key={index}
         >
           {item}
