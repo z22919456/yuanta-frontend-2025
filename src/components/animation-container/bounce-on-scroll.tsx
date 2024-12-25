@@ -6,9 +6,14 @@ import { useRef } from 'react';
 type BounceOnScrollProps = {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 };
 
-const BounceOnScroll = ({ children, className }: BounceOnScrollProps) => {
+const BounceOnScroll = ({
+  children,
+  className,
+  delay,
+}: BounceOnScrollProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -20,7 +25,7 @@ const BounceOnScroll = ({ children, className }: BounceOnScrollProps) => {
       initial={{ opacity: 0, y: 70 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 70 }}
       transition={{
-        delay: 0.2,
+        delay: delay || 0.2,
         type: 'spring',
         stiffness: 100, // 彈簧剛性
         damping: 10, // 阻尼
