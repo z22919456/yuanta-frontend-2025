@@ -130,11 +130,16 @@ export default {
         '0%, 100%': { backgroundColor: '#D84029' },
         '50%': { backgroundColor: '#910612' },
       },
+      spin: {
+        '0%': { transform: 'rotate(0deg)' },
+        '100%': { transform: 'rotate(360deg)' },
+      },
     },
     // 添加自定義動畫
     animation: {
       swing: 'swing 5s ease-in-out infinite',
       pulse: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      spin: 'spin 20s linear infinite',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],
