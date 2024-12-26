@@ -15,8 +15,8 @@ import moneyGod3 from '@/assets/banner/seminar/money_god3.png';
 import moneyGod4 from '@/assets/banner/seminar/money_god4.png';
 import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
 import Coin from '@/assets/coin.svg';
+import Image from '@/lib/image';
 import { cn } from '@/lib/utils';
-import Image from 'next-image-export-optimizer';
 
 export default function Home() {
   return (
@@ -36,7 +36,7 @@ export default function Home() {
               <Image
                 src={laser}
                 alt="laser"
-                className="h-full w-full animate-spin object-fill [animation-duration:20000ms]"
+                className="animate-spin h-full w-full object-fill [animation-duration:20000ms]"
               />
             </div>
             <div className="relative mx-auto w-fit">

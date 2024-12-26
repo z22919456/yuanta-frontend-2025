@@ -8,8 +8,7 @@ import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
 import moneyLeft from '@/assets/banner/seminar/money_left.png';
 import moneyRight from '@/assets/banner/seminar/money_right.png';
 import title from '@/assets/banner/seminar/title.png';
-import Image from 'next-image-export-optimizer';
-
+import Image from '@/lib/image';
 const Banner = () => {
   return (
     <div className="relative">
@@ -22,7 +21,7 @@ const Banner = () => {
             alt="title"
             className="w-full"
           />
-          <button className="sm:xl animate-pulse absolute left-[53%] top-[58.4%] z-20 flex h-[9.2%] w-[23%] items-center justify-center rounded-full border-2 border-y-tab-active-bo text-center font-bold text-white shadow-xl hover:border-y-tab-t hover:!bg-y-tab-bg hover:text-y-tab-t md:border-4 md:text-3xl lg:text-4xl">
+          <button className="sm:xl absolute left-[53%] top-[58.4%] z-20 flex h-[9.2%] w-[23%] animate-pulse items-center justify-center rounded-full border-2 border-y-tab-active-bo text-center font-bold text-white shadow-xl hover:border-y-tab-t hover:!bg-y-tab-bg hover:text-y-tab-t md:border-4 md:text-3xl lg:text-4xl">
             <a href="#form_top">免費報名</a>
           </button>
         </div>
