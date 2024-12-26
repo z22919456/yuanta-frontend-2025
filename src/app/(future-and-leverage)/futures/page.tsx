@@ -11,7 +11,7 @@ import ProductSwiper from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
 import WhichOne from '../components/WhichOne';
 import ComparisonTable from './components/comparison-table';
-import Start from './components/start.svg';
+import Start from './components/star.svg';
 import Step from './components/Step';
 import { products, products2 } from './data';
 
