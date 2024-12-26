@@ -92,7 +92,7 @@ const Agenda = () => {
                 {item.location.address}
               </a>
             </p>
-            <p className="pb-1 pt-2 font-medium">論壇主題： {item.topic}</p>
+            <p className="pb-1 pt-2 font-medium">論壇主題：</p>
             <ScrollArea className="w-full">
               <div className="flex space-x-2">
                 {item.sessions.map((session, index) => (
@@ -198,15 +198,7 @@ const Agenda = () => {
                     <td className="p-3 text-center">
                       {session.start} <br />| <br /> {session.end}
                     </td>
-                    {item.topic ? (
-                      index == 0 && (
-                        <td className="p-3" rowSpan={item.sessions.length}>
-                          {item.topic}
-                        </td>
-                      )
-                    ) : (
-                      <td className="p-3">{session.topic}</td>
-                    )}
+                    <td className="p-3">{session.topic}</td>
                     <td className="p-3">
                       {session.content.split('\n').map((line, index) => (
                         <p key={index}>{line}</p>
