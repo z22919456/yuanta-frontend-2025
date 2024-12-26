@@ -39,7 +39,7 @@ const data = [
   {
     city: '高雄',
     date: '114/1/10(五)',
-    time: '19:30 - 20:30',
+    time: '19:00 - 20:30',
     location: {
       name: '思博客商務中心',
       address: '高雄市新興區\n民生一路56號B1-1',
