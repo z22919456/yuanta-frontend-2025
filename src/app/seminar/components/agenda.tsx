@@ -45,7 +45,6 @@ const data = [
       address: '高雄市新興區\n民生一路56號B1-1',
       map: 'https://maps.app.goo.gl/rVRMgu7FXaGhyz9i9',
     },
-    topic: '從當沖到波段\n期貨交易全攻略',
     sessions: [
       {
         start: '19:00',
