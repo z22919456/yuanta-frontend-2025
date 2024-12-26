@@ -134,12 +134,28 @@ export default {
         '0%': { transform: 'rotate(0deg)' },
         '100%': { transform: 'rotate(360deg)' },
       },
+      floating: {
+        '0%': { transform: 'translateY(0px)' },
+        '50%': { transform: 'translateY(-20px)' },
+        '100%': { transform: 'translateY(0px)' },
+      },
+      sliding: {
+        '0%': { transform: 'translateX(-5px)', opacity: '0.5' },
+        '50%': { transform: 'translateX(5px)', opacity: '1' },
+        '100%': { transform: 'translateX(-5px)', opacity: '0.5' },
+      },
+      opacity: {
+        '0%': { opacity: '0.8' },
+        '100%': { opacity: '1' },
+      },
     },
     // 添加自定義動畫
     animation: {
       swing: 'swing 5s ease-in-out infinite',
       pulse: 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       spin: 'spin 20s linear infinite',
+      floating: 'floating 3s ease-in-out infinite',
+      sliding: 'sliding 4s ease-in-out infinite',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],

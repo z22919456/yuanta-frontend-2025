@@ -3,7 +3,7 @@ import envelopeImg from '@/app/(future-and-leverage)/assets/envelope.png';
 import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
-import Image from 'next-image-export-optimizer';
+import Image from '@/lib/image';
 import flowerImg from '../assets/flower.png';
 import InfoTabs from '../components/InfoTabs';
 import ProductCard from '../components/product-card';

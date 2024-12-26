@@ -1,7 +1,7 @@
 import read1Img from '@/app/(future-and-leverage)/assets/read1.png';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Image from 'next-image-export-optimizer';
+import Image from '@/lib/image';
 import { infoContexts } from '../futures/data';
 
 const InfoTabs = () => {
