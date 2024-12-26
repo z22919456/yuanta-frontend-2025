@@ -59,7 +59,7 @@ const locations = [
   {
     value: 'kaohsiung',
     label: '高雄',
-    date: '114/1/10(五) 19:00-21:00',
+    date: '114/1/10(五) 19:00-20:30',
     location: '思博客商務中心',
     address: '高雄市新興區民生一路56號B1-1',
   },
