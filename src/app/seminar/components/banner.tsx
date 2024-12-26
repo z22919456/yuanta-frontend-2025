@@ -70,45 +70,49 @@ const Banner = () => {
             priority
             src={moneyLeft}
             alt="moneyLeft"
-            className="absolute -left-44 top-28 z-10"
+            className="animate-floating absolute -left-44 top-28 z-10"
           />
           <Image
             placeholder="empty"
             priority
             src={moneyRight}
             alt="moneyRight"
-            className="absolute -right-24 top-20"
+            className="animate-floating absolute -right-24 top-20 [animation-delay:1.5s]"
           />
         </div>
       </div>
       <div className="hidden lg:block">
+        {/* left down */}
         <Image
           placeholder="empty"
           priority
           src={cloudLeft}
           alt="cloudLeft"
-          className="absolute -bottom-20 left-0 max-w-[35vw]"
+          className="animate-sliding absolute -bottom-20 -left-2 max-w-[35vw] [animation-delay:0s]"
         />
+        {/* left top */}
         <Image
           placeholder="empty"
           priority
           src={cloudLeft}
           alt="cloudLeft"
-          className="absolute -left-48 bottom-40 max-w-[35vw]"
+          className="animate-sliding absolute -left-48 bottom-40 max-w-[35vw] [animation-delay:1s]"
         />
+        {/* right down */}
         <Image
           placeholder="empty"
           priority
           src={cloudRight}
           alt="cloudRight"
-          className="absolute -bottom-20 right-0 max-w-[35vw]"
+          className="animate-sliding absolute -bottom-20 -right-2 max-w-[35vw] [animation-delay:2s]"
         />
+        {/* right top */}
         <Image
           placeholder="empty"
           priority
           src={cloudRight}
           alt="cloudRight"
-          className="absolute -right-48 bottom-40 max-w-[35vw]"
+          className="animate-sliding absolute -right-48 bottom-40 max-w-[35vw] [animation-delay:3s]"
         />
       </div>
     </div>

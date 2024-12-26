@@ -7,12 +7,14 @@ import freeImg from './assets/free.png';
 import AgendaDialog from './components/agenda-dialog';
 import Banner from './components/banner';
 import EventForm from './components/event-form';
+import FireworksBG from './components/fireworks-bg';
 import { kaohsiungTeacherData, taipeiTeacherData } from './teacher';
 
 const Page = () => {
   return (
-    <main className="min-h-screen bg-gradient-main pb-5 pt-[64px]">
+    <main className="relative min-h-screen bg-gradient-main pb-5 pt-[64px]">
       <Banner />
+      <FireworksBG />
       <div className="container">
         <Wall title="想為2025年 鋪上投資之路嗎？">
           <WallContent className="space-y-5 px-2 !pt-16 sm:!pt-20 md:px-8 lg:!pt-28">
