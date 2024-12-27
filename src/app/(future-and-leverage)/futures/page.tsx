@@ -1,5 +1,6 @@
 import stage7 from '@/app/(future-and-leverage)/assets/stage7.png';
 import Card, { CardHeader } from '@/components/card';
+import { Button } from '@/components/ui/button';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
 import flowerImg from '../assets/flower.png';
@@ -38,7 +39,7 @@ const Page = () => {
             <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
               {/* 我達到地幾步 */}
               <Card>
-                <CardHeader>
+                <CardHeader className="items-be flex justify-center gap-2 px-1 py-3">
                   <h2 className="font-default text-xl">
                     我己經達到地{' '}
                     <span className="text-2xl font-extrabold text-y-t-light">
@@ -47,6 +48,12 @@ const Page = () => {
                     </span>{' '}
                     步
                   </h2>
+                  <Button
+                    size="rounded"
+                    className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+                  >
+                    點我查詢
+                  </Button>
                 </CardHeader>
                 <div className="w-full px-0 py-3 md:px-8">
                   <Image src={stage7} alt="我達到地幾步" className="mx-auto" />
@@ -55,9 +62,9 @@ const Page = () => {
 
               {/* 齊聚五燈獎 */}
               <Card>
-                <CardHeader>
+                <CardHeader className="py-4">
                   <h2
-                    className="main-title-secondary -mt-1 mb-0 text-3xl"
+                    className="main-title-secondary -mt-1 mb-0 text-4xl"
                     data-stroke="齊聚五燈獎"
                   >
                     齊聚五燈獎
