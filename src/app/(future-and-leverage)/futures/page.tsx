@@ -39,7 +39,7 @@ const Page = () => {
             </p>
             <div className="grid grid-cols-2 gap-3 md:grid-cols-7">
               {/* AirPods */}
-              <Card className="relative col-span-2 overflow-visible p-3 md:p-3">
+              <Card className="relative col-span-2 overflow-visible p-3">
                 <p className="absolute left-full top-1/2 z-10 hidden -translate-y-1/2 text-3xl text-y-bo md:-ml-1 md:block md:text-4xl">
                   ▶︎
                 </p>
@@ -58,7 +58,7 @@ const Page = () => {
                   </strong>{' '}
                   名
                 </p>
-                <div className="grid grid-cols-2 items-center md:block">
+                <div className="-mb-2 grid grid-cols-2 items-center md:mb-0 md:block">
                   <Image
                     src={airPodsImg}
                     className="mx-auto my-1 w-[80%] max-w-32 md:my-2"
@@ -74,7 +74,7 @@ const Page = () => {
               </Card>
 
               {/* Iphone */}
-              <Card className="col-span-2 p-1 md:p-3">
+              <Card className="col-span-2 p-3">
                 <h2 className="mb-2 text-2xl leading-tight">
                   第二次抽獎
                   <br className="hidden md:block" />
@@ -87,7 +87,7 @@ const Page = () => {
                   </strong>{' '}
                   名
                 </p>
-                <div className="grid grid-cols-2 items-center md:block">
+                <div className="-mb-2 grid grid-cols-2 items-center md:mb-0 md:block">
                   <Image
                     src={iphoneImg}
                     className="mx-auto my-1 w-[80%] max-w-32 md:my-2"
