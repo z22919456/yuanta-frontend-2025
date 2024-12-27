@@ -37,60 +37,72 @@ const Page = () => {
                 *第一次中獎者，口數將重新計算！
               </small>
             </p>
-            <div className="grid grid-cols-2 gap-2 md:grid-cols-7 md:gap-3">
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-7">
               {/* AirPods */}
-              <Card className="relative overflow-visible p-1 md:col-span-2 md:p-3">
-                <p className="absolute left-full top-1/2 z-10 -translate-y-1/2 text-3xl text-y-bo md:-ml-1 md:text-4xl">
+              <Card className="relative col-span-2 overflow-visible p-3 md:p-3">
+                <p className="absolute left-full top-1/2 z-10 hidden -translate-y-1/2 text-3xl text-y-bo md:-ml-1 md:block md:text-4xl">
                   ▶︎
                 </p>
-                <h2 className="mb-2 text-xl leading-tight md:text-2xl">
+                <p className="absolute left-1/2 top-full z-10 -mt-2 -translate-x-1/2 text-4xl text-y-bo md:hidden">
+                  ▼
+                </p>
+                <h2 className="mb-2 text-2xl leading-tight">
                   第一次抽獎
-                  <br />
+                  <br className="hidden md:block" />
                   【封關前】
                 </h2>
                 <p className="text-base">
                   先抽{' '}
-                  <strong className="text-2xl font-semibold text-y-secondary">
+                  <strong className="text-2xl font-black text-y-secondary">
                     2
                   </strong>{' '}
                   名
                 </p>
-
-                <Image
-                  src={airPodsImg}
-                  className="mx-auto my-2 w-[80%] max-w-32"
-                  alt="AirPods Pro 2"
-                />
-                <h3 className="text-base leading-tight sm:text-lg md:text-xl">
-                  AirPod <br /> Pro2
-                </h3>
-                <p className="text-sm">(價值7,490元)</p>
+                <div className="grid grid-cols-2 items-center md:block">
+                  <Image
+                    src={airPodsImg}
+                    className="mx-auto my-1 w-[80%] max-w-32 md:my-2"
+                    alt="AirPods Pro 2"
+                  />
+                  <div>
+                    <h3 className="text-xl leading-tight">
+                      AirPod <br /> Pro2
+                    </h3>
+                    <p className="text-sm">(價值7,490元)</p>
+                  </div>
+                </div>
               </Card>
 
               {/* Iphone */}
-              <Card className="p-1 md:col-span-2 md:p-3">
-                <h2 className="mb-2 text-xl leading-tight md:text-2xl">
+              <Card className="col-span-2 p-1 md:p-3">
+                <h2 className="mb-2 text-2xl leading-tight">
                   第二次抽獎
-                  <br />
+                  <br className="hidden md:block" />
                   【活動結束】
                 </h2>
                 <p className="text-base">
                   後抽{' '}
-                  <strong className="text-2xl font-semibold text-y-secondary">
+                  <strong className="text-2xl font-black text-y-secondary">
                     5
                   </strong>{' '}
                   名
                 </p>
-                <Image
-                  src={iphoneImg}
-                  className="mx-auto my-2 w-[80%] max-w-32"
-                  alt="Iphone 16 Pro Max 256G"
-                />
-                <h3 className="text-base leading-tight sm:text-lg md:text-xl">
-                  iPhone 16 Pro <br />
-                  Max 256G
-                </h3>
-                <p className="text-sm">(價值44,900元)</p>
+                <div className="grid grid-cols-2 items-center md:block">
+                  <Image
+                    src={iphoneImg}
+                    className="mx-auto my-1 w-[80%] max-w-32 md:my-2"
+                    alt="Iphone 16 Pro Max 256G"
+                  />
+                  <div>
+                    <h3 className="text-xl leading-tight">
+                      iPhone 16 <br className="block md:hidden" /> Pro{' '}
+                      <br className="hidden md:block" />
+                      Max <br className="block md:hidden" />
+                      256G
+                    </h3>
+                    <p className="text-sm">(價值44,900元)</p>
+                  </div>
+                </div>
               </Card>
               {/* em */}
               <Card className="col-span-2 border-y-tab-active-bo md:col-span-3">
