@@ -62,10 +62,16 @@ const Menu = () => {
           <aside className="space-y-5 px-5 py-7 pt-12">
             <ul className="w-full text-xl font-bold">
               <li
-                className="border-b border-gray-300 p-2 text-gray-400"
+                className="border-b border-gray-300 p-2 text-gray-900"
                 onClick={() => setOpen((o) => !o)}
               >
-                <p className="text-blue-900">春節不打烊活動準備中...</p>
+                <Link href="/futures">外期財門</Link>
+              </li>
+              <li
+                className="border-b border-gray-300 p-2 text-gray-900"
+                onClick={() => setOpen((o) => !o)}
+              >
+                <Link href="/leverage">槓桿財門</Link>
               </li>
               <li
                 className="border-b border-gray-300 p-2 text-gray-900"

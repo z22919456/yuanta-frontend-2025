@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="fixed z-50 w-full bg-white px-5 py-3 shadow-md md:px-7 md:py-4">
         <nav className="container flex items-center justify-between">
           <h1 className="">
-            <Link href="/seminar" className="">
+            <Link href="/" className="">
               <Image
                 src={Logo}
                 className="w-28 cursor-pointer md:w-44"
@@ -54,8 +54,11 @@ const Navbar = () => {
               <OnlyTwo />
               <Link href="/seminar">講座報名</Link>
             </li>
-            <li className="border-gray-300 px-3 text-blue-800 last:border-r-0 hover:text-blue-600">
-              <p>春節不打烊活動準備中...</p>
+            <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
+              <Link href="/futures">外期財門</Link>
+            </li>
+            <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
+              <Link href="/leverage">槓桿財門</Link>
             </li>
           </ul>
           <ul className="hidden space-x-3 lg:flex">
