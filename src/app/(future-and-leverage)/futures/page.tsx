@@ -1,20 +1,22 @@
 import airPodsImg from '@/app/(future-and-leverage)/assets/airpods.png';
 import envelopeImg from '@/app/(future-and-leverage)/assets/envelope.png';
 import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
+import stage7 from '@/app/(future-and-leverage)/assets/stage7.png';
 import Card, { CardHeader } from '@/components/card';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
 import flowerImg from '../assets/flower.png';
 import InfoTabs from '../components/InfoTabs';
-import ProductCard from '../components/product-card';
-import ProductSwiper from '../components/product-swiper';
+import ProductSwiper, {
+  MobileProductSwiper,
+} from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
 import WhichOne from '../components/WhichOne';
 import Banner from './components/banner';
 import ComparisonTable from './components/comparison-table';
 import Start from './components/star.svg';
 import Step from './components/Step';
-import { products, products2 } from './data';
+import { products } from './data';
 
 const Page = () => {
   return (
@@ -35,17 +37,17 @@ const Page = () => {
                 *第一次中獎者，口數將重新計算！
               </small>
             </p>
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-7">
+            <div className="grid grid-cols-2 gap-2 md:grid-cols-7 md:gap-3">
               {/* AirPods */}
-              <Card className="md:col-span-2">
-                <h2 className="mb-2 text-2xl leading-tight">
+              <Card className="p-1 md:col-span-2 md:p-3">
+                <h2 className="mb-2 text-xl leading-tight md:text-2xl">
                   第一次抽獎
                   <br />
                   【封關前】
                 </h2>
-                <p>
+                <p className="text-base">
                   先抽{' '}
-                  <strong className="text-3xl font-semibold text-y-secondary">
+                  <strong className="text-2xl font-semibold text-y-secondary">
                     2
                   </strong>{' '}
                   名
@@ -53,42 +55,42 @@ const Page = () => {
 
                 <Image
                   src={airPodsImg}
-                  className="mx-auto my-2"
+                  className="mx-auto my-2 w-[80%] max-w-32"
                   alt="AirPods Pro 2"
                 />
-                <h3 className="text-2xl leading-tight">
+                <h3 className="text-base leading-tight sm:text-lg md:text-xl">
                   AirPod <br /> Pro2
                 </h3>
                 <p className="text-sm">(價值7,490元)</p>
               </Card>
 
               {/* Iphone */}
-              <Card className="md:col-span-2">
-                <h2 className="mb-2 text-2xl leading-tight">
+              <Card className="p-1 md:col-span-2 md:p-3">
+                <h2 className="mb-2 text-xl leading-tight md:text-2xl">
                   第二次抽獎
                   <br />
                   【活動結束】
                 </h2>
-                <p>
+                <p className="text-base">
                   後抽{' '}
-                  <strong className="text-3xl font-semibold text-y-secondary">
+                  <strong className="text-2xl font-semibold text-y-secondary">
                     5
                   </strong>{' '}
                   名
                 </p>
                 <Image
                   src={iphoneImg}
-                  className="mx-auto my-2"
+                  className="mx-auto my-2 w-[80%] max-w-32"
                   alt="Iphone 16 Pro Max 256G"
                 />
-                <h3 className="text-2xl leading-tight">
+                <h3 className="text-base leading-tight sm:text-lg md:text-xl">
                   iPhone 16 Pro <br />
                   Max 256G
                 </h3>
                 <p className="text-sm">(價值44,900元)</p>
               </Card>
               {/* em */}
-              <Card className="border-y-tab-active-bo md:col-span-3">
+              <Card className="col-span-2 border-y-tab-active-bo md:col-span-3">
                 <h1
                   className="main-title-secondary my-2 mb-6 text-4xl"
                   data-stroke="新春送紅包"
@@ -132,6 +134,9 @@ const Page = () => {
                     步
                   </h2>
                 </CardHeader>
+                <div className="w-full px-0 py-3 md:px-8">
+                  <Image src={stage7} alt="我達到地幾步" className="mx-auto" />
+                </div>
               </Card>
 
               {/* 齊聚五燈獎 */}
@@ -145,7 +150,7 @@ const Page = () => {
                   </h2>
                 </CardHeader>
 
-                <div className="space-y-5 p-5">
+                <div className="flex h-full flex-col justify-around p-5">
                   {/* 五種交易類型 */}
                   <Image
                     src={flowerImg}
@@ -154,7 +159,7 @@ const Page = () => {
                   />
 
                   <div className="text-left">
-                    <p>
+                    <p className="lg:text-2xl">
                       活動期間，交易跨美盤(CME) 商品種類，加碼再送指定好禮！ 
                     </p>
                     <p>
@@ -182,7 +187,7 @@ const Page = () => {
                   </Card>
 
                   {/* 288口 */}
-                  <Card>
+                  <Card className="mb-10">
                     <CardHeader className="bg-[#007CC9]">
                       <h3
                         className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px]"
@@ -210,23 +215,19 @@ const Page = () => {
         {/* 大家都在交易什麼？ */}
         <Wall title="大家都在交易什麼？">
           <WallContent className="relative mb-4">
-            <div className="hidden grid-cols-8 gap-5 lg:grid">
+            {/* <div className="hidden grid-cols-8 gap-5 lg:grid">
               {products.map((product) => (
                 <ProductCard key={product.code} product={product} />
               ))}
-            </div>
-            <div className="lg:hidden">
+            </div> */}
+            <div className="hidden md:block">
               <ProductSwiper products={products} controlClassPrefix="p1" />
             </div>
-          </WallContent>
-          <WallContent className="relative pt-5">
-            <div className="hidden grid-cols-8 gap-5 lg:grid [&_>div:nth-child(5)]:col-start-2">
-              {products2.map((product) => (
-                <ProductCard key={product.code} product={product} />
-              ))}
-            </div>
-            <div className="lg:hidden">
-              <ProductSwiper products={products2} controlClassPrefix="p2" />
+            <div className="block md:hidden">
+              <MobileProductSwiper
+                products={products}
+                controlClassPrefix="p2"
+              />
             </div>
           </WallContent>
         </Wall>
@@ -256,8 +257,8 @@ const Page = () => {
         </Wall>
 
         {/* 春節不打烊外  還有很多優勢*/}
-        <Wall title="春節不打烊外 還有很多優勢">
-          <WallContent className="!pt-16 md:!pt-24">
+        <Wall title="股票vs國外期貨">
+          <WallContent>
             <ComparisonTable />
           </WallContent>
         </Wall>

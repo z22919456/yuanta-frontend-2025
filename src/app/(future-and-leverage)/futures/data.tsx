@@ -91,9 +91,6 @@ export const products = [
       priceUnit: '美元',
     },
   },
-];
-
-export const products2 = [
   {
     name: '微黃金',
     code: 'MGC',
