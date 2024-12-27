@@ -10,6 +10,7 @@ import ProductCard from '../components/product-card';
 import ProductSwiper from '../components/product-swiper';
 import ReadingTabs from '../components/ReadingTabs';
 import WhichOne from '../components/WhichOne';
+import Banner from './components/banner';
 import ComparisonTable from './components/comparison-table';
 import Start from './components/star.svg';
 import Step from './components/Step';
@@ -18,6 +19,7 @@ import { products, products2 } from './data';
 const Page = () => {
   return (
     <main className="min-h-screen bg-gradient-main pb-5 pt-[64px]">
+      <Banner />
       <div className="container">
         {/* 五告蘋安啦！ */}
         <Wall title="五告蘋安啦！">
