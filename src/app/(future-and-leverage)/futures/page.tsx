@@ -39,7 +39,10 @@ const Page = () => {
             </p>
             <div className="grid grid-cols-2 gap-2 md:grid-cols-7 md:gap-3">
               {/* AirPods */}
-              <Card className="p-1 md:col-span-2 md:p-3">
+              <Card className="relative overflow-visible p-1 md:col-span-2 md:p-3">
+                <p className="absolute left-full top-1/2 z-10 -translate-y-1/2 text-3xl text-y-bo md:-ml-1 md:text-4xl">
+                  ▶︎
+                </p>
                 <h2 className="mb-2 text-xl leading-tight md:text-2xl">
                   第一次抽獎
                   <br />
