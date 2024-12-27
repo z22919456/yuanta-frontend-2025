@@ -148,6 +148,11 @@ export default {
         '0%': { opacity: '0.8' },
         '100%': { opacity: '1' },
       },
+      brightness: {
+        '0%': { filter: 'brightness(120%)' },
+        '50%': { filter: 'brightness(90%)' },
+        '100%': { filter: 'brightness(120%)' },
+      },
     },
     // 添加自定義動畫
     animation: {
@@ -156,6 +161,7 @@ export default {
       spin: 'spin 20s linear infinite',
       floating: 'floating 3s ease-in-out infinite',
       sliding: 'sliding 4s ease-in-out infinite',
+      brightness: 'brightness 3s ease-in-out infinite',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],

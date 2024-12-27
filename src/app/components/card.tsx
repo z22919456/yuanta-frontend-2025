@@ -15,7 +15,7 @@ const Card = ({ children, primary = false, number, className }: CardProps) => (
   >
     <div
       className={cn(
-        'relative box-border flex aspect-square max-h-72 w-full flex-col items-center justify-center space-y-3 rounded-lg border-4 border-y-bo bg-[#FFEEDC] p-2 text-center sm:flex-row md:aspect-auto md:flex-col lg:aspect-square',
+        'relative box-border flex aspect-square max-h-[20rem] w-full flex-col items-center justify-center space-y-3 rounded-lg border-4 border-y-bo bg-[#FFEEDC] p-2 text-center sm:flex-row md:aspect-auto md:flex-col lg:aspect-square',
         primary && 'border-6 border-y-tab-active-bo md:flex-row lg:flex-col'
       )}
     >

@@ -16,6 +16,7 @@ import moneyGod4 from '@/assets/banner/seminar/money_god4.png';
 import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
 import Coin from '@/assets/coin.svg';
 import Image from 'next-image-export-optimizer';
+import Link from 'next/link';
 
 const Banner = () => {
   return (
@@ -76,8 +77,20 @@ const Banner = () => {
 
         {/* door */}
         <div className="relative grid w-full scale-110 grid-cols-2 pt-6">
-          <Image src={leftDoor} alt="外期財門" className="z-10" />
-          <Image src={rightDoor} alt="槓桿財門" className="z-10" />
+          <Link href="/futures" className="relative z-10">
+            <Image
+              src={leftDoor}
+              alt="外期財門"
+              className="animate-brightness z-10 cursor-pointer hover:brightness-125 hover:[animation:none]"
+            />
+          </Link>
+          <Link href="/futures" className="relative z-10">
+            <Image
+              src={rightDoor}
+              alt="槓桿財門"
+              className="animate-brightness z-10 cursor-pointer [animation-delay:-1500ms] hover:brightness-125 hover:[animation:none]"
+            />
+          </Link>
           {/* 屋簷上的財神 */}
           <Image
             src={moneyGod3}
@@ -113,33 +126,33 @@ const Banner = () => {
           <Image
             src={coinLeft}
             alt="moneyLeft"
-            className="absolute left-24 top-10 z-10"
+            className="animate-floating absolute left-24 top-10 z-10"
           />
           <Image
             src={coinRight}
             alt="moneyRight"
-            className="absolute right-24 top-16"
+            className="animate-floating absolute right-24 top-16 [animation-delay:1.5s]"
           />
           {/* Cloud */}
           <Image
             src={cloudLeft}
             alt="cloudLeft"
-            className="absolute -left-40 bottom-10 -z-10 max-w-[35vw] opacity-80"
+            className="animate-sliding absolute -left-40 bottom-10 -z-10 max-w-[35vw] opacity-80 [animation-delay:0s]"
           />
           <Image
             src={cloudLeft}
             alt="cloudLeft"
-            className="absolute -left-72 bottom-60 -z-10 max-w-[35vw] opacity-80"
+            className="animate-sliding absolute -left-72 bottom-60 -z-10 max-w-[35vw] opacity-80 [animation-delay:-1s]"
           />
           <Image
             src={cloudRight}
             alt="cloudRight"
-            className="absolute -right-40 bottom-10 -z-10 max-w-[35vw] opacity-80"
+            className="animate-sliding absolute -right-40 bottom-10 -z-10 max-w-[35vw] opacity-80 [animation-delay:-2s]"
           />
           <Image
             src={cloudRight}
             alt="cloudRight"
-            className="absolute -right-72 bottom-60 -z-10 max-w-[35vw] opacity-80"
+            className="animate-sliding absolute -right-72 bottom-60 -z-10 max-w-[35vw] opacity-80 [animation-delay:-3s]"
           />
         </div>
       </div>
