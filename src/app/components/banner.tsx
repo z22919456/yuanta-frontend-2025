@@ -31,7 +31,7 @@ const Banner = () => {
             <Image
               src={laser}
               alt="laser"
-              className="animate-spin h-full w-full object-fill [animation-duration:20000ms]"
+              className="h-full w-full animate-spin object-fill [animation-duration:20000ms]"
             />
           </div>
           <div className="relative mx-auto w-fit">
@@ -81,14 +81,14 @@ const Banner = () => {
             <Image
               src={leftDoor}
               alt="外期財門"
-              className="animate-brightness z-10 cursor-pointer hover:brightness-125 hover:[animation:none]"
+              className="z-10 animate-brightness cursor-pointer hover:brightness-125 hover:[animation:none]"
             />
           </Link>
           <Link href="/futures" className="relative z-10">
             <Image
               src={rightDoor}
               alt="槓桿財門"
-              className="animate-brightness z-10 cursor-pointer [animation-delay:-1500ms] hover:brightness-125 hover:[animation:none]"
+              className="z-10 animate-brightness cursor-pointer [animation-delay:-1500ms] hover:brightness-125 hover:[animation:none]"
             />
           </Link>
           {/* 屋簷上的財神 */}
@@ -126,33 +126,33 @@ const Banner = () => {
           <Image
             src={coinLeft}
             alt="moneyLeft"
-            className="animate-floating absolute left-24 top-10 z-10"
+            className="absolute left-24 top-10 z-10 animate-floating"
           />
           <Image
             src={coinRight}
             alt="moneyRight"
-            className="animate-floating absolute right-24 top-16 [animation-delay:1.5s]"
+            className="absolute right-24 top-16 -z-10 animate-floating [animation-delay:1.5s]"
           />
           {/* Cloud */}
           <Image
             src={cloudLeft}
             alt="cloudLeft"
-            className="animate-sliding absolute -left-40 bottom-10 -z-10 max-w-[35vw] opacity-80 [animation-delay:0s]"
+            className="absolute -left-40 bottom-10 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:0s]"
           />
           <Image
             src={cloudLeft}
             alt="cloudLeft"
-            className="animate-sliding absolute -left-72 bottom-60 -z-10 max-w-[35vw] opacity-80 [animation-delay:-1s]"
+            className="absolute -left-72 bottom-60 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:-1s]"
           />
           <Image
             src={cloudRight}
             alt="cloudRight"
-            className="animate-sliding absolute -right-40 bottom-10 -z-10 max-w-[35vw] opacity-80 [animation-delay:-2s]"
+            className="absolute -right-40 bottom-10 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:-2s]"
           />
           <Image
             src={cloudRight}
             alt="cloudRight"
-            className="animate-sliding absolute -right-72 bottom-60 -z-10 max-w-[35vw] opacity-80 [animation-delay:-3s]"
+            className="absolute -right-72 bottom-60 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:-3s]"
           />
         </div>
       </div>

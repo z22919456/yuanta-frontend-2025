@@ -150,7 +150,7 @@ export default {
       },
       brightness: {
         '0%': { filter: 'brightness(120%)' },
-        '50%': { filter: 'brightness(90%)' },
+        '50%': { filter: 'brightness(80%)' },
         '100%': { filter: 'brightness(120%)' },
       },
     },
