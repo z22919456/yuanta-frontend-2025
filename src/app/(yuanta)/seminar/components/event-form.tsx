@@ -81,7 +81,10 @@ const formSchema = z.object({
   customerType: z.enum(['NotCustomer', 'GotAccount', 'GotIBAccount'], {
     required_error: '請選擇是否為元大期貨客戶',
   }),
-  introducer: z.string().max(5, { message: '請勿超過5個字' }).optional(),
+  introducer: z
+    .string()
+    .max(10, { message: '格式錯誤，不應超過10碼' })
+    .optional(),
   agreeToTerms: z.literal(true, {
     errorMap: () => ({
       message: '必須同意此條款同意，才能報名',
