@@ -44,7 +44,7 @@ const SharePage = () => {
 
   const generateUrl = () => {
     if (!branch || !employeeId) return '';
-    return `https://www.yuantafutures.com.tw/2025cny/seminar?interdocur=${branch}-${employeeId}`;
+    return `https://www.yuantafutures.com.tw/2025cny/seminar?introducer=${branch}-${employeeId}`;
   };
 
   const isValid = () => {
