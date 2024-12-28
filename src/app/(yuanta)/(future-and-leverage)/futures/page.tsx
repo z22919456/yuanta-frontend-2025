@@ -1,4 +1,4 @@
-import stage7 from '@/app/(future-and-leverage)/assets/stage7.png';
+import stage7 from '@/app/(yuanta)/(future-and-leverage)/assets/stage7.png';
 import Card, { CardHeader } from '@/components/card';
 import { Button } from '@/components/ui/button';
 import Wall, { WallContent } from '@/components/wall';

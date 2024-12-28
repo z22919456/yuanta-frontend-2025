@@ -1,5 +1,5 @@
-import LightBulbImg from '@/app/(future-and-leverage)/assets/light.png';
-import WhichOneImg from '@/app//(future-and-leverage)/assets/which_one.png';
+import LightBulbImg from '@/app/(yuanta)/(future-and-leverage)/assets/light.png';
+import WhichOneImg from '@/app/(yuanta)/(future-and-leverage)/assets/which_one.png';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from '@/lib/image';
 import ListWithBlock from './listWithBlock';

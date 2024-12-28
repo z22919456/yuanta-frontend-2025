@@ -1,6 +1,6 @@
-import read2Img from '@/app/(future-and-leverage)/assets/read2.png';
-import read3Img from '@/app/(future-and-leverage)/assets/read3.png';
-import read4Img from '@/app/(future-and-leverage)/assets/read4.png';
+import read2Img from '@/app/(yuanta)/(future-and-leverage)/assets/read2.png';
+import read3Img from '@/app/(yuanta)/(future-and-leverage)/assets/read3.png';
+import read4Img from '@/app/(yuanta)/(future-and-leverage)/assets/read4.png';
 
 export const products = [
   {

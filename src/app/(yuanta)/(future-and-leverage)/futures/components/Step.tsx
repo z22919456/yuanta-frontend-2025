@@ -1,12 +1,12 @@
 'use client';
 
-import stepImg1 from '@/app/(future-and-leverage)/assets/step/step-1.png';
-import stepImg2 from '@/app/(future-and-leverage)/assets/step/step-2.png';
-import stepImg3 from '@/app/(future-and-leverage)/assets/step/step-3.png';
-import stepImg4 from '@/app/(future-and-leverage)/assets/step/step-4.png';
-import stepImg5 from '@/app/(future-and-leverage)/assets/step/step-5.png';
-import bgImg from '@/app/(future-and-leverage)/assets/step/step-bg.png';
-import stepCubeImg from '@/app/(future-and-leverage)/assets/step/step-cube.png';
+import stepImg1 from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-1.png';
+import stepImg2 from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-2.png';
+import stepImg3 from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-3.png';
+import stepImg4 from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-4.png';
+import stepImg5 from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-5.png';
+import bgImg from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-bg.png';
+import stepCubeImg from '@/app/(yuanta)/(future-and-leverage)/assets/step/step-cube.png';
 import { Button } from '@/components/ui/button';
 import {
   Tabs as ATabs,

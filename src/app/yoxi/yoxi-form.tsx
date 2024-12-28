@@ -118,6 +118,8 @@ const YoxiForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  console.log(isSuccess);
+
   const onErrorDialogClose = () => {
     setIsError(false);
   };

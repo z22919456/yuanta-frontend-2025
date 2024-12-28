@@ -1,6 +1,6 @@
-import airPodsImg from '@/app/(future-and-leverage)/assets/airpods.png';
-import envelopeImg from '@/app/(future-and-leverage)/assets/envelope.png';
-import iphoneImg from '@/app/(future-and-leverage)/assets/iphone.png';
+import airPodsImg from '@/app/(yuanta)/(future-and-leverage)/assets/airpods.png';
+import envelopeImg from '@/app/(yuanta)/(future-and-leverage)/assets/envelope.png';
+import iphoneImg from '@/app/(yuanta)/(future-and-leverage)/assets/iphone.png';
 import Card from '@/components/card';
 import { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
