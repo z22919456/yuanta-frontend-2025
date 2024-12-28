@@ -85,10 +85,10 @@ const ComparisonTable = () => {
             </th>
           </tr>
         </thead>
-        <tbody className="text-base text-gray-900 md:text-xl">
+        <tbody className="text-base text-gray-900 md:text-xl [&>tr:first-child>td:first-child]:rounded-tl-lg [&>tr:last-child>td:first-child]:rounded-bl-lg [&>tr:last-child>td:last-child]:rounded-br-lg [&>tr:last-child]:border-b-0">
           {data.map(({ title, foreign, domestic, domesticDesc, good }, i) => (
             <tr className="border-b-2 border-white" key={i}>
-              <td className="rounded-tl-lg bg-gray-200 px-2 py-2 text-xs font-semibold md:px-4 md:text-base">
+              <td className="bg-gray-200 px-2 py-2 text-xs font-semibold md:px-4 md:text-base">
                 {title}
               </td>
               <td className="border-l-2 border-white bg-[#EEF8FF] p-2 md:px-4">

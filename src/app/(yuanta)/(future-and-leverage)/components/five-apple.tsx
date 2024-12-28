@@ -17,10 +17,10 @@ const data = {
     redEnvelope: '交易1筆',
   },
   leverage: {
-    point: '交易10口',
+    point: '交易1點',
     airPods: 2,
-    iphone: 5,
-    redEnvelope: '交易1筆',
+    iphone: 3,
+    redEnvelope: '交易2點',
   },
 };
 
