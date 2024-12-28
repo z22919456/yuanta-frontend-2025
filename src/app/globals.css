@@ -100,15 +100,16 @@ body {
 
   .main-title-secondary {
     @apply relative z-10 text-y-t-light;
+    @apply [--stroke-width:5px];
     @apply [--stroke-color:theme('colors.y.t.main')];
-    word-break: keep-all;
+    @apply [--stroke-shadow-color:theme('colors.y.tab.active.bo')];
 
     &::after {
       content: attr(data-stroke);
       z-index: -1;
       word-break: keep-all;
-      text-stroke: 5px var(--stroke-color);
-      -webkit-text-stroke: 5px var(--stroke-color);
+      text-stroke: var(--stroke-width) var(--stroke-color);
+      -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
       color: transparent;
       @apply absolute -left-0 top-0 size-full;
     }
@@ -117,8 +118,8 @@ body {
       content: attr(data-stroke);
       z-index: -1;
       word-break: keep-all;
-      text-stroke: 5px theme('colors.y.tab.active.bo');
-      -webkit-text-stroke: 5px theme('colors.y.tab.active.bo');
+      text-stroke: var(--stroke-width) var(--stroke-shadow-color);
+      -webkit-text-stroke: var(--stroke-width) var(--stroke-shadow-color);
       color: transparent;
       top: 0.125rem;
       @apply absolute -left-0 size-full;

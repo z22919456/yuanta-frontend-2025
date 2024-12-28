@@ -161,6 +161,56 @@ export default {
         '50%': { filter: 'brightness(80%)' },
         '100%': { filter: 'brightness(120%)' },
       },
+      car: {
+        '0%': {
+          transform: 'translateX(1500px)',
+          animationTimingFunction:
+            'cubic-bezier(0.25, 0.46, 0.45, 0.94)' /* ease-out */,
+        },
+        '20%': {
+          transform: 'translateX(0px)',
+        },
+        '80%': {
+          transform: 'translateX(0px)',
+          animationTimingFunction:
+            'cubic-bezier(0.55, 0, 1, 0.45)' /* ease-in */,
+        },
+        '100%': { transform: 'translateX(-2500px)' },
+      },
+      bounceIn: {
+        '0%': {
+          transform: 'translateY(-150px)',
+          animationTimingFunction: 'ease-in',
+        },
+        '38%': {
+          transform: 'translateY(0px)',
+          animationTimingFunction: 'ease-out',
+        },
+        '55%': {
+          transform: 'translateY(-50px)',
+          animationTimingFunction: 'ease-in',
+        },
+        '72%': {
+          transform: 'translateY(0px)',
+          animationTimingFunction: 'ease-out',
+        },
+        '81%': {
+          transform: 'translateY(-20px)',
+          animationTimingFunction: 'ease-in',
+        },
+        '90%': {
+          transform: 'translateY(0px)',
+          animationTimingFunction: 'ease-out',
+        },
+        '95%': {
+          transform: 'translateY(-5px)',
+          animationTimingFunction: 'ease-in',
+        },
+        '100%': {
+          transform: 'translateY(0px)',
+          animationTimingFunction: 'ease-out',
+        },
+      },
     },
     // 添加自定義動畫
     animation: {
@@ -170,6 +220,9 @@ export default {
       floating: 'floating 3s ease-in-out infinite',
       sliding: 'sliding 4s ease-in-out infinite',
       brightness: 'brightness 3s ease-in-out infinite',
+      car: 'car 6s infinite',
+      'bounce-in':
+        'bounceIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],
