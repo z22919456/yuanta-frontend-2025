@@ -211,6 +211,20 @@ export default {
           animationTimingFunction: 'ease-out',
         },
       },
+      floatDeco: {
+        '0%': {
+          transform: 'translateY(0) scale(1) rotate(0deg)',
+        },
+        '25%': {
+          transform: 'translateY(15px) scale(1.1) rotate(10deg)',
+        },
+        '50%': {
+          transform: 'translateY(30px) scale(1) rotate(20deg)',
+        },
+        '75%': {
+          transform: 'translateY(15px) scale(0.9) rotate(10deg)',
+        },
+      },
     },
     // 添加自定義動畫
     animation: {
@@ -223,6 +237,7 @@ export default {
       car: 'car 6s infinite',
       'bounce-in':
         'bounceIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
+      'float-deco': 'floatDeco 6s ease-in-out infinite',
     },
   },
   plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],

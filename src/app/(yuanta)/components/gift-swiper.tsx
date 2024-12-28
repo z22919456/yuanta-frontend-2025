@@ -49,11 +49,9 @@ const GiftSwiper = ({ controlClassPrefix }: Props) => {
         <SwiperSlide>
           <Card number={1} primary className="">
             <div className="h-24 w-full sm:w-1/2 md:w-full">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-2xl">
-                指定交易
-              </h2>
+              <h2 className="text-2xl">指定交易</h2>
               <h2
-                className="main-title-secondary text-3xl sm:text-4xl md:text-5xl lg:text-3xl"
+                className="main-title-secondary text-3xl"
                 data-stroke="送黃金牌"
               >
                 送黃金牌

@@ -9,11 +9,13 @@ import laser from '@/assets/banner/home/laser.png';
 import leftDoor from '@/assets/banner/home/left_door.png';
 import rightDoor from '@/assets/banner/home/right_door.png';
 import title from '@/assets/banner/home/title.png';
+import redEnvelope from '@/assets/banner/red-envelope.png';
 import moneyGod1 from '@/assets/banner/seminar/money_god1.png';
 import moneyGod2 from '@/assets/banner/seminar/money_god2.png';
 import moneyGod3 from '@/assets/banner/seminar/money_god3.png';
 import moneyGod4 from '@/assets/banner/seminar/money_god4.png';
 import moneyGod5 from '@/assets/banner/seminar/money_god5.png';
+import yenbauImg from '@/assets/banner/yenbau.png';
 import Coin from '@/assets/coin.svg';
 import Image from 'next-image-export-optimizer';
 import Link from 'next/link';
@@ -37,7 +39,7 @@ const Banner = () => {
               placeholder="empty"
               src={laser}
               alt="laser"
-              className="h-full w-full animate-spin object-fill [animation-duration:20000ms]"
+              className="animate- h-full w-full animate-[spin_40s_linear_infinite] object-fill"
             />
           </div>
           <div className="relative mx-auto w-fit">
@@ -46,14 +48,14 @@ const Banner = () => {
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="absolute -left-10 -top-1 w-[48%]"
+              className="absolute -left-10 -top-1 w-[48%] animate-spin"
             />
             {/* firework */}
             <Image
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="absolute -right-10 -top-3 w-[52%]"
+              className="absolute -right-10 -top-3 w-[52%] animate-spin"
             />
             {/* title image */}
             <Image
@@ -109,33 +111,43 @@ const Banner = () => {
             placeholder="empty"
             src={moneyGod3}
             alt="橘財神"
-            className="absolute right-16 hidden h-[40%] w-auto rotate-6 md:-top-14 md:block lg:-top-24 lg:right-32"
+            className="absolute right-16 hidden h-[40%] w-auto origin-bottom rotate-6 animate-swing md:-top-14 md:block lg:-top-24 lg:right-32"
           />
           <Image
             placeholder="empty"
             src={moneyGod5}
             alt="藍財神"
-            className="absolute left-16 hidden h-[40%] w-auto -rotate-6 md:-top-14 md:block lg:-top-24 lg:left-32"
+            className="absolute left-16 hidden h-[40%] w-auto origin-bottom -rotate-6 animate-swing animation-delay-[-2.5s] md:-top-14 md:block lg:-top-24 lg:left-32"
           />
           {/* 門邊的財神 */}
           <Image
             placeholder="empty"
             src={moneyGod2}
             alt="綠財神"
-            className="absolute bottom-0 right-10 z-20 hidden h-[43%] w-auto md:block"
+            className="absolute bottom-0 right-10 z-20 hidden h-[43%] w-auto origin-bottom animate-swing md:block"
           />
           <Image
             placeholder="empty"
             src={moneyGod4}
             alt="黃財神"
-            className="absolute bottom-0 left-10 z-20 hidden h-[43%] w-auto md:block"
+            className="absolute bottom-0 left-10 z-20 hidden h-[43%] w-auto origin-bottom animate-swing animation-delay-[-2.5s] md:block"
           />
           {/* 中間的財神 */}
           <Image
             placeholder="empty"
             src={moneyGod1}
             alt="紅財神"
-            className="absolute -bottom-2 left-1/2 z-20 h-[65%] w-auto -translate-x-1/2"
+            className="absolute -bottom-2 left-1/2 z-20 h-[70%] w-auto -translate-x-1/2"
+          />
+          <Image
+            src={redEnvelope}
+            alt="紅包"
+            className="animate-float-deco absolute -right-12 top-[20%] hidden w-10 md:block"
+          />
+          <Image
+            src={yenbauImg}
+            alt="元寶"
+            className="animate-float-deco absolute -left-16 top-[40%] hidden w-20 animation-delay-[-2s] md:block"
           />
         </div>
 
