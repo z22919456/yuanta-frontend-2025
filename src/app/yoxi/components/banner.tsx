@@ -6,7 +6,7 @@ import titleImg from '../assets/title.png';
 
 const Banner = () => {
   return (
-    <section className="container relative -z-10 aspect-[1.5] md:aspect-[2]">
+    <section className="container relative z-10 aspect-[1.5] md:aspect-[2]">
       <Image
         src={cityImg}
         alt="city"
