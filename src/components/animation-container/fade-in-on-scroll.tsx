@@ -6,9 +6,14 @@ import { useRef } from 'react';
 type FadeInOnScrollProps = {
   children: React.ReactNode;
   className?: string;
+  delay?: number;
 };
 
-const FadeInOnScroll = ({ children, className }: FadeInOnScrollProps) => {
+const FadeInOnScroll = ({
+  children,
+  className,
+  delay = 0,
+}: FadeInOnScrollProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     once: true,
@@ -22,6 +27,7 @@ const FadeInOnScroll = ({ children, className }: FadeInOnScrollProps) => {
       transition={{
         duration: 0.8,
         ease: 'easeOut',
+        delay,
       }}
       className={className}
     >
