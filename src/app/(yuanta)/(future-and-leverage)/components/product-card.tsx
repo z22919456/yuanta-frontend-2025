@@ -1,4 +1,4 @@
-import { products } from '@/app/(future-and-leverage)/futures/data';
+import { products } from '@/app/(yuanta)/(future-and-leverage)/futures/data';
 import Card from '@/components/card';
 import { cn } from '@/lib/utils';
 

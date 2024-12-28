@@ -36,6 +36,10 @@ export default {
         '6': '6px',
       },
       colors: {
+        taxi: {
+          red: '#E6001D',
+          blue: '#076DE2',
+        },
         y: {
           wall: {
             DEFAULT: '#bb000d',
@@ -121,6 +125,7 @@ export default {
         'gradient-home-red': 'linear-gradient(to right, #D84029, #F2732C)',
         'gradient-triangle':
           'linear-gradient(135deg, #910612 50%, transparent 50%)',
+        'gradient-taxi': 'linear-gradient(to right, #E6001D 50%, #076DE2 50%)',
       },
     },
     keyframes: {

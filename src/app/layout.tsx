@@ -1,10 +1,7 @@
-import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
 import { GoogleTagManager } from '@next/third-parties/google';
 import type { Metadata, Viewport } from 'next';
 import { Noto_Sans_TC } from 'next/font/google';
 import localFont from 'next/font/local';
-import NextTopLoader from 'nextjs-toploader';
 import './globals.css';
 
 const mantouSans = localFont({
@@ -55,10 +52,7 @@ export default function RootLayout({
         className={`${noto.variable} ${mantouSans.variable} relative overflow-x-hidden font-default text-y-t-base antialiased`}
         monica-locale="zh_TW"
       >
-        <NextTopLoader />
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
