@@ -9,13 +9,15 @@ import moneyGodGreen from '@/assets/banner/leverage/money-god-green.png';
 import moneyGodOrange from '@/assets/banner/leverage/money-god-orange.png';
 import moneyGodRed from '@/assets/banner/leverage/money-god-red.png';
 import moneyGodYellow from '@/assets/banner/leverage/money-god-yellow.png';
+import redEnvelope from '@/assets/banner/red-envelope.png';
 import rightCoin from '@/assets/banner/right-coin.png';
+import yenbauImg from '@/assets/banner/yenbau.png';
 import Image from '@/lib/image';
 
 const Banner = () => {
   return (
     <div className="relative">
-      <div className="container relative z-20 w-full pt-[60%] lg:h-[36rem] lg:pt-0">
+      <div className="container relative z-20 w-full pt-[60%] sm:h-[24rem] sm:pt-0 md:h-[29rem] lg:h-[36rem] xl:h-[42rem]">
         <div className="absolute left-1/2 top-0 w-10/12 -translate-x-1/2 -translate-y-[12%] lg:w-[73%]">
           <Image
             placeholder="empty"
@@ -23,6 +25,16 @@ const Banner = () => {
             src={gat}
             alt="大門"
             className="w-full"
+          />
+          <Image
+            src={redEnvelope}
+            alt="紅包"
+            className="animate-float-deco absolute -right-20 top-[40%] hidden w-16 sm:block"
+          />
+          <Image
+            src={yenbauImg}
+            alt="元寶"
+            className="animate-float-deco absolute -left-24 top-[50%] hidden w-20 animation-delay-[-2s] sm:block"
           />
         </div>
         <div className="absolute -bottom-10 z-20 flex items-end px-3 lg:-bottom-16 lg:px-20">

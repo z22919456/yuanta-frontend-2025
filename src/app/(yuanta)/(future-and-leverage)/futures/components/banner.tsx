@@ -9,7 +9,9 @@ import moneyGodGreen from '@/assets/banner/money-god-green.png';
 import moneyGodOrange from '@/assets/banner/money-god-orange.png';
 import moneyGodRed from '@/assets/banner/money-god-red.png';
 import moneyGodYellow from '@/assets/banner/money-god-yellow.png';
+import redEnvelope from '@/assets/banner/red-envelope.png';
 import rightCoin from '@/assets/banner/right-coin.png';
+import yenbauImg from '@/assets/banner/yenbau.png';
 import Image from '@/lib/image';
 
 const Banner = () => {
@@ -23,6 +25,16 @@ const Banner = () => {
             src={gat}
             alt="大門"
             className="w-full"
+          />
+          <Image
+            src={redEnvelope}
+            alt="紅包"
+            className="animate-float-deco absolute -right-20 top-[40%] hidden w-16 sm:block"
+          />
+          <Image
+            src={yenbauImg}
+            alt="元寶"
+            className="animate-float-deco absolute -left-24 top-[50%] hidden w-20 animation-delay-[-2s] sm:block"
           />
         </div>
         <div className="absolute -bottom-10 z-20 flex items-end px-3 lg:-bottom-16 lg:px-20">
