@@ -15,7 +15,7 @@ import Image from '@/lib/image';
 const Banner = () => {
   return (
     <div className="relative">
-      <div className="container relative z-20 w-full pt-[60%] lg:h-[36rem] lg:pt-0">
+      <div className="container relative z-20 w-full pt-[60%] sm:h-[24rem] sm:pt-0 md:h-[29rem] lg:h-[36rem] xl:h-[42rem]">
         <div className="absolute left-1/2 top-0 w-10/12 -translate-x-1/2 -translate-y-[12%] lg:w-[73%]">
           <Image
             placeholder="empty"

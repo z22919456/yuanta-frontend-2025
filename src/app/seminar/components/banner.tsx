@@ -12,7 +12,7 @@ import Image from '@/lib/image';
 const Banner = () => {
   return (
     <div className="relative">
-      <div className="container relative w-full pt-[68%] sm:pt-[70%] lg:h-[38rem] lg:pt-0">
+      <div className="container relative w-full pt-[72%] sm:h-[29rem] sm:pt-0 md:h-[33rem] lg:h-[38rem] xl:h-[45rem]">
         <div className="absolute left-1/2 top-0 w-full -translate-x-[48%] -translate-y-[18%] lg:w-11/12">
           <Image
             placeholder="empty"
@@ -64,31 +64,31 @@ const Banner = () => {
             />
           </div>
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden md:block">
           <Image
             placeholder="empty"
             priority
             src={moneyLeft}
             alt="moneyLeft"
-            className="animate-floating absolute -left-44 top-28 z-10"
+            className="absolute -left-44 top-28 z-10 animate-floating"
           />
           <Image
             placeholder="empty"
             priority
             src={moneyRight}
             alt="moneyRight"
-            className="animate-floating absolute -right-24 top-20 [animation-delay:1.5s]"
+            className="absolute -right-24 top-20 z-10 animate-floating [animation-delay:1.5s]"
           />
         </div>
       </div>
-      <div className="hidden lg:block">
+      <div className="hidden md:block">
         {/* left down */}
         <Image
           placeholder="empty"
           priority
           src={cloudLeft}
           alt="cloudLeft"
-          className="animate-sliding absolute -bottom-20 -left-2 max-w-[35vw] [animation-delay:0s]"
+          className="absolute -bottom-20 -left-2 max-w-[35vw] animate-sliding [animation-delay:0s]"
         />
         {/* left top */}
         <Image
@@ -96,7 +96,7 @@ const Banner = () => {
           priority
           src={cloudLeft}
           alt="cloudLeft"
-          className="animate-sliding absolute -left-48 bottom-40 max-w-[35vw] [animation-delay:1s]"
+          className="absolute -left-48 bottom-40 max-w-[35vw] animate-sliding [animation-delay:1s]"
         />
         {/* right down */}
         <Image
@@ -104,7 +104,7 @@ const Banner = () => {
           priority
           src={cloudRight}
           alt="cloudRight"
-          className="animate-sliding absolute -bottom-20 -right-2 max-w-[35vw] [animation-delay:2s]"
+          className="absolute -bottom-20 -right-2 max-w-[35vw] animate-sliding [animation-delay:2s]"
         />
         {/* right top */}
         <Image
@@ -112,7 +112,7 @@ const Banner = () => {
           priority
           src={cloudRight}
           alt="cloudRight"
-          className="animate-sliding absolute -right-48 bottom-40 max-w-[35vw] [animation-delay:3s]"
+          className="absolute -right-48 bottom-40 max-w-[35vw] animate-sliding [animation-delay:3s]"
         />
       </div>
     </div>

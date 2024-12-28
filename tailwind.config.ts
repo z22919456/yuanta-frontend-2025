@@ -11,7 +11,7 @@ export default {
   ],
   theme: {
     screens: {
-      sm: '430px',
+      sm: '640px',
       md: '768px',
       lg: '1080px',
       xl: '1280px',
@@ -20,7 +20,10 @@ export default {
       center: true,
       padding: '1rem',
       screens: {
-        xl: '1080px',
+        sm: '640px',
+        md: '768px',
+        lg: '1080px',
+        xl: '1280px',
       },
     },
     extend: {
@@ -113,7 +116,7 @@ export default {
       backgroundImage: {
         'gradient-band': 'linear-gradient(to right, #FFB75D, #FFFFE4, #FFB75D)',
         'gradient-main': 'linear-gradient(to bottom, #D84029, #FF792F)',
-        'gradient-main2': 'linear-gradient(to bottom, #D84029, #FF792F)',
+        'gradient-main2': 'linear-gradient(to bottom, #005ABC, #002956)',
         'gradient-home-blue': 'linear-gradient(to right, #005ABC, #002956)',
         'gradient-home-red': 'linear-gradient(to right, #D84029, #F2732C)',
         'gradient-triangle':
