@@ -37,42 +37,42 @@ const Banner = () => {
             className="animate-float-deco absolute -left-24 top-[50%] hidden w-20 animation-delay-[-2s] sm:block"
           />
         </div>
-        <div className="absolute -bottom-10 z-20 flex items-end px-3 lg:-bottom-16 lg:px-20">
-          <div className="grid grid-cols-[repeat(2,20.75fr)_27fr_repeat(2,20.75fr)] items-end">
+        <div className="lg:px-auto absolute -bottom-10 left-1/2 z-20 flex min-w-[100%] -translate-x-1/2 items-end px-3 lg:-bottom-16 lg:min-w-[85%]">
+          <div className="grid w-full grid-cols-[repeat(2,20.75fr)_27fr_repeat(2,20.75fr)] items-end">
             <Image
               placeholder="empty"
               priority
               src={moneyGodBlue}
               alt="HKEX 財神"
-              className="origin-bottom animate-swing"
+              className="mx-auto origin-bottom animate-swing"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGodYellow}
               alt="EUREX 財神"
-              className="origin-bottom animate-swing"
+              className="mx-auto origin-bottom animate-swing"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGodRed}
               alt="CME 財神"
-              className="origin-bottom animate-swing"
+              className="mx-auto origin-bottom animate-swing"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGodGreen}
               alt="SGX 財神"
-              className="origin-bottom animate-swing"
+              className="mx-auto origin-bottom animate-swing"
             />
             <Image
               placeholder="empty"
               priority
               src={moneyGodOrange}
               alt="JPX 財神"
-              className="origin-bottom animate-swing"
+              className="mx-auto origin-bottom animate-swing"
             />
           </div>
         </div>

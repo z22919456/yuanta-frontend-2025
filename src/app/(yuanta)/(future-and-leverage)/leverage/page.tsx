@@ -5,6 +5,7 @@ import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
 import FiveApple from '../components/five-apple';
 import stepImgMobile from './assets/stage4-mobil.png';
+import stepImg from './assets/stage4.png';
 import Banner from './components/banner';
 import ComparisonTable from './components/comparison-table';
 import ReadingTabs from './components/ReadingTabs';
@@ -55,9 +56,9 @@ const Page = () => {
                     className="mx-auto block md:hidden"
                   />
                   <Image
-                    src={stepImgMobile}
+                    src={stepImg}
                     alt="我達到地幾步"
-                    className="mx-auto hidden md:block"
+                    className="mx-auto -mb-6 hidden md:block"
                   />
                 </div>
               </Card>

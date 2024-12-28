@@ -21,6 +21,7 @@ const ProductSwiper = ({ products, controlClassPrefix }: Props) => {
         modules={[Navigation, Pagination]}
         className="mt-3 w-full !pb-5"
         pagination={{ clickable: true }}
+        loop
         navigation={{
           nextEl: `#${nextEl}`,
           prevEl: `#${prevEl}`,
@@ -30,11 +31,11 @@ const ProductSwiper = ({ products, controlClassPrefix }: Props) => {
             slidesPerView: 2,
             spaceBetween: 10,
           },
-          800: {
+          768: {
             slidesPerView: 3,
             spaceBetween: 10,
           },
-          1024: {
+          1080: {
             slidesPerView: 4,
             spaceBetween: 20,
           },
