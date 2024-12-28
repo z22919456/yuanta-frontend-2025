@@ -1,5 +1,6 @@
 import BounceOnScroll from '@/components/animation-container/bounce-on-scroll';
 import Card, { CardHeader } from '@/components/card';
+import StarBackground from '@/components/start-background';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
 import { Suspense } from 'react';
@@ -13,6 +14,7 @@ import { kaohsiungTeacherData, taipeiTeacherData } from './teacher';
 const Page = () => {
   return (
     <main className="relative min-h-screen bg-gradient-main pb-5 pt-[64px]">
+      <StarBackground />
       <Banner />
       <FireworksBG />
       <div className="container">

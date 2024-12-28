@@ -1,5 +1,6 @@
 import stage7 from '@/app/(yuanta)/(future-and-leverage)/assets/stage7.png';
 import Card, { CardHeader } from '@/components/card';
+import StarBackground from '@/components/start-background';
 import { Button } from '@/components/ui/button';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
@@ -20,6 +21,7 @@ import { products } from './data';
 const Page = () => {
   return (
     <main className="min-h-screen bg-gradient-main pb-5 pt-[64px]">
+      <StarBackground />
       <Banner />
       <div className="container">
         {/* 五告蘋安啦！ */}
