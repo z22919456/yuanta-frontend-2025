@@ -124,7 +124,7 @@ const Page = () => {
               <BounceOnScroll className="order-2 w-full shrink pb-0 md:order-1 md:w-6/12 md:pb-12 md:pr-3 lg:w-1/2 lg:pb-0">
                 <Image src={freeImg} alt="免費課程！" />
               </BounceOnScroll>
-              <div className="order-1 flex w-full shrink flex-col justify-between space-y-5 font-extrabold md:order-2 md:w-6/12 md:space-y-0 md:px-5 lg:w-1/2">
+              <div className="order-1 flex w-full shrink flex-col justify-between space-y-7 font-extrabold md:order-2 md:w-6/12 md:space-y-0 md:px-5 lg:w-1/2">
                 <BounceOnScroll>
                   <h2
                     className="main-title-secondary relative block text-3xl font-normal lg:text-5xl"
@@ -136,30 +136,40 @@ const Page = () => {
                 </BounceOnScroll>
                 {/*  */}
                 <BounceOnScroll className="relative ml-4 bg-white py-3 pl-7">
-                  <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
+                  <p className="absolute -left-4 top-1/2 flex aspect-square w-12 -translate-y-1/2 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                     <span className="-rotate-45 font-title text-2xl">1</span>
                   </p>
-                  <p>
-                    <strong className="text-xl text-[#FF7700]">2025年</strong>
+                  <p className="sm:text-2xl md:text-lg lg:text-2xl">
+                    <strong className="text-xl text-[#FF7700] sm:text-3xl md:text-xl lg:text-3xl">
+                      2025年
+                    </strong>
                     全球經濟趨勢
                   </p>
                 </BounceOnScroll>
                 <BounceOnScroll className="relative ml-4 bg-white py-3 pl-7">
-                  <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
+                  <p className="absolute -left-4 top-1/2 flex aspect-square w-12 -translate-y-1/2 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                     <span className="-rotate-45 font-title text-2xl">2</span>
                   </p>
-                  <p>
-                    <strong className="text-xl text-[#FF7700]">川普2.0</strong>
+                  <p className="sm:text-2xl md:text-lg lg:text-2xl">
+                    <strong className="text-xl text-[#FF7700] sm:text-3xl md:text-xl lg:text-3xl">
+                      川普2.0
+                    </strong>
                     大解析市場展望
                   </p>
                 </BounceOnScroll>
                 <BounceOnScroll className="relative ml-4 bg-white py-3 pl-7">
-                  <p className="absolute -left-4 top-0 flex aspect-square w-11 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
+                  <p className="absolute -left-4 top-1/2 flex aspect-square w-12 -translate-y-1/2 rotate-45 items-center justify-center border-4 border-[#FFAA49] bg-y-wall text-white">
                     <span className="-rotate-45 font-title text-2xl">3</span>
                   </p>
-                  <p>
-                    從<strong className="text-xl text-[#FF7700]">當沖</strong>到
-                    <strong className="text-xl text-[#FF7700]">波段</strong>
+                  <p className="sm:text-2xl md:text-lg lg:text-2xl">
+                    從
+                    <strong className="text-xl text-[#FF7700] sm:text-3xl md:text-xl lg:text-3xl">
+                      當沖
+                    </strong>
+                    到
+                    <strong className="text-xl text-[#FF7700] sm:text-3xl md:text-xl lg:text-3xl">
+                      波段
+                    </strong>
                     交易全攻略
                   </p>
                 </BounceOnScroll>
