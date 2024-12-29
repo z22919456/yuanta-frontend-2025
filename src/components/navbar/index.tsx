@@ -50,16 +50,19 @@ const Navbar = () => {
             </Link>
           </h1>
           <ul className="hidden w-full items-center justify-end pr-5 text-lg font-bold text-primary lg:flex">
-            <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
+            <li className="flex justify-center border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
               <OnlyTwo />
               <Link href="/seminar">講座報名</Link>
             </li>
-            <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
+            <li className="px-3 text-gray-500 last:border-r-0">
+              <p>春節不打烊活動準備中...</p>
+            </li>
+            {/* <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
               <Link href="/futures">外期財門</Link>
             </li>
             <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
               <Link href="/leverage">槓桿財門</Link>
-            </li>
+            </li> */}
           </ul>
           <ul className="hidden space-x-3 lg:flex">
             <MediaLinks />

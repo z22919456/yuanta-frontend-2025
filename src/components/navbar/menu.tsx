@@ -61,7 +61,7 @@ const Menu = () => {
         >
           <aside className="space-y-5 px-5 py-7 pt-12">
             <ul className="w-full text-xl font-bold">
-              <li
+              {/* <li
                 className="border-b border-gray-300 p-2 text-gray-900"
                 onClick={() => setOpen((o) => !o)}
               >
@@ -72,13 +72,19 @@ const Menu = () => {
                 onClick={() => setOpen((o) => !o)}
               >
                 <Link href="/leverage">槓桿財門</Link>
-              </li>
+              </li> */}
               <li
                 className="border-b border-gray-300 p-2 text-gray-900"
                 onClick={() => setOpen((o) => !o)}
               >
                 <OnlyTwo />
                 <Link href="/seminar">講座報名</Link>
+              </li>
+              <li
+                className="border-b border-gray-300 p-2 text-gray-500"
+                onClick={() => setOpen((o) => !o)}
+              >
+                <p>春節不打烊活動準備中...</p>
               </li>
             </ul>
             <ul className="flex justify-center space-x-6 text-blue-900">
