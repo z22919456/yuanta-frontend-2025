@@ -98,7 +98,7 @@ const Banner = () => {
               className="z-10 animate-brightness cursor-pointer hover:brightness-125 hover:[animation:none]"
             />
           </Link>
-          <Link href="/futures" className="relative z-10">
+          <Link href="/leverage" className="relative z-10">
             <Image
               placeholder="empty"
               src={rightDoor}
@@ -142,12 +142,12 @@ const Banner = () => {
           <Image
             src={redEnvelope}
             alt="紅包"
-            className="animate-float-deco absolute -right-12 top-[20%] hidden w-10 md:block"
+            className="absolute -right-12 top-[20%] hidden w-10 animate-float-deco md:block"
           />
           <Image
             src={yenbauImg}
             alt="元寶"
-            className="animate-float-deco absolute -left-16 top-[40%] hidden w-20 animation-delay-[-2s] md:block"
+            className="absolute -left-16 top-[40%] hidden w-20 animate-float-deco animation-delay-[-2s] md:block"
           />
         </div>
 

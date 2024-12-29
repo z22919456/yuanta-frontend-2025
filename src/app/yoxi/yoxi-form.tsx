@@ -20,7 +20,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
-import Loading from './components/loading';
+import { useLoading } from './loading-context';
 
 const LOCATIONS: [string, ...string[]] = [
   'taipei',
@@ -130,6 +130,7 @@ const YoxiForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [playLoadingCover, setPlayLoadingCover] = useState(false);
+  const { setIsLoading: setGlobalLoading } = useLoading();
 
   const router = useRouter();
 
@@ -144,7 +145,7 @@ const YoxiForm = () => {
   useEffect(() => {
     if (isSuccess && !playLoadingCover) {
       // 前往成功頁面
-      router.push('/yoxi/thankyou');
+      router.push('/yoxi/thankyou', { scroll: false });
     }
   }, [isSuccess, playLoadingCover, router]);
 
@@ -198,9 +199,17 @@ const YoxiForm = () => {
       });
   };
 
+  useEffect(() => {
+    if (isLoading) {
+      setGlobalLoading(true);
+    }
+    if (!isLoading && !playLoadingCover) {
+      setGlobalLoading(false);
+    }
+  }, [isLoading, playLoadingCover, setGlobalLoading]);
+
   return (
     <>
-      {(isLoading || playLoadingCover) && <Loading />}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
