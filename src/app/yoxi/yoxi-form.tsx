@@ -135,7 +135,7 @@ const YoxiForm = () => {
   useEffect(() => {
     if (isSuccess && !playLoadingCover) {
       // 前往成功頁面
-      router.push('/yoxi/success');
+      router.push('/yoxi/thankyou');
     }
   }, [isSuccess, playLoadingCover, router]);
 
@@ -150,7 +150,7 @@ const YoxiForm = () => {
     setIsLoading(true);
     setPlayLoadingCover(true);
     fetch(
-      `${process.env.NEXT_PUBLIC_API_URL || ''}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/event`,
+      `${process.env.NEXT_PUBLIC_API_URL || ''}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/yoxi_customer`,
       {
         method: 'POST',
         headers: {

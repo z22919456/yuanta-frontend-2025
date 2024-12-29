@@ -15,7 +15,7 @@ const YoxiLayout = ({
       <Navbar />
       <main className="relative min-h-screen bg-gradient-taxi pb-1 pt-[64px]">
         <Banner />
-        <div className="container relative z-10 mb-5">
+        <div className="container relative z-10 mb-14">
           <section className="container rounded-xl border-2 border-[#513510] bg-white p-5 md:border-4 lg:rounded-3xl">
             <div className="mx-auto max-w-3xl space-y-5 py-5">
               <Image
