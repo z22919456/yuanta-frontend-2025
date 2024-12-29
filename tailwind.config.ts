@@ -177,6 +177,20 @@ export default {
         },
         '100%': { transform: 'translateX(-2500px)' },
       },
+      car2: {
+        '0%': {
+          transform: 'translateX(100%)',
+        },
+        '3%': {
+          transform: 'translateX(100%)',
+          animationTimingFunction:
+            'cubic-bezier(0.55, 0, 1, 0.45)' /* ease-in */,
+        },
+        '98%': {
+          transform: 'translateX(-100vw)',
+        },
+        '100%': { transform: 'translateX(-100vw)' },
+      },
       bounceIn: {
         '0%': {
           transform: 'translateY(-150px)',
@@ -235,6 +249,7 @@ export default {
       sliding: 'sliding 4s ease-in-out infinite',
       brightness: 'brightness 3s ease-in-out infinite',
       car: 'car 6s infinite',
+      car2: 'car2 2s infinite',
       'bounce-in':
         'bounceIn 1.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards',
       'float-deco': 'floatDeco 6s ease-in-out infinite',

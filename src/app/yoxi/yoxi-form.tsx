@@ -13,11 +13,14 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoaderCircle } from 'lucide-react';
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
+import Loading from './components/loading';
 
 const LOCATIONS: [string, ...string[]] = [
   'taipei',
@@ -117,8 +120,24 @@ const YoxiForm = () => {
   const [isError, setIsError] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [playLoadingCover, setPlayLoadingCover] = useState(false);
 
-  console.log(isSuccess);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (playLoadingCover) {
+      setTimeout(() => {
+        setPlayLoadingCover(false);
+      }, 2000);
+    }
+  }, [playLoadingCover]);
+
+  useEffect(() => {
+    if (isSuccess && !playLoadingCover) {
+      // 前往成功頁面
+      router.push('/yoxi/success');
+    }
+  }, [isSuccess, playLoadingCover, router]);
 
   const onErrorDialogClose = () => {
     setIsError(false);
@@ -129,6 +148,7 @@ const YoxiForm = () => {
       ...values,
     };
     setIsLoading(true);
+    setPlayLoadingCover(true);
     fetch(
       `${process.env.NEXT_PUBLIC_API_URL || ''}${process.env.NEXT_PUBLIC_BASE_PATH || ''}/api/event`,
       {
@@ -164,6 +184,7 @@ const YoxiForm = () => {
 
   return (
     <>
+      {(isLoading || playLoadingCover) && <Loading />}
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(onSubmit)}
@@ -331,7 +352,7 @@ const YoxiForm = () => {
                   <FormField
                     key={type}
                     control={form.control}
-                    name="willingTypes"
+                    name="contactTimes"
                     render={({ field }) => (
                       <FormItem
                         className="flex items-center space-x-3 space-y-0"
@@ -400,7 +421,7 @@ const YoxiForm = () => {
         </form>
       </Form>
       <ErrorDialog
-        open={isError}
+        open={isError && !playLoadingCover}
         onOpenChange={onErrorDialogClose}
         message={errorMessage}
       />

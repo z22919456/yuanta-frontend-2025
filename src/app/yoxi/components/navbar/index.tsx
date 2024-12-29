@@ -11,7 +11,7 @@ const Navbar = () => {
             <Link href="/" className="">
               <Image
                 src={Logo}
-                className="w-28 cursor-pointer md:w-44"
+                className="w-64 cursor-pointer md:w-72"
                 alt="Logo"
                 placeholder="empty"
                 priority

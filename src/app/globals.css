@@ -107,6 +107,7 @@ body {
     @apply [--stroke-width:5px];
     @apply [--stroke-color:theme('colors.y.t.main')];
     @apply [--stroke-shadow-color:theme('colors.y.tab.active.bo')];
+    word-break: keep-all;
 
     &::after {
       content: attr(data-stroke);

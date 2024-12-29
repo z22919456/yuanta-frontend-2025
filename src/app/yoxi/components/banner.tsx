@@ -1,6 +1,7 @@
 import Image from '@/lib/image';
 import cityImg from '../assets/city-bg.png';
 import customerImg from '../assets/customer.png';
+import handImg from '../assets/hand.png';
 import taxiImg from '../assets/taxi.png';
 import titleImg from '../assets/title.png';
 
@@ -25,14 +26,20 @@ const Banner = () => {
         placeholder="empty"
         src={taxiImg}
         alt="taxi"
-        className="animate-car absolute -right-5 bottom-0 w-[90%] md:w-[75%]"
+        className="absolute -right-5 bottom-0 w-[90%] animate-car md:w-[75%]"
       />
-      <div className="absolute bottom-0 w-[43%] overflow-hidden md:w-[36%]">
+      <div className="absolute bottom-0 w-[43%] md:w-[36%]">
         <Image
           placeholder="empty"
           src={customerImg}
           alt="customer"
-          className="-mb-2 origin-bottom animate-swing lg:-mb-4"
+          className="relative z-20 -mb-2 origin-bottom lg:-mb-4"
+        />
+        <Image
+          placeholder="empty"
+          src={handImg}
+          alt="hand"
+          className="animate-hand absolute bottom-[29.5%] left-[40%] w-[53%] origin-left animate-swing xl:bottom-[31%] xl:left-[36%] xl:w-[43%]"
         />
       </div>
     </section>
