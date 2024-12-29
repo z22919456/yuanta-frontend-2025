@@ -127,7 +127,7 @@ const Page = () => {
             />
             <div className="order-1 flex w-full shrink flex-col justify-between space-y-5 font-extrabold md:order-2 md:w-6/12 md:space-y-0 md:px-5 lg:w-1/2">
               <h2
-                className="main-title-secondary relative block text-3xl font-normal md:text-4xl lg:text-5xl"
+                className="main-title-secondary relative block text-3xl font-normal lg:text-5xl"
                 data-stroke="3大重點不可錯過！"
               >
                 <span className="text-[#FF7700]">3大</span>

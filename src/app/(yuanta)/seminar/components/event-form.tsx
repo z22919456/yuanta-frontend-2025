@@ -32,7 +32,7 @@ const locations = [
     value: 'taipei',
     label: '台北',
     date: '114/1/8(三) 14:30-16:00',
-    location: '犇亞會議中心（2樓201）',
+    location: '犇亞會議中心（2樓201廳）',
     address: '台北市復興北路99號2樓201廳',
   },
   // {
@@ -291,8 +291,8 @@ const EventForm = () => {
                       實體現場! 名額有限手刀搶下
                     </Label>
                   </div>
-                  <p className="text-base">
-                    (如實體已滿，將有專人聯繫發送線上連結)
+                  <p className="text-base text-red-500">
+                    *如實體已滿，將有專人聯繫發送線上連結
                   </p>
                   <p className="text-base text-red-500">
                     *如期望<span className="underline">線上參與</span>
@@ -326,7 +326,7 @@ const EventForm = () => {
                               <RadioGroupItem value="GotAccount" />
                             </FormControl>
                             <FormLabel className="font-medium">
-                              是，我在元大期貨有帳戶
+                              是，我有元大期貨帳戶
                             </FormLabel>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0">
@@ -334,7 +334,7 @@ const EventForm = () => {
                               <RadioGroupItem value="GotIBAccount" />
                             </FormControl>
                             <FormLabel className="font-medium">
-                              是，我在元大證券IB期貨戶
+                              是，我有元大證券IB期貨戶
                             </FormLabel>
                           </FormItem>
                           <FormItem className="flex items-center space-x-3 space-y-0">
@@ -499,6 +499,15 @@ const EventForm = () => {
                 注意事項
               </h3>
               <ol className="ml-4 list-decimal text-base">
+                <li className="text-y-secondary">
+                  如有活動問題或期望線上參與，請於週一至週五
+                  08:00-17:00，洽該報名地區分公司索取連結
+                  <p>
+                    * 台北場：<a href="tel:0227176000">(02) 2717-6000</a>
+                    <br />* 高雄場：
+                    <a href="tel:072157777">(07) 215-7777</a>
+                  </p>
+                </li>
                 <li>主辦單位保留議程變動之權利。</li>
                 <li>
                   活動全程免費，因應市場、法令變動或其他不可抗力、不可歸責主辦單位之事由（例如天災、疫情），主辦單位保有修改、終止、延期本活動之權利，並於網頁公告，不另行通知。
@@ -508,24 +517,6 @@ const EventForm = () => {
                 </li>
                 <li>
                   如實體已滿，於活動前兩日內，有專人聯繫發送線上連結，屆時請留意相關訊息。
-                </li>
-                <li>
-                  如有活動問題，週一至週五08:00-17:00 洽活動承辦小組 蘇小姐(
-                  <a href="tel:0227116000">02-2711-6000#7213</a>)
-                </li>
-                <li>
-                  如期望線上參與，週一至週五08:00-17:00洽想報名地區的分公司索取連結。
-                  <p>
-                    經紀部(台北)：<a href="tel:0227176000">(02) 2717-6000</a>
-                    <br />
-                    新竹分公司：<a href="tel:036662558">(03) 666-2558</a>
-                    <br />
-                    台中分公司：<a href="tel:0437033368">(04) 3703-3368</a>
-                    <br />
-                    台南分公司：<a href="tel:062355999">(06) 235-5999</a>
-                    <br />
-                    高雄分公司：<a href="tel:072157777">(07) 215-7777</a>
-                  </p>
                 </li>
               </ol>
             </div>
