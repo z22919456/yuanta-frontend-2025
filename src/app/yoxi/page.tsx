@@ -9,7 +9,7 @@ const Page = () => {
         {/* 200 */}
         <FadeInOnScroll>
           <div className="rounded-lg border-4 border-taxi-red p-5">
-            <h1 className="text-2xl">開戶成功</h1>
+            <h1 className="text-2xl">期貨開戶成功</h1>
             <h1
               className="main-title-secondary text-3xl text-taxi-red [--stroke-color:#fff] [--stroke-shadow-color:#E6001D]"
               data-stroke="送200元&#8203;搭車金"
@@ -43,7 +43,8 @@ const Page = () => {
               請留下資料，後續由您所選擇地區專人聯繫協助(線上或線下)開戶，如開戶成功，可獲得搭車金！
             </li>
             <li className="before:absolute before:-ml-6 before:mr-2 before:text-lg before:text-red-500 before:content-['●']">
-              開戶成功，1個月內將發送搭車序號至您簡訊，請留意訊息！
+              開戶成功，<span className="underline">1個月內</span>
+              將發送搭車序號至您簡訊，請留意訊息！
             </li>
           </ul>
         </div>

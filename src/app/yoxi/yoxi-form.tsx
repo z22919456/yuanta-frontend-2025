@@ -377,7 +377,9 @@ const YoxiForm = () => {
                           }
                         />
                       </FormControl>
-                      <FormLabel className="font-medium">槓桿開戶</FormLabel>
+                      <FormLabel className="font-medium">
+                        差價契約 CFD 開戶
+                      </FormLabel>
                     </FormItem>
                   )}
                 />
