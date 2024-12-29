@@ -12,8 +12,8 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
-import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoaderCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
@@ -82,26 +82,35 @@ const WILLING_TYPES: [string, ...string[]] = ['futures', 'leverage'];
 
 // **□ 平日晚間時段 (18:00 - 21:00)**
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: '請輸入真實姓名',
-  }),
-  email: z.string().email({
-    message: '請輸入正確的 Email',
-  }),
-  phone: z.string().regex(/^09[0-9]{8}$/, {
-    message: '手機格式錯誤',
-  }),
-  contactTimes: z.array(z.enum(CONTACTS)).min(1, {
-    message: '請選擇方便聯絡時間',
-  }),
-  location: z.enum(LOCATIONS, {
-    message: '請選擇地區',
-  }),
-  willingTypes: z.array(z.enum(WILLING_TYPES)).min(1, {
-    message: '請選則開戶意願',
-  }),
-});
+const formSchema = z
+  .object({
+    name: z.string().min(2, {
+      message: '請輸入真實姓名',
+    }),
+    email: z.string().email({
+      message: '請輸入正確的 Email',
+    }),
+    phone: z.string().regex(/^09[0-9]{8}$/, {
+      message: '手機格式錯誤',
+    }),
+    contactTimes: z.array(z.enum(CONTACTS)).min(1, {
+      message: '請選擇方便聯絡時間',
+    }),
+    willingTypes: z.array(z.enum(WILLING_TYPES)).min(1, {
+      message: '請選則開戶意願',
+    }),
+    location: z.enum(LOCATIONS).optional(),
+  })
+  .superRefine((data, ctx) => {
+    // 如果 willingType 包含 'futures'，location 為必填
+    if (data.willingTypes.includes('futures') && !data.location) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: '請選擇地區',
+        path: ['location'],
+      });
+    }
+  });
 
 const YoxiForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -111,7 +120,7 @@ const YoxiForm = () => {
       phone: '',
       email: '',
       contactTimes: [],
-      location: '',
+      location: undefined,
       willingTypes: [],
     },
   });
@@ -144,9 +153,16 @@ const YoxiForm = () => {
   };
 
   const onSubmit = (values: z.infer<typeof formSchema>) => {
-    const date = {
+    const submitData = {
       ...values,
     };
+
+    if (!submitData.willingTypes.includes('futures')) {
+      submitData.location = undefined;
+    }
+
+    console.log(submitData);
+
     setIsLoading(true);
     setPlayLoadingCover(true);
     fetch(
@@ -157,7 +173,7 @@ const YoxiForm = () => {
           'Content-Type': 'application/json',
         },
         credentials: 'include',
-        body: JSON.stringify(date),
+        body: JSON.stringify(submitData),
       }
     )
       .then((res) => {
@@ -263,78 +279,108 @@ const YoxiForm = () => {
           {/* 我有意願 */}
           <FormField
             control={form.control}
-            name="location"
+            name="willingTypes"
             render={() => (
               <FormItem className="space-y-3">
                 <FormLabel>我有意願...</FormLabel>
 
-                {WILLING_TYPES.map((type) => (
-                  <FormField
-                    key={type}
-                    control={form.control}
-                    name="willingTypes"
-                    render={({ field }) => (
+                <FormField
+                  control={form.control}
+                  name="willingTypes"
+                  render={({ field }) => (
+                    <>
                       <FormItem
                         className="flex items-center space-x-3 space-y-0"
-                        key={type}
+                        key={WILLING_TYPES[0]}
                       >
                         <FormControl>
                           <Checkbox
-                            checked={field.value?.includes(type)}
+                            checked={field.value?.includes(WILLING_TYPES[0])}
                             onCheckedChange={(checked) =>
                               checked
-                                ? field.onChange([...field.value, type])
+                                ? field.onChange([
+                                    ...field.value,
+                                    WILLING_TYPES[0],
+                                  ])
                                 : field.onChange(
                                     field.value?.filter(
-                                      (value) => value !== type
+                                      (value) => value !== WILLING_TYPES[0]
                                     )
                                   )
                             }
                           />
                         </FormControl>
-                        <FormLabel className="font-medium">
-                          {type === 'futures' ? '期貨開戶' : '槓桿開戶'}
-                        </FormLabel>
+                        <FormLabel className="font-medium">期貨開戶</FormLabel>
                       </FormItem>
-                    )}
-                  />
-                ))}
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          {/* 請勾選離您最近的地區 */}
-          <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem className="space-y-3">
-                <FormLabel>
-                  請勾選離您最近的地區，將有專人聯繫並協助(線上或線下)開戶
-                </FormLabel>
-                <FormControl>
-                  <RadioGroup
-                    onValueChange={field.onChange}
-                    defaultValue={field.value}
-                    value={field.value}
-                    className="flex flex-wrap space-y-1"
-                  >
-                    {LOCATIONS.map((location) => (
-                      <FormItem
-                        className="flex items-center space-x-3 space-y-0"
-                        key={location}
-                      >
-                        <FormControl>
-                          <RadioGroupItem value={location} />
-                        </FormControl>
-                        <FormLabel className="font-medium">
-                          {LOCATIONS_LABELS[location]}
-                        </FormLabel>
-                      </FormItem>
-                    ))}
-                  </RadioGroup>
-                </FormControl>
+                      {/* 請勾選離您最近的地區 */}
+                      {field.value?.includes(WILLING_TYPES[0]) && (
+                        <FormField
+                          control={form.control}
+                          name="location"
+                          render={({ field }) => (
+                            <FormItem className="ml-8 space-y-3">
+                              <FormLabel>
+                                請勾選地區，將有專人聯繫並協助(線上或線下)開戶
+                              </FormLabel>
+                              <FormControl>
+                                <RadioGroup
+                                  onValueChange={field.onChange}
+                                  defaultValue={field.value}
+                                  value={field.value}
+                                  className="flex flex-wrap space-y-1"
+                                >
+                                  {LOCATIONS.map((location) => (
+                                    <FormItem
+                                      className="flex items-center space-x-3 space-y-0"
+                                      key={location}
+                                    >
+                                      <FormControl>
+                                        <RadioGroupItem value={location} />
+                                      </FormControl>
+                                      <FormLabel className="font-medium">
+                                        {LOCATIONS_LABELS[location]}
+                                      </FormLabel>
+                                    </FormItem>
+                                  ))}
+                                </RadioGroup>
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+                      )}
+                    </>
+                  )}
+                />
+                <FormField
+                  control={form.control}
+                  name="willingTypes"
+                  render={({ field }) => (
+                    <FormItem
+                      className="flex items-center space-x-3 space-y-0"
+                      key={WILLING_TYPES[1]}
+                    >
+                      <FormControl>
+                        <Checkbox
+                          checked={field.value?.includes(WILLING_TYPES[1])}
+                          onCheckedChange={(checked) =>
+                            checked
+                              ? field.onChange([
+                                  ...field.value,
+                                  WILLING_TYPES[1],
+                                ])
+                              : field.onChange(
+                                  field.value?.filter(
+                                    (value) => value !== WILLING_TYPES[1]
+                                  )
+                                )
+                          }
+                        />
+                      </FormControl>
+                      <FormLabel className="font-medium">槓桿開戶</FormLabel>
+                    </FormItem>
+                  )}
+                />
                 <FormMessage />
               </FormItem>
             )}
