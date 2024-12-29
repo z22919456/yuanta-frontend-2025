@@ -8,6 +8,7 @@ import stepImgMobile from './assets/stage4-mobil.png';
 import stepImg from './assets/stage4.png';
 import Banner from './components/banner';
 import ComparisonTable from './components/comparison-table';
+import ProductsSlider from './components/products-slider';
 import ReadingTabs from './components/ReadingTabs';
 import { advantages, steps } from './data';
 
@@ -68,13 +69,7 @@ const Page = () => {
         {/* 大家都在做什麼價差交易？ */}
         <Wall title="大家都在做什麼價差交易？">
           <WallContent className="relative mb-4">
-            {/* <div className="hidden grid-cols-8 gap-5 lg:grid">
-              {products.map((product) => (
-                <ProductCard key={product.code} product={product} />
-              ))}
-            </div> */}
-            <div className="hidden md:block"></div>
-            <div className="block md:hidden"></div>
+            <ProductsSlider />
           </WallContent>
         </Wall>
         {/* 交易外期請先參閱 */}

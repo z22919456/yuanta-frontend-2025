@@ -11,6 +11,197 @@ import step1 from './assets/step1.png';
 import step2 from './assets/step2.png';
 import step3 from './assets/step3.png';
 
+export type Product = {
+  code: string;
+  title: string;
+  products: {
+    name: string;
+    code: string;
+    margin: number;
+    desc: string;
+    lastPrice?: number;
+    lastDate?: string;
+  }[];
+};
+
+export const products: Product[] = [
+  {
+    code: 'forexProducts',
+    title: '外匯商品',
+    products: [
+      {
+        name: 'EUR/USD',
+        code: '歐元/美元',
+        margin: 34.92,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'USD/JPY',
+        code: '美元/日幣',
+        margin: 33.3,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'GBP/USD',
+        code: '英鎊/美元',
+        margin: 41.85,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'USD/CHF',
+        code: '美元/瑞郎',
+        margin: 33.3,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'USD/CAD',
+        code: '美元/加幣',
+        margin: 33.3,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'AUD/USD',
+        code: '澳幣/美元',
+        margin: 32.36,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'NZD/USD',
+        code: '紐幣/美元',
+        margin: 29.17,
+        desc: '最小交易手數：0.01手',
+      },
+    ],
+  },
+  {
+    code: 'commodityProducts',
+    title: '大宗商品',
+    products: [
+      {
+        name: 'XAU/USD',
+        code: '黃金',
+        margin: 131.02,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'XAG/USD',
+        code: '白銀',
+        margin: 151.94,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'XTI/USD',
+        code: '西德州',
+        margin: 68.77,
+        desc: '最小交易手數：0.01手',
+      },
+      {
+        name: 'XBR/USD',
+        code: '布蘭特',
+        margin: 72.81,
+        desc: '最小交易手數：0.01手',
+      },
+    ],
+  },
+  {
+    code: 'usCfdProducts',
+    title: '美股CFD商品',
+    products: [
+      {
+        name: 'US30',
+        code: '道瓊',
+        margin: 224.3,
+        desc: '最小交易手數：0.1手',
+      },
+      {
+        name: 'SPX500',
+        code: 'S&P500',
+        margin: 30.11,
+        desc: '最小交易手數：0.1手',
+      },
+      {
+        name: 'NAS100',
+        code: '那斯達克100指數',
+        margin: 104.61,
+        desc: '最小交易手數：0.1手',
+      },
+      {
+        name: 'DAX30',
+        code: '德國DAX指數',
+        margin: 1011.69,
+        desc: '最小交易手數：0.1手',
+      },
+      {
+        name: 'NK225',
+        code: '日經225指數',
+        margin: 12.55,
+        desc: '最小交易手數：0.1手',
+      },
+      {
+        name: 'HSI50',
+        code: '恆生指數',
+        margin: 246.17,
+        desc: '最小交易手數：0.1手',
+      },
+    ],
+  },
+  {
+    code: 'globalIndexProducts',
+    title: '國際指數商品',
+    products: [
+      {
+        name: 'Apple',
+        code: 'AAPL',
+        margin: 29.38,
+        desc: '保證金比例：15%',
+        lastPrice: 195.89,
+        lastDate: '11/26',
+      },
+      {
+        name: 'Ford Motor',
+        code: 'F',
+        margin: 2.39,
+        desc: '保證金比例：20%',
+        lastPrice: 11.95,
+        lastDate: '11/26',
+      },
+      {
+        name: 'Advanced Micro Devices',
+        code: 'AMD',
+        margin: 27.78,
+        desc: '保證金比例：20%',
+        lastPrice: 138.9,
+        lastDate: '11/26',
+      },
+      {
+        name: 'NVIDIA',
+        code: 'NVDA',
+        margin: 100.15,
+        desc: '保證金比例：20%',
+        lastPrice: 500.77,
+        lastDate: '11/26',
+      },
+      {
+        name: 'Tesla, Inc.',
+        code: 'TSLA',
+        margin: 50.42,
+        desc: '保證金比例：20%',
+        lastPrice: 252.08,
+        lastDate: '11/26',
+      },
+      {
+        name: 'Amazon.com',
+        code: 'AMZN',
+        margin: 23.11,
+        desc: '保證金比例：15%',
+        lastPrice: 154.07,
+        lastDate: '11/26',
+      },
+    ],
+  },
+  { code: 'tradingProductTypes', title: '交易商品類別', products: [] },
+];
+
 export const advantages = [
   {
     count: '優勢一',
@@ -53,174 +244,6 @@ export const steps = [
     count: 'SETP3',
     title: '完成開戶',
     img: step3,
-  },
-];
-
-export const products = [
-  {
-    name: '微那斯達克',
-    code: 'MNQ',
-    margin: 2442,
-    tick: {
-      value: 0.25,
-      valueUnit: '點',
-      price: 0.5,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '小那斯達克',
-    code: 'NQ',
-    margin: 24420,
-    tick: {
-      value: 0.25,
-      valueUnit: '點',
-      price: 5,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '微歐元',
-    code: 'ECM',
-    margin: 253,
-    tick: {
-      value: 1,
-      valueUnit: '點',
-      price: 1.25,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '日元',
-    code: 'JY',
-    margin: 3190,
-    tick: {
-      value: 0.5,
-      valueUnit: '點',
-      price: 6.25,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '微SP指數',
-    code: 'MES',
-    margin: 1606,
-    tick: {
-      value: 0.25,
-      valueUnit: '點',
-      price: 1.25,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '微道瓊指數',
-    code: 'MYM',
-    margin: 1144,
-    tick: {
-      value: 1,
-      valueUnit: '點',
-      price: 0.5,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '小道瓊指數',
-    code: 'YM',
-    margin: 11440,
-    tick: {
-      value: 1,
-      valueUnit: '點',
-      price: 5,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '輕原油',
-    code: 'CL',
-    margin: 5720,
-    tick: {
-      value: 0.01,
-      valueUnit: '美元/桶',
-      price: 10,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '微黃金',
-    code: 'MGC',
-    margin: 1265,
-    tick: {
-      value: 0.1,
-      valueUnit: '美元/盎司',
-      price: 1,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '黃金',
-    code: 'GC',
-    margin: 12650,
-    tick: {
-      value: 0.1,
-      valueUnit: '美元/盎司',
-      price: 10,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: 'H50指數',
-    code: 'SFCH',
-    margin: 2420,
-    tick: {
-      value: 2.5,
-      valueUnit: '點',
-      price: 5,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '富時台灣',
-    code: 'STWN',
-    margin: 5280,
-    tick: {
-      value: 0.25,
-      valueUnit: '點',
-      price: 10,
-      priceUnit: '美元',
-    },
-  },
-  {
-    name: '大阪小日經',
-    code: 'JNM',
-    margin: 231649,
-    tick: {
-      value: 5,
-      valueUnit: '點',
-      price: 500,
-      priceUnit: '日圓',
-    },
-  },
-  {
-    name: '大阪微日經',
-    code: 'JNU',
-    margin: 23165,
-    tick: {
-      value: 5,
-      valueUnit: '點',
-      price: 50,
-      priceUnit: '日圓',
-    },
-  },
-  {
-    name: '微DAX指數',
-    code: 'FDXS',
-    margin: 1420,
-    tick: {
-      value: 1,
-      valueUnit: '點',
-      price: 1,
-      priceUnit: '歐元',
-    },
   },
 ];
 
