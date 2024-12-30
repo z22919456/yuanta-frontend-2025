@@ -50,7 +50,7 @@ const Navbar = () => {
             </Link>
           </h1>
           <ul className="hidden w-full items-center justify-end pr-5 text-lg font-bold text-primary lg:flex">
-            <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
+            <li className="flex justify-center border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
               <OnlyTwo />
               <Link href="/seminar">講座報名</Link>
             </li>
