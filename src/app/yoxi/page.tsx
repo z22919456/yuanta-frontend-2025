@@ -1,5 +1,5 @@
 import FadeInOnScroll from '@/components/animation-container/fade-in-on-scroll';
-import YoxiForm from './yoxi-form';
+import YoxiForm from './components/form/yoxi-form';
 
 const Page = () => {
   return (

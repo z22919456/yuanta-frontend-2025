@@ -3,9 +3,8 @@ import Background from '../(yuanta)/components/background';
 import EventBanner from '../(yuanta)/components/banner';
 import logo from './assets/yoxi_yuanta.png';
 import Banner from './components/banner';
-import Loading from './components/loading';
+import { LoadingProvider } from './components/form/loading-context';
 import Navbar from './components/navbar';
-import { LoadingProvider } from './loading-context';
 
 const YoxiLayout = ({
   children,
@@ -15,7 +14,6 @@ const YoxiLayout = ({
   return (
     <LoadingProvider>
       <Navbar />
-      <Loading />
       <main className="relative min-h-screen bg-gradient-taxi pb-1 pt-[64px]">
         <Banner />
         <div className="container relative z-10 mb-14">
