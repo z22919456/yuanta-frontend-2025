@@ -5,9 +5,9 @@ import { products } from '../data';
 import MobileProductSwiper from './mobile-product-slider';
 import ProductCard from './product-card';
 
-const ProductsSlider = () => {
+const ProductsSlider = async () => {
   return (
-    <Tabs defaultValue="CFD" className="w-full">
+    <Tabs defaultValue={products[0].code} className="w-full">
       <ScrollArea>
         <div className="w-[720px] md:w-auto">
           <TabsList className="mb-4 grid w-full grid-cols-5">
@@ -25,16 +25,20 @@ const ProductsSlider = () => {
         <TabsContent key={tab.code} value={tab.code} className="">
           <div
             className={cn(
-              'mx-auto hidden flex-wrap items-center justify-center md:flex md:[&_>div]:w-1/3',
-              tab.products.length == 6
-                ? 'max-w-4xl [&_>div]:w-1/3'
-                : 'lg:[&_>div]:w-1/4'
+              'mx-auto hidden flex-wrap items-stretch justify-center gap-3 md:flex md:[&_>div]:basis-[calc(33.33%-12px)]',
+              tab.products.length > 4
+                ? 'md:[&_>div]:basis-[calc(33.33%-12px)] lg:[&_>div]:basis-[calc(25%-12px)]'
+                : 'max-w-3xl lg:max-w-none md:[&_>div]:basis-[calc(50%-12px)] lg:[&_>div]:basis-[calc(25%-12px)]'
+              // tab.products.length == 6
+              //   ? 'max-w-4xl [&_>div]:basis-[calc(33.33%-12px)]'
+              //   : 'lg:[&_>div]:basis-[calc(25%-12px)]'
             )}
           >
             {tab.products.map((product) => (
-              <div key={product.code} className="p-2">
-                <ProductCard product={product} />
-              </div>
+              <ProductCard
+                product={product}
+                key={'code' in product ? product.code : product.name}
+              />
             ))}
           </div>
           <div className="block md:hidden">

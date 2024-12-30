@@ -11,20 +11,27 @@ import step1 from './assets/step1.png';
 import step2 from './assets/step2.png';
 import step3 from './assets/step3.png';
 
-export type Product = {
-  code: string;
-  title: string;
-  products: {
-    name: string;
-    code: string;
-    margin: number;
-    desc: string;
-    lastPrice?: number;
-    lastDate?: string;
-  }[];
+export type Group = {
+  name: string;
+  desc: string;
 };
 
-export const products: Product[] = [
+export type Product = {
+  name: string;
+  code: string;
+  margin: number;
+  desc: string;
+  lastPrice?: number;
+  lastDate?: string;
+};
+
+export type ProductGroup = {
+  code: string;
+  title: string;
+  products: Product[] | Group[];
+};
+
+export const products: ProductGroup[] = [
   {
     code: 'forexProducts',
     title: '外匯商品',
@@ -190,7 +197,7 @@ export const products: Product[] = [
         lastDate: '11/26',
       },
       {
-        name: 'Amazon.com',
+        name: 'Amazon\t.com',
         code: 'AMZN',
         margin: 23.11,
         desc: '保證金比例：15%',
@@ -199,7 +206,22 @@ export const products: Product[] = [
       },
     ],
   },
-  { code: 'tradingProductTypes', title: '交易商品類別', products: [] },
+  {
+    code: 'tradingProductTypes',
+    title: '交易商品類別',
+    products: [
+      {
+        name: '外匯保證金',
+        desc: 'EUR/USD、GBP/USD、USD/JPY 等等…\n高達32種貨幣對',
+      },
+      { name: '大宗商品', desc: '黃金\n白銀\n原油' },
+      {
+        name: '國際指數',
+        desc: '道瓊、那斯達克、標普500、 德國DAX、日經225、恆生50',
+      },
+      { name: '美股&ETF', desc: '美國個股、ETF' },
+    ],
+  },
 ];
 
 export const advantages = [
