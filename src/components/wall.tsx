@@ -67,7 +67,7 @@ export const WallContent = ({ children, className }: WallContentProps) => {
   return (
     <div
       className={cn(
-        'rounded-lg border-2 border-y-bo bg-y-bg p-3 text-center text-lg md:border-4 md:p-5',
+        'rounded-lg border-2 border-y-bo bg-y-bg p-3 text-center text-lg md:border-4 md:p-8',
         className
       )}
     >
