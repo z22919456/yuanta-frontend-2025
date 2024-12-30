@@ -32,10 +32,12 @@ const FiveApple = ({ type }: Props) => {
       <BounceOnScroll>
         <p>
           活動期間，
-          <strong className="text-y-secondary">{data[type].point}</strong>
+          <strong className="text-xl text-y-secondary">
+            {data[type].point}
+          </strong>
           獲一次抽獎機會，抽獎機會無上限！
         </p>
-        <p className="text-base leading-4">
+        <p className="mt-3 text-base leading-4">
           <small>
             *抽獎次數，依照整個活動期間計算！
             <br />

@@ -1,5 +1,6 @@
 import LightBulbImg from '@/app/(yuanta)/(future-and-leverage)/assets/light.png';
 import WhichOneImg from '@/app/(yuanta)/(future-and-leverage)/assets/which_one.png';
+import BounceOnScroll from '@/components/animation-container/bounce-on-scroll';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from '@/lib/image';
 import ListWithBlock from './listWithBlock';
@@ -9,13 +10,13 @@ const WhichOne = () => {
     <div>
       <div className="block lg:flex lg:space-x-5">
         {/* image */}
-        <div className="relative w-full lg:w-1/3">
+        <BounceOnScroll className="relative w-full lg:w-1/3">
           <Image
             src={WhichOneImg}
             alt="Which one to choose"
             className="mx-auto mb-5 object-contain object-center p-5"
           />
-        </div>
+        </BounceOnScroll>
 
         {/* tabs */}
         <Tabs
@@ -23,14 +24,16 @@ const WhichOne = () => {
           className="relative z-20 w-full grow lg:w-2/3"
         >
           {/* tabsTrigger */}
-          <TabsList className="w-full">
-            <TabsTrigger className="h-16 w-full" value="futures_trade">
-              期貨適合
-            </TabsTrigger>
-            <TabsTrigger className="h-16 w-full" value="options_trade">
-              選擇權適合
-            </TabsTrigger>
-          </TabsList>
+          <BounceOnScroll className="w-full">
+            <TabsList className="w-full">
+              <TabsTrigger className="h-16 w-full" value="futures_trade">
+                期貨適合
+              </TabsTrigger>
+              <TabsTrigger className="h-16 w-full" value="options_trade">
+                選擇權適合
+              </TabsTrigger>
+            </TabsList>
+          </BounceOnScroll>
 
           {/* Content 1 */}
           <TabsContent className="mt-5 rounded-2xl" value="futures_trade">

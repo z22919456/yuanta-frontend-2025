@@ -11,7 +11,10 @@ type Props = {
 const ProductCard = ({ product, index }: Props) => {
   if ('code' in product) {
     return (
-      <BounceRightOnScroll className="h-full items-stretch" delay={index * 0.1}>
+      <BounceRightOnScroll
+        className="h-full items-stretch"
+        delay={index * 0.1 + 0.1}
+      >
         <Card className="flex h-full md:block">
           <div
             className={cn(

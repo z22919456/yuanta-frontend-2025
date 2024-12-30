@@ -91,8 +91,8 @@ export const MobileProductSwiper = ({
       >
         {productsGroup.map((products, i) => (
           <SwiperSlide key={i} className="space-y-3">
-            {products.map((product) => (
-              <ProductCard product={product} key={product.code} />
+            {products.map((product, index) => (
+              <ProductCard product={product} key={product.code} index={index} />
             ))}
           </SwiperSlide>
         ))}

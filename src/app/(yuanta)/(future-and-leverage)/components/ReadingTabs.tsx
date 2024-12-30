@@ -1,4 +1,6 @@
 import read1Img from '@/app/(yuanta)/(future-and-leverage)/assets/read1.png';
+import BounceLeftOnScroll from '@/components/animation-container/bounce-left-on-scroll';
+import BounceRightOnScroll from '@/components/animation-container/bounce-right-on-scroll';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from '@/lib/image';
@@ -11,10 +13,26 @@ const ReadingTabs = () => {
       <ScrollArea>
         <div className="w-[650px] md:w-auto">
           <TabsList className="mb-4 grid w-full grid-cols-4">
-            <TabsTrigger value="research">價值連城的研究報告</TabsTrigger>
-            <TabsTrigger value="stocks">小資族首選</TabsTrigger>
-            <TabsTrigger value="review">來！回顧一下</TabsTrigger>
-            <TabsTrigger value="trends">熱門話題帶來的交易波動</TabsTrigger>
+            <BounceRightOnScroll delay={0.1}>
+              <TabsTrigger value="research" className="w-full">
+                價值連城的研究報告
+              </TabsTrigger>
+            </BounceRightOnScroll>
+            <BounceRightOnScroll delay={0.2}>
+              <TabsTrigger value="stocks" className="w-full">
+                小資族首選
+              </TabsTrigger>
+            </BounceRightOnScroll>
+            <BounceRightOnScroll delay={0.3}>
+              <TabsTrigger value="review" className="w-full">
+                來！回顧一下
+              </TabsTrigger>
+            </BounceRightOnScroll>
+            <BounceRightOnScroll delay={0.4}>
+              <TabsTrigger value="trends" className="w-full">
+                熱門話題帶來的交易波動
+              </TabsTrigger>
+            </BounceRightOnScroll>
           </TabsList>
         </div>
         <ScrollBar orientation="horizontal" />
@@ -24,7 +42,9 @@ const ReadingTabs = () => {
         value="research"
         className="flex items-center justify-center"
       >
-        <Image src={read1Img} alt="價值連城的研究報告下載" />
+        <BounceRightOnScroll>
+          <Image src={read1Img} alt="價值連城的研究報告下載" />
+        </BounceRightOnScroll>
       </TabsContent>
 
       {tabValues.map((tab) => (
@@ -34,9 +54,15 @@ const ReadingTabs = () => {
           className="grid grid-cols-1 gap-3 md:grid-cols-2"
         >
           <div className="col-span-1">
-            <Image src={readContexts[tab].image} alt="小資族首選" />
+            <BounceRightOnScroll>
+              <Image
+                src={readContexts[tab].image}
+                alt="小資族首選"
+                className="mx-auto"
+              />
+            </BounceRightOnScroll>
           </div>
-          <div className="col-span-1 whitespace-pre-wrap text-left">
+          <BounceLeftOnScroll className="col-span-1 whitespace-pre-wrap text-left">
             <ul className="flex h-full flex-col justify-stretch">
               {readContexts[tab].text.map((text, index) => (
                 <li
@@ -52,7 +78,7 @@ const ReadingTabs = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </BounceLeftOnScroll>
         </TabsContent>
       ))}
     </Tabs>
