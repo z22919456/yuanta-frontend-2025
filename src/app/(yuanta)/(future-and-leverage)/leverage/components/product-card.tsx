@@ -5,16 +5,13 @@ import { cn } from '@/lib/utils';
 
 type Props = {
   product: ProductGroup['products'][0];
-  index: number;
+  index?: number;
 };
 
-const ProductCard = ({ product, index }: Props) => {
+const ProductCard = ({ product, index = 0 }: Props) => {
   if ('code' in product) {
     return (
-      <BounceRightOnScroll
-        className="h-full items-stretch"
-        delay={index * 0.1 + 0.1}
-      >
+      <BounceRightOnScroll className="h-full items-stretch">
         <Card className="flex h-full md:block">
           <div
             className={cn(

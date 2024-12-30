@@ -6,17 +6,17 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Product } from '../data';
+import { Group, Product, ProductGroup } from '../data';
 import ProductCard from './product-card';
 
-type Props = { products: Product['products']; controlClassPrefix: string };
+type Props = { products: ProductGroup['products']; controlClassPrefix: string };
 
 const MobileProductSwiper = ({ products, controlClassPrefix }: Props) => {
   const nextEl = `${controlClassPrefix}swiper-button-next`;
   const prevEl = `${controlClassPrefix}swiper-button-prev`;
   // 四個一組
-  const productsGroup = products.reduce(
-    (acc: Product['products'][], product, i) => {
+  const productsGroup = products.reduce<Array<(Product | Group)[]>>(
+    (acc, product, i) => {
       const groupIndex = Math.floor(i / 4);
       if (!acc[groupIndex]) {
         acc[groupIndex] = [];
@@ -42,7 +42,10 @@ const MobileProductSwiper = ({ products, controlClassPrefix }: Props) => {
         {productsGroup.map((products, i) => (
           <SwiperSlide key={i} className="space-y-3">
             {products.map((product) => (
-              <ProductCard product={product} key={product.code} />
+              <ProductCard
+                product={product}
+                key={'code' in product ? product.code : product.name}
+              />
             ))}
           </SwiperSlide>
         ))}
