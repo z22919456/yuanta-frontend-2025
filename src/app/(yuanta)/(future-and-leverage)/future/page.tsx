@@ -110,17 +110,17 @@ const Page = () => {
 
                     {/* 188口 */}
                     <Card>
-                      <CardHeader className="bg-[#007CC9]">
+                      <CardHeader className="bg-[#007CC9] lg:py-5">
                         <h3
-                          className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px]"
+                          className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px] sm:text-2xl lg:text-3xl"
                           data-stroke="美盤188口以上"
                         >
                           美盤188口以上
                         </h3>
-                        <div className="mt-1 flex justify-center space-x-2">
+                        <div className="mt-1 flex justify-center space-x-2 md:mt-3">
                           {[1, 2, 3].map((i) => (
                             <BounceInOnScroll key={i} delay={i * 0.1}>
-                              <Start className="size-5" />
+                              <Start className="size-5 sm:size-6 md:size-7" />
                             </BounceInOnScroll>
                           ))}
                         </div>
@@ -137,17 +137,17 @@ const Page = () => {
 
                     {/* 288口 */}
                     <Card className="mb-10">
-                      <CardHeader className="bg-[#007CC9]">
+                      <CardHeader className="bg-[#007CC9] lg:py-5">
                         <h3
-                          className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px]"
+                          className="main-title z-10 -mt-1 mb-0 text-xl [--stroke-width:3px] sm:text-2xl lg:text-3xl"
                           data-stroke="美盤288口以上"
                         >
                           美盤288口以上
                         </h3>
-                        <div className="mt-1 flex justify-center space-x-2">
+                        <div className="mt-1 flex justify-center space-x-2 md:mt-3">
                           {[1, 2, 3, 4, 5].map((i) => (
                             <BounceInOnScroll key={i} delay={i * 0.1}>
-                              <Start className="size-5" />
+                              <Start className="size-5 sm:size-6 md:size-7" />
                             </BounceInOnScroll>
                           ))}
                         </div>
