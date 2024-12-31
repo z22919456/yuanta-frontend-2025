@@ -54,8 +54,18 @@ const ProductsSlider = async () => {
               controlClassPrefix={tab.code}
             />
           </div>
+          {tab.desc && (
+            <p className="mt-3 text-left text-sm text-y-secondary">
+              {tab.desc}
+            </p>
+          )}
         </TabsContent>
       ))}
+      <p className="mt-3 text-left text-xs text-slate-500">
+        以113/12/27盤後作為參考價
+        <br />
+        更詳細資訊請以元大期貨槓桿交易商官網發布的資訊為準
+      </p>
     </Tabs>
   );
 };

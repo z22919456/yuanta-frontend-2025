@@ -28,6 +28,7 @@ export type Product = {
 export type ProductGroup = {
   code: string;
   title: string;
+  desc?: string;
   products: Product[] | Group[];
 };
 
@@ -39,7 +40,7 @@ export const products: ProductGroup[] = [
       {
         name: 'EUR/USD',
         code: '歐元/美元',
-        margin: 34.92,
+        margin: 34.71,
         desc: '最小交易手數：0.01手',
       },
       {
@@ -51,7 +52,7 @@ export const products: ProductGroup[] = [
       {
         name: 'GBP/USD',
         code: '英鎊/美元',
-        margin: 41.85,
+        margin: 41.71,
         desc: '最小交易手數：0.01手',
       },
       {
@@ -69,13 +70,13 @@ export const products: ProductGroup[] = [
       {
         name: 'AUD/USD',
         code: '澳幣/美元',
-        margin: 32.36,
+        margin: 31.1,
         desc: '最小交易手數：0.01手',
       },
       {
         name: 'NZD/USD',
         code: '紐幣/美元',
-        margin: 29.17,
+        margin: 28.12,
         desc: '最小交易手數：0.01手',
       },
     ],
@@ -87,25 +88,25 @@ export const products: ProductGroup[] = [
       {
         name: 'XAU/USD',
         code: '黃金',
-        margin: 131.02,
+        margin: 131.94,
         desc: '最小交易手數：0.01手',
       },
       {
         name: 'XAG/USD',
         code: '白銀',
-        margin: 151.94,
+        margin: 150.24,
         desc: '最小交易手數：0.01手',
       },
       {
         name: 'XTI/USD',
         code: '西德州',
-        margin: 68.77,
+        margin: 69.62,
         desc: '最小交易手數：0.01手',
       },
       {
         name: 'XBR/USD',
         code: '布蘭特',
-        margin: 72.81,
+        margin: 73.26,
         desc: '最小交易手數：0.01手',
       },
     ],
@@ -113,41 +114,42 @@ export const products: ProductGroup[] = [
   {
     code: 'usCfdProducts',
     title: '美股CFD商品',
+    desc: '註：美股CFD作業處理費為成交金額之千分之一；低收5美元。',
     products: [
       {
         name: 'US30',
         code: '道瓊',
-        margin: 224.3,
+        margin: 216.63,
         desc: '最小交易手數：0.1手',
       },
       {
         name: 'SPX500',
         code: 'S&P500',
-        margin: 30.11,
+        margin: 30.19,
         desc: '最小交易手數：0.1手',
       },
       {
         name: 'NAS100',
         code: '那斯達克100指數',
-        margin: 104.61,
+        margin: 108.84,
         desc: '最小交易手數：0.1手',
       },
       {
         name: 'DAX30',
         code: '德國DAX指數',
-        margin: 1011.69,
+        margin: 1034.32,
         desc: '最小交易手數：0.1手',
       },
       {
         name: 'NK225',
         code: '日經225指數',
-        margin: 12.55,
-        desc: '最小交易手數：0.1手',
+        margin: 12.52,
+        desc: '最小交易手數：1手',
       },
       {
         name: 'HSI50',
         code: '恆生指數',
-        margin: 246.17,
+        margin: 258.74,
         desc: '最小交易手數：0.1手',
       },
     ],
@@ -155,54 +157,55 @@ export const products: ProductGroup[] = [
   {
     code: 'globalIndexProducts',
     title: '國際指數商品',
+    desc: '註：國際指數作業處理費為成交金額之萬分之一。',
     products: [
       {
         name: 'Apple',
         code: 'AAPL',
-        margin: 29.38,
+        margin: 38.85,
         desc: '保證金比例：15%',
-        lastPrice: 195.89,
-        lastDate: '11/26',
-      },
-      {
-        name: 'Ford Motor',
-        code: 'F',
-        margin: 2.39,
-        desc: '保證金比例：20%',
-        lastPrice: 11.95,
-        lastDate: '11/26',
-      },
-      {
-        name: 'Advanced Micro Devices',
-        code: 'AMD',
-        margin: 27.78,
-        desc: '保證金比例：20%',
-        lastPrice: 138.9,
-        lastDate: '11/26',
+        lastPrice: 259.02,
+        lastDate: '12/27',
       },
       {
         name: 'NVIDIA',
         code: 'NVDA',
-        margin: 100.15,
-        desc: '保證金比例：20%',
-        lastPrice: 500.77,
-        lastDate: '11/26',
+        margin: 34.98,
+        desc: '保證金比例：25%',
+        lastPrice: 139.93,
+        lastDate: '12/27',
       },
       {
         name: 'Tesla, Inc.',
         code: 'TSLA',
-        margin: 50.42,
+        margin: 90.83,
         desc: '保證金比例：20%',
-        lastPrice: 252.08,
-        lastDate: '11/26',
+        lastPrice: 454.13,
+        lastDate: '12/27',
       },
       {
         name: 'Amazon\t.com',
         code: 'AMZN',
-        margin: 23.11,
+        margin: 34.06,
         desc: '保證金比例：15%',
-        lastPrice: 154.07,
-        lastDate: '11/26',
+        lastPrice: 227.05,
+        lastDate: '12/27',
+      },
+      {
+        name: 'Meta platform, Inc',
+        code: 'META',
+        margin: 90.5,
+        desc: '保證金比例：15%',
+        lastPrice: 603.35,
+        lastDate: '12/27',
+      },
+      {
+        name: 'Netflix, Inc.',
+        code: 'NFLX',
+        margin: 138.62,
+        desc: '保證金比例：15%',
+        lastPrice: 924.14,
+        lastDate: '12/27',
       },
     ],
   },
