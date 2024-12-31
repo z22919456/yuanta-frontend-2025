@@ -1,4 +1,5 @@
 import stage7 from '@/app/(yuanta)/(future-and-leverage)/assets/stage7.png';
+import BounceInOnScroll from '@/components/animation-container/bounce-In-on-scroll';
 import BounceOnScroll from '@/components/animation-container/bounce-on-scroll';
 import Card, { CardHeader } from '@/components/card';
 import StarBackground from '@/components/start-background';
@@ -33,22 +34,21 @@ const Page = () => {
         {/* 步行萬里，滿額送禮 */}
         <Wall title="步行萬里 滿額送禮" titleClassName="whitespace-nowrap">
           <WallContent className="space-y-4">
-            <BounceOnScroll>
-              <p>
-                活動期間，
-                <strong className="text-xl font-semibold text-y-secondary">
-                  不論新舊戶累積交易達指定口數門檻
-                </strong>
-                ，即可獲得指定好禮！
-              </p>
-              <p className="text-base leading-4">
-                <small>(每ID限領乙次)</small>
-              </p>
-            </BounceOnScroll>
+            <p>
+              活動期間，
+              <strong className="text-xl font-semibold text-y-secondary">
+                不論新舊戶累積交易達指定口數門檻
+              </strong>
+              ，即可獲得指定好禮！
+            </p>
+            <p className="text-base leading-4">
+              <small>(每ID限領乙次)</small>
+            </p>
+
             <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
               {/* 我達到地幾步 */}
               <BounceOnScroll className="md:col-span-2">
-                <Card>
+                <Card className="h-full">
                   <CardHeader className="items-be flex justify-center gap-2 px-1 py-3">
                     <h2 className="font-default text-xl">
                       我己經達到地{' '}
@@ -65,12 +65,14 @@ const Page = () => {
                       點我查詢
                     </Button>
                   </CardHeader>
-                  <div className="w-full px-0 py-3 md:px-8">
-                    <Image
-                      src={stage7}
-                      alt="我達到地幾步"
-                      className="mx-auto"
-                    />
+                  <div className="flex w-full items-center justify-center px-0 py-3 md:px-8">
+                    <BounceInOnScroll delay={0.5} initialSize={1.5}>
+                      <Image
+                        src={stage7}
+                        alt="我達到地幾步"
+                        className="mx-auto sm:pt-5 lg:pt-0"
+                      />
+                    </BounceInOnScroll>
                   </div>
                 </Card>
               </BounceOnScroll>
@@ -89,15 +91,17 @@ const Page = () => {
 
                   <div className="flex h-full flex-col justify-around p-5">
                     {/* 五種交易類型 */}
-                    <Image
-                      src={flowerImg}
-                      alt="金屬｜能源｜匯率｜指數｜債券"
-                      className="mx-auto w-4/5"
-                    />
+                    <BounceInOnScroll delay={0.5} initialSize={1.5}>
+                      <Image
+                        src={flowerImg}
+                        alt="金屬｜能源｜匯率｜指數｜債券"
+                        className="mx-auto w-4/5"
+                      />
+                    </BounceInOnScroll>
 
                     <div className="text-left">
                       <p className="lg:text-2xl">
-                        活動期間，交易跨美盤(CME) 商品種類，加碼再送指定好禮！ 
+                        活動期間，交易跨美盤(CME) 商品種類，加碼再送指定好禮！
                       </p>
                       <p>
                         <small>(每ID限領乙次)</small>
@@ -114,15 +118,21 @@ const Page = () => {
                           美盤188口以上
                         </h3>
                         <div className="mt-1 flex justify-center space-x-2">
-                          <Start className="size-5" />
-                          <Start className="size-5" />
-                          <Start className="size-5" />
+                          {[1, 2, 3].map((i) => (
+                            <BounceInOnScroll key={i} delay={i * 0.1}>
+                              <Start className="size-5" />
+                            </BounceInOnScroll>
+                          ))}
                         </div>
                       </CardHeader>
-                      <p className="font-default">交易三類商品</p>
-                      <p className="font-title text-y-tab-active-bg">
-                        贈1,000元
-                      </p>
+                      <div className="lg:py-5">
+                        <p className="font-default lg:text-xl xl:text-2xl">
+                          交易三類商品
+                        </p>
+                        <p className="font-title text-y-tab-active-bg lg:text-xl xl:text-2xl">
+                          贈1,000元
+                        </p>
+                      </div>
                     </Card>
 
                     {/* 288口 */}
@@ -135,17 +145,21 @@ const Page = () => {
                           美盤288口以上
                         </h3>
                         <div className="mt-1 flex justify-center space-x-2">
-                          <Start className="size-5" />
-                          <Start className="size-5" />
-                          <Start className="size-5" />
-                          <Start className="size-5" />
-                          <Start className="size-5" />
+                          {[1, 2, 3, 4, 5].map((i) => (
+                            <BounceInOnScroll key={i} delay={i * 0.1}>
+                              <Start className="size-5" />
+                            </BounceInOnScroll>
+                          ))}
                         </div>
                       </CardHeader>
-                      <p className="font-default">交易五類商品</p>
-                      <p className="font-title text-y-tab-active-bg">
-                        贈1,500元
-                      </p>
+                      <div className="lg:py-5">
+                        <p className="font-default lg:text-xl xl:text-2xl">
+                          交易五類商品
+                        </p>
+                        <p className="font-title text-y-tab-active-bg lg:text-xl xl:text-2xl">
+                          贈1,500元
+                        </p>
+                      </div>
                     </Card>
                   </div>
                 </Card>
@@ -160,7 +174,7 @@ const Page = () => {
             <div className="hidden md:block">
               <ProductSwiper products={products} controlClassPrefix="p1" />
             </div>
-            <div className="block md:hidden">
+            <div className="-mx-3 block md:hidden">
               <MobileProductSwiper
                 products={products}
                 controlClassPrefix="p2"

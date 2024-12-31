@@ -3,36 +3,39 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-type BounceRightOnScrollProps = {
+type BounceInOnScrollProps = {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  everyTime?: boolean;
+  asChild?: boolean;
+  initialSize?: number;
 };
 
-const BounceRightOnScroll = ({
+const BounceInOnScroll = ({
   children,
   className,
   delay,
-  everyTime = false,
-}: BounceRightOnScrollProps) => {
+  initialSize,
+}: BounceInOnScrollProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
-    once: !everyTime,
+    once: true,
     margin: '0px 0px -50px 0px', // 當元素距離底部 50px 時觸發
   });
 
   const animationProps = {
     ref,
-    initial: { opacity: 0, x: 70 },
-    animate: isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 70 },
+    initial: { opacity: 0, scale: initialSize || 2 },
+    animate: isInView
+      ? { opacity: 1, scale: 1 }
+      : { opacity: 0, scale: initialSize || 2 },
     transition: {
       delay: delay || 0.2,
       type: 'spring',
       stiffness: 100,
       damping: 10,
       mass: 1,
-      duration: 0.8,
+      duration: 1,
     },
     className,
   };
@@ -40,4 +43,4 @@ const BounceRightOnScroll = ({
   return <motion.div {...animationProps}>{children}</motion.div>;
 };
 
-export default BounceRightOnScroll;
+export default BounceInOnScroll;

@@ -15,7 +15,7 @@ const ProductCard = ({ product, index = 0 }: Props) => {
       className="h-full items-stretch"
       delay={index * 0.1 + 0.1}
     >
-      <Card className="flex items-stretch md:block">
+      <Card className="mx-auto flex items-stretch md:block">
         <div
           className={cn(
             'flex w-24 shrink-0 border-y-bo bg-y-card-header text-2xl text-white md:-mx-3 md:-mt-3 md:mb-2 md:block md:w-auto md:border-b-4 md:border-r-0 md:px-3 md:py-2 md:text-center',

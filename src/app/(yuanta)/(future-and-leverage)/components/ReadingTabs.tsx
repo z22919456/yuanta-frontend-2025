@@ -12,28 +12,14 @@ const ReadingTabs = () => {
     <Tabs defaultValue="research" className="w-full">
       <ScrollArea>
         <div className="w-[650px] md:w-auto">
-          <TabsList className="mb-4 grid w-full grid-cols-4">
-            <BounceRightOnScroll delay={0.1}>
-              <TabsTrigger value="research" className="w-full">
-                價值連城的研究報告
-              </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.2}>
-              <TabsTrigger value="stocks" className="w-full">
-                小資族首選
-              </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.3}>
-              <TabsTrigger value="review" className="w-full">
-                來！回顧一下
-              </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.4}>
-              <TabsTrigger value="trends" className="w-full">
-                熱門話題帶來的交易波動
-              </TabsTrigger>
-            </BounceRightOnScroll>
-          </TabsList>
+          <BounceRightOnScroll delay={0.4}>
+            <TabsList className="mb-4 grid w-full grid-cols-4">
+              <TabsTrigger value="research">價值連城的研究報告</TabsTrigger>
+              <TabsTrigger value="stocks">小資族首選</TabsTrigger>
+              <TabsTrigger value="review">來！回顧一下</TabsTrigger>
+              <TabsTrigger value="trends">熱門話題帶來的交易波動</TabsTrigger>
+            </TabsList>
+          </BounceRightOnScroll>
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>

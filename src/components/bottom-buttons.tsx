@@ -10,31 +10,31 @@ const BottomButtons = () => {
   return (
     <>
       <motion.div
-        className="sticky bottom-0 left-0 right-0 z-40 mt-5 md:hidden"
-        initial={{ y: 500 }}
-        animate={{ y: y && y > 100 ? 0 : 500 }}
+        className="sticky bottom-0 left-0 right-0 z-50 md:hidden"
+        initial={{ y: 1000 }}
+        animate={{ y: y && y > 100 ? 0 : 1000 }}
         transition={{ type: 'spring', mass: 0.1, bounce: 0.1 }}
       >
         <div className="absolute -top-14 right-2 z-40 size-12">
           <ToTop />
         </div>
-        <div className="bg-black/40 py-3 pt-2">
-          <div className="flex space-x-2 px-4">
+        <div className="bg-blur-xl w-screen bg-black/40 px-2 py-3 pt-2 backdrop-blur">
+          <div className="grid w-full grid-cols-3 gap-2">
             <Button
               size="lg"
-              className="ml-2 h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+              className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
             >
               點我開戶
             </Button>
             <Button
               size="lg"
-              className="ml-2 h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+              className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
             >
               點我開戶
             </Button>
             <Button
               size="lg"
-              className="ml-2 h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+              className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
             >
               點我開戶
             </Button>

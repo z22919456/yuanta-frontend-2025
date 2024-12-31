@@ -80,17 +80,17 @@ export const MobileProductSwiper = ({
     <>
       <Swiper
         modules={[Navigation, Pagination]}
-        className="mt-3 w-full max-w-sm !pb-5"
+        className="mt-3 box-border w-full max-w-md !px-3 !pb-5"
         pagination={{ clickable: true }}
         slidesPerView={1}
-        spaceBetween={10}
+        spaceBetween={20}
         navigation={{
           nextEl: `#${nextEl}`,
           prevEl: `#${prevEl}`,
         }}
       >
         {productsGroup.map((products, i) => (
-          <SwiperSlide key={i} className="space-y-3">
+          <SwiperSlide key={i} className="w-full space-y-3">
             {products.map((product, index) => (
               <ProductCard product={product} key={product.code} index={index} />
             ))}

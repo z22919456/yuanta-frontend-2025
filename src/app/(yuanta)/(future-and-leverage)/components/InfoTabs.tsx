@@ -17,14 +17,10 @@ const InfoTabs = () => {
     <Tabs defaultValue="whatIsFutures" className="w-full">
       <ScrollArea>
         <div className="w-[650px] md:w-auto">
-          <TabsList className="mb-4 grid w-full grid-cols-4">
-            <BounceRightOnScroll delay={0.1}>
-              <TabsTrigger className="w-full" value="whatIsFutures">
-                什麼是期貨
-              </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.2}>
-              <TabsTrigger className="w-full" value="whyFutures">
+          <BounceRightOnScroll delay={0.1}>
+            <TabsList className="mb-4 grid w-full grid-cols-4">
+              <TabsTrigger value="whatIsFutures">什麼是期貨</TabsTrigger>
+              <TabsTrigger value="whyFutures">
                 <p>
                   為什麼
                   <br className="" />
@@ -34,14 +30,8 @@ const InfoTabs = () => {
                   </span>
                 </p>
               </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.3}>
-              <TabsTrigger className="w-full" value="whatIsOptions">
-                什麼是選擇權
-              </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.4}>
-              <TabsTrigger className="w-full" value="whyOptions">
+              <TabsTrigger value="whatIsOptions">什麼是選擇權</TabsTrigger>
+              <TabsTrigger value="whyOptions">
                 <p>
                   為什麼
                   <br className="" />
@@ -51,8 +41,8 @@ const InfoTabs = () => {
                   </span>
                 </p>
               </TabsTrigger>
-            </BounceRightOnScroll>
-          </TabsList>
+            </TabsList>
+          </BounceRightOnScroll>
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
@@ -66,20 +56,22 @@ const InfoTabs = () => {
 
       {tabValues.map((tab) => (
         <TabsContent key={tab} value={tab}>
-          <BounceOnScroll className="whitespace-pre-wrap text-left">
+          <div className="whitespace-pre-wrap text-left">
             <ul className="flex h-full flex-col justify-stretch">
               {infoContexts[tab].map((text, index) => (
-                <li className="flex h-full items-center py-2" key={index}>
-                  <p className="flex items-start">
-                    <span className="mr-2 flex-shrink-0 text-lg text-amber-700">
-                      ◆
-                    </span>
-                    <span>{text}</span>
-                  </p>
-                </li>
+                <BounceOnScroll delay={0.1 + index * 0.1} key={index}>
+                  <li className="flex h-full items-center py-2" key={index}>
+                    <p className="flex items-start">
+                      <span className="mr-2 flex-shrink-0 text-lg text-amber-700">
+                        ◆
+                      </span>
+                      <span>{text}</span>
+                    </p>
+                  </li>
+                </BounceOnScroll>
               ))}
             </ul>
-          </BounceOnScroll>
+          </div>
         </TabsContent>
       ))}
     </Tabs>

@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="zh-TW">
       <GoogleTagManager gtmId="GTM-KSVRB2H" />
       <body
-        className={`${noto.variable} ${mantouSans.variable} relative overflow-x-hidden font-default text-y-t-base antialiased`}
+        className={`${noto.variable} ${mantouSans.variable} relative font-default text-y-t-base antialiased`}
         monica-locale="zh_TW"
       >
         {children}

@@ -4,6 +4,8 @@
 
 html {
   overflow-x: hidden;
+  maw-width: 100vw;
+  width: 100vw;
 }
 
 body {
@@ -74,7 +76,7 @@ body {
     @apply border-border;
   }
   body {
-    @apply relative max-w-[100vw] overflow-x-hidden bg-background font-medium text-y-t-base;
+    @apply relative max-w-[100vw] overflow-x-clip bg-background font-medium text-y-t-base;
   }
   h1,
   h2,
