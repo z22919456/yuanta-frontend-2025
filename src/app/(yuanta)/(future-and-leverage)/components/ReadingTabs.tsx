@@ -10,19 +10,19 @@ const ReadingTabs = () => {
   const tabValues = ['stocks', 'review', 'trends'] as const;
   return (
     <Tabs defaultValue="research" className="w-full">
-      <ScrollArea>
-        <div className="w-[650px] md:w-auto">
-          <BounceRightOnScroll delay={0.4}>
+      <BounceRightOnScroll>
+        <ScrollArea>
+          <div className="w-[650px] md:w-auto">
             <TabsList className="mb-4 grid w-full grid-cols-4">
               <TabsTrigger value="research">價值連城的研究報告</TabsTrigger>
               <TabsTrigger value="stocks">小資族首選</TabsTrigger>
               <TabsTrigger value="review">來！回顧一下</TabsTrigger>
               <TabsTrigger value="trends">熱門話題帶來的交易波動</TabsTrigger>
             </TabsList>
-          </BounceRightOnScroll>
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </BounceRightOnScroll>
 
       <TabsContent
         value="research"

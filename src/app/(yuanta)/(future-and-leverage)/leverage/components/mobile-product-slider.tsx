@@ -40,10 +40,11 @@ const MobileProductSwiper = ({ products, controlClassPrefix }: Props) => {
         }}
       >
         {productsGroup.map((products, i) => (
-          <SwiperSlide key={i} className="space-y-3">
-            {products.map((product) => (
+          <SwiperSlide key={i} className="space-y-3 px-3">
+            {products.map((product, index) => (
               <ProductCard
                 product={product}
+                index={index}
                 key={'code' in product ? product.code : product.name}
               />
             ))}

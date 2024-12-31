@@ -9,25 +9,21 @@ const ReadingTabs = () => {
   const tabValues = ['CFD', 'JPA', 'GOLD'] as const;
   return (
     <Tabs defaultValue="CFD" className="w-full">
-      <ScrollArea>
+      <ScrollArea className="-mx-3 md:mx-0">
         <div className="w-[487px] md:w-auto">
-          <TabsList className="mb-4 grid w-full grid-cols-3">
-            <BounceRightOnScroll delay={0}>
-              <TabsTrigger value={tabValues[0]} className="w-full">
+          <BounceRightOnScroll delay={0.4}>
+            <TabsList className="mb-4 grid w-full grid-cols-3 px-3 md:px-0">
+              <TabsTrigger value={tabValues[0]}>
                 每果CFD 升溫的新趨勢
               </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.1}>
-              <TabsTrigger value={tabValues[1]} className="w-full">
+              <TabsTrigger value={tabValues[1]}>
                 注意到了嗎？ 日本的崛起！
               </TabsTrigger>
-            </BounceRightOnScroll>
-            <BounceRightOnScroll delay={0.2}>
-              <TabsTrigger value={tabValues[2]} className="w-full">
+              <TabsTrigger value={tabValues[2]}>
                 黃金創高！ 吸引交易者目光
               </TabsTrigger>
-            </BounceRightOnScroll>
-          </TabsList>
+            </TabsList>
+          </BounceRightOnScroll>
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>

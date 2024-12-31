@@ -9,21 +9,17 @@ import ProductCard from './product-card';
 const ProductsSlider = async () => {
   return (
     <Tabs defaultValue={products[0].code} className="w-full">
-      <ScrollArea>
+      <ScrollArea className="-mx-3 md:mx-0">
         <div className="w-[720px] md:w-auto">
-          <TabsList className="mb-4 grid w-full grid-cols-5">
-            {products.map((product, i) => (
-              <BounceRightOnScroll key={product.code} delay={i * 0.1}>
-                <TabsTrigger
-                  key={product.code}
-                  value={product.code}
-                  className="w-full"
-                >
+          <BounceRightOnScroll>
+            <TabsList className="mb-4 grid w-full grid-cols-5 px-3 md:px-0">
+              {products.map((product) => (
+                <TabsTrigger key={product.code} value={product.code}>
                   {product.title}
                 </TabsTrigger>
-              </BounceRightOnScroll>
-            ))}
-          </TabsList>
+              ))}
+            </TabsList>
+          </BounceRightOnScroll>
         </div>
         <ScrollBar orientation="horizontal" />
       </ScrollArea>
@@ -52,7 +48,7 @@ const ProductsSlider = async () => {
               />
             ))}
           </div>
-          <div className="block md:hidden">
+          <div className="-mx-3 block md:hidden">
             <MobileProductSwiper
               products={tab.products}
               controlClassPrefix={tab.code}

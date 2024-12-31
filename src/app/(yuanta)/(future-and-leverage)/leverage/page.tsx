@@ -26,18 +26,16 @@ const Page = () => {
         {/* 步行萬里，滿額送禮 */}
         <Wall title="步行萬里 滿額送禮" titleClassName="whitespace-nowrap">
           <WallContent className="space-y-4">
-            <BounceOnScroll>
-              <p>
-                活動期間，
-                <strong className="text-xl font-semibold text-y-secondary">
-                  不論新舊戶累積交易達指定口數門檻
-                </strong>
-                ，即可獲得指定好禮！ 
-              </p>
-              <p className="text-base leading-5">
-                <small>(每ID限領乙次)</small>
-              </p>
-            </BounceOnScroll>
+            <p>
+              活動期間，
+              <strong className="text-xl font-semibold text-y-secondary">
+                不論新舊戶累積交易達指定口數門檻
+              </strong>
+              ，即可獲得指定好禮！ 
+            </p>
+            <p className="text-base leading-5">
+              <small>(每ID限領乙次)</small>
+            </p>
             <BounceOnScroll>
               <div className="grid gap-4">
                 {/* 我達到地幾步 */}
@@ -132,7 +130,7 @@ const Page = () => {
         </Wall>
         <Wall title="速懂！差價契約的特性">
           <WallContent className="!pt-20 md:!pt-12">
-            <div className="mx-auto mb-3 grid w-full max-w-2xl grid-cols-1 gap-3 md:mb-6 md:mt-5 md:grid-cols-3 lg:grid-cols-3">
+            <div className="md:mb- mx-auto mb-3 grid w-full max-w-2xl grid-cols-1 gap-3 md:mt-5 md:grid-cols-3 lg:grid-cols-3">
               {steps.map((a, i) => (
                 <BounceOnScroll
                   key={a.count}

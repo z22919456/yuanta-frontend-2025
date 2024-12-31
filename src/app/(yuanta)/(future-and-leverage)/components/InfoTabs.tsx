@@ -15,10 +15,10 @@ const InfoTabs = () => {
   ] as const;
   return (
     <Tabs defaultValue="whatIsFutures" className="w-full">
-      <ScrollArea>
-        <div className="w-[650px] md:w-auto">
-          <BounceRightOnScroll delay={0.1}>
-            <TabsList className="mb-4 grid w-full grid-cols-4">
+      <BounceRightOnScroll>
+        <ScrollArea className="-mx-3 md:mx-0">
+          <div className="w-[650px] md:w-auto">
+            <TabsList className="mb-4 grid w-full grid-cols-4 px-3 md:px-0">
               <TabsTrigger value="whatIsFutures">什麼是期貨</TabsTrigger>
               <TabsTrigger value="whyFutures">
                 <p>
@@ -42,10 +42,10 @@ const InfoTabs = () => {
                 </p>
               </TabsTrigger>
             </TabsList>
-          </BounceRightOnScroll>
-        </div>
-        <ScrollBar orientation="horizontal" />
-      </ScrollArea>
+          </div>
+          <ScrollBar orientation="horizontal" />
+        </ScrollArea>
+      </BounceRightOnScroll>
 
       <TabsContent
         value="research"

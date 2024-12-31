@@ -10,7 +10,7 @@ const BottomButtons = () => {
   return (
     <>
       <motion.div
-        className="sticky bottom-0 left-0 right-0 z-50 md:hidden"
+        className="sticky bottom-0 left-0 right-0 z-40 md:hidden"
         initial={{ y: 1000 }}
         animate={{ y: y && y > 100 ? 0 : 1000 }}
         transition={{ type: 'spring', mass: 0.1, bounce: 0.1 }}
