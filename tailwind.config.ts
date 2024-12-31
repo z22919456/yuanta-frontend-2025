@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import tailwindcssAnimate from 'tailwindcss-animate';
+import tailwindcssAnimated from 'tailwindcss-animated';
 import tailwindcssAnimationDelay from 'tailwindcss-animation-delay';
 
 export default {
@@ -239,6 +240,16 @@ export default {
           transform: 'translateY(15px) scale(0.9) rotate(10deg)',
         },
       },
+      bounce: {
+        '0%, to': {
+          transform: 'translateY(-8%)',
+          animationTimingFunction: 'cubic-bezier(.8,0,1,1)',
+        },
+        '50%': {
+          transform: 'none',
+          animationTimingFunction: 'cubic-bezier(0,0,.2,1)',
+        },
+      },
     },
     // 添加自定義動畫
     animation: {
@@ -255,5 +266,5 @@ export default {
       'float-deco': 'floatDeco 6s ease-in-out infinite',
     },
   },
-  plugins: [tailwindcssAnimate, tailwindcssAnimationDelay],
+  plugins: [tailwindcssAnimated, tailwindcssAnimate, tailwindcssAnimationDelay],
 } satisfies Config;

@@ -134,7 +134,7 @@ const FiveApple = ({ type }: Props) => {
             <Image
               src={envelopeImg}
               alt="200元獎勵金"
-              className="mx-auto mt-5"
+              className="animate-bounce animate-infinite mx-auto mt-5"
             />
           </Card>
         </BounceRightOnScroll>
