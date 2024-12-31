@@ -9,7 +9,7 @@ const ListWithBlock = ({ list, className }: Props) => {
   return (
     <ul
       className={cn(
-        'list-none space-y-4 pl-8 text-lg md:space-y-6 md:pl-12 md:text-2xl',
+        'list-none space-y-4 pl-8 text-lg md:space-y-6 md:pl-12 md:text-xl lg:text-2xl',
         className
       )}
     >

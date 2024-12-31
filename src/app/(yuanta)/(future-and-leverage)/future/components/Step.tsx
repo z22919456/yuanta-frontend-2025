@@ -105,7 +105,7 @@ const Info = ({ currentStep }: { currentStep: number }) => {
             ]}
             className="!space-y-3 text-base"
           />
-          <p className="mt-4 flex items-center">
+          <p className="mt-4 flex items-center text-lg lg:text-2xl">
             如果還沒開戶{' '}
             <a
               href="https://www.yuantafutures.com.tw/openaccount_01"
@@ -257,7 +257,7 @@ const Step = () => {
   };
 
   return (
-    <div className="-mb-6 space-y-8 pt-14 md:-mb-5">
+    <div className="-mb-6 space-y-8 pt-14 md:-mb-8">
       <motion.div
         className="mx-auto mb-5 max-w-[700px]"
         whileInView={{ opacity: 1, y: 0 }}
@@ -289,10 +289,10 @@ const Step = () => {
         viewport={{ once: true, margin: '-100px' }}
       >
         <div className="relative rounded-xl p-3 text-white">
-          <div className="relative z-10 p-5">
+          <div className="relative z-10 py-5">
             {/* Content */}
-            <div className="flex w-full flex-col md:flex-row-reverse">
-              <div className="w-full self-center md:w-1/2">
+            <div className="flex w-full flex-col justify-center md:flex-row-reverse">
+              <div className="w-full self-center md:w-2/3 lg:w-1/2">
                 {/* Controller */}
                 <div className="flex w-full items-center justify-center space-x-5 text-3xl font-black text-y-tab-t">
                   <CircleChevronLeft
@@ -333,7 +333,7 @@ const Step = () => {
               </div>
               {/* Image */}
               <motion.div
-                className="-mb-5 mt-5 flex justify-center md:-mb-8 md:pr-5"
+                className="-mb-5 mt-5 flex justify-center md:-mb-8 lg:pr-5"
                 {...mobilMotionProps}
                 key={step}
               >
