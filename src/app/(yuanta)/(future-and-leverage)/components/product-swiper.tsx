@@ -2,7 +2,7 @@
 
 import { Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { products } from '../futures/data';
+import { products } from '../future/data';
 import ProductCard from './product-card';
 
 import { ArrowLeft, ArrowRight } from 'lucide-react';

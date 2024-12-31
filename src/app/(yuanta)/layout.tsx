@@ -1,7 +1,5 @@
-import BottomButtons from '@/components/bottom-buttons';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
-import SideButtons from '@/components/side-buttons';
 import NextTopLoader from 'nextjs-toploader';
 
 const Layout = ({
@@ -14,8 +12,6 @@ const Layout = ({
       <NextTopLoader />
       <Navbar />
       {children}
-      <SideButtons />
-      <BottomButtons />
       <Footer />
     </>
   );

@@ -4,7 +4,7 @@ import BounceRightOnScroll from '@/components/animation-container/bounce-right-o
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Image from '@/lib/image';
-import { readContexts } from '../futures/data';
+import { readContexts } from '../future/data';
 
 const ReadingTabs = () => {
   const tabValues = ['stocks', 'review', 'trends'] as const;

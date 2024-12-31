@@ -136,14 +136,17 @@ body {
   .shadow-number {
     @apply relative z-10 text-4xl text-[#FFF2B2];
     @apply [--stroke-color:theme('colors.y.t.main')];
+    @apply [--stroke-width:8px];
+    @apply [--stroke-shadow-color:#47260088];
+
     word-break: keep-all;
 
     &::after {
       content: attr(data-stroke);
       z-index: -1;
       word-break: keep-all;
-      text-stroke: 8px var(--stroke-color);
-      -webkit-text-stroke: 8px var(--stroke-color);
+      text-stroke: var(--stroke-width) var(--stroke-color);
+      -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
       color: transparent;
       @apply absolute -left-0 top-0 size-full;
     }
@@ -152,8 +155,8 @@ body {
       content: attr(data-stroke);
       z-index: -1;
       word-break: keep-all;
-      text-stroke: 5px #47260088;
-      -webkit-text-stroke: 5px #47260088;
+      text-stroke: var(--stroke-width) var(--stroke-shadow-color);
+      -webkit-text-stroke: var(--stroke-width) var(--stroke-shadow-color);
       color: transparent;
       @apply absolute -left-0 top-1 size-full;
     }

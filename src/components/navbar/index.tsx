@@ -55,7 +55,7 @@ const Navbar = () => {
               <Link href="/seminar">講座報名</Link>
             </li>
             <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
-              <Link href="/futures">外期財門</Link>
+              <Link href="/future">外期財門</Link>
             </li>
             <li className="border-gray-300 px-3 last:border-r-0 hover:text-blue-600">
               <Link href="/leverage">槓桿財門</Link>

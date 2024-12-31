@@ -90,7 +90,7 @@ const Banner = () => {
 
         {/* door */}
         <div className="relative grid w-full scale-110 grid-cols-2 pt-6">
-          <Link href="/futures" className="relative z-10">
+          <Link href="/future" className="relative z-10">
             <Image
               placeholder="empty"
               src={leftDoor}

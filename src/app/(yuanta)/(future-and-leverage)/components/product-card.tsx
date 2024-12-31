@@ -1,4 +1,4 @@
-import { products } from '@/app/(yuanta)/(future-and-leverage)/futures/data';
+import { products } from '@/app/(yuanta)/(future-and-leverage)/future/data';
 import BounceRightOnScroll from '@/components/animation-container/bounce-right-on-scroll';
 import Card from '@/components/card';
 import { cn } from '@/lib/utils';

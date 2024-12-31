@@ -65,7 +65,7 @@ const Menu = () => {
                 className="border-b border-gray-300 p-2 text-gray-900"
                 onClick={() => setOpen((o) => !o)}
               >
-                <Link href="/futures">外期財門</Link>
+                <Link href="/future">外期財門</Link>
               </li>
               <li
                 className="border-b border-gray-300 p-2 text-gray-900"
