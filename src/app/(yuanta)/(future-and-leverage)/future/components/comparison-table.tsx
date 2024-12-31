@@ -109,6 +109,17 @@ const ComparisonTable = () => {
             </tr>
           ))}
         </tbody>
+        <tfoot>
+          <tr>
+            <td
+              className="border-t-2 border-white bg-gray-100 px-2 py-2 text-left text-xs font-semibold md:px-4 md:text-base"
+              colSpan={3}
+            >
+              【備註】期貨各項交易財務槓桿高，交易人請慎重考量自身財務能力，並特別留意控管個人部位及交易風險;
+              相關圖表及數據均為歷史資料，其結果並不代表具有預測未來之能力、過去之績效並不代表未來獲利，交易人應依個人財務狀況審慎評估。
+            </td>
+          </tr>
+        </tfoot>
       </table>
     </div>
   );
