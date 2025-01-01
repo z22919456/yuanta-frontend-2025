@@ -48,14 +48,14 @@ const Banner = () => {
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="absolute -left-10 -top-1 w-[48%] animate-spin"
+              className="animate-duration-[20s] absolute -left-10 -top-1 w-[48%] animate-spin"
             />
             {/* firework */}
             <Image
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="absolute -right-10 -top-3 w-[52%] animate-spin"
+              className="animate-duration-[20s] absolute -right-10 -top-3 w-[52%] animate-spin"
             />
             {/* title image */}
             <Image
