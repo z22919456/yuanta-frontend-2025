@@ -72,7 +72,7 @@ const LoginInForm = ({ onSubmit }: Props) => {
                         {...field}
                       />
                     </FormControl>
-                    <UserCircle2 className="absolute left-2 top-2 peer-focus-visible:text-blue-600" />
+                    <UserCircle2 className="absolute left-2 top-3 peer-focus-visible:text-blue-600" />
                   </div>
                 </div>
                 {/* <FormDescription></FormDescription> */}
@@ -98,7 +98,7 @@ const LoginInForm = ({ onSubmit }: Props) => {
                         type="password"
                       />
                     </FormControl>
-                    <Lock className="absolute left-2 top-2 peer-focus-visible:text-blue-600" />
+                    <Lock className="absolute left-2 top-3 peer-focus-visible:text-blue-600" />
                   </div>
                 </div>
                 {/* <FormDescription>
