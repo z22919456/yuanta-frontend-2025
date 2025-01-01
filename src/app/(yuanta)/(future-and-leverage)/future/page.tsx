@@ -83,9 +83,9 @@ const Page = () => {
                   <CardHeader className="py-4">
                     <h2
                       className="main-title-secondary -mt-1 mb-0 text-4xl"
-                      data-stroke="齊聚五燈獎"
+                      data-stroke="期聚五燈獎"
                     >
-                      齊聚五燈獎
+                      期聚五燈獎
                     </h2>
                   </CardHeader>
 

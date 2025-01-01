@@ -70,7 +70,7 @@ const FiveApple = ({ type }: Props) => {
               />
               <div>
                 <h3 className="text-xl leading-tight">
-                  AirPod <br /> Pro2
+                  AirPods <br /> Pro2
                 </h3>
                 <p className="text-sm">(價值7,490元)</p>
               </div>
@@ -134,7 +134,7 @@ const FiveApple = ({ type }: Props) => {
             <Image
               src={envelopeImg}
               alt="200元獎勵金"
-              className="animate-bounce animate-infinite mx-auto mt-5"
+              className="mx-auto mt-5 animate-bounce animate-infinite"
             />
           </Card>
         </BounceRightOnScroll>

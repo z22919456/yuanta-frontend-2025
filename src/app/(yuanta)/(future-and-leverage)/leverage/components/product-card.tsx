@@ -53,7 +53,8 @@ const ProductCard = ({ product, index = 0 }: Props) => {
             </div>
           </div>
           <div className="pl-2 text-left text-lg font-bold md:pt-3 md:text-center md:text-2xl">
-            <p>保證金</p>
+            <p className="text-base md:text-xl">最低門檻所需金額</p>
+            <p className="text-sm md:text-base">(美金)</p>
             <p className="mb-3 text-y-secondary">
               ${product.margin.toLocaleString()}
             </p>

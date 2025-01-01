@@ -17,7 +17,13 @@ const data = [
   {
     title: '出入金手續費',
     domestic: '高',
-    foreign: '元大銀行、國泰世華\n銀行免手續費',
+    foreign: (
+      <>
+        元大銀行、國泰世華
+        <br className="hidden md:block" />
+        銀行免手續費
+      </>
+    ),
     good: true,
   },
   {

@@ -3,21 +3,20 @@ import thumbImg from '../../assets/thumb.png';
 
 const data = [
   {
-    title: '商品特性',
-    domestic: '股票(張)',
-    foreign: '國外期貨(口)',
-    good: true,
-  },
-  {
     title: '春節交易',
     domestic: '台股關盤',
-    foreign: '元大期貨不打烊！',
+    foreign: <p className="text-y-secondary">元大期貨不打烊！</p>,
     good: true,
   },
   {
     title: '合約規格',
     domestic: '1張=1,000股',
-    foreign: '• 槓桿倍數較大\n• 可依照不同合約做交易選擇',
+    foreign: (
+      <p>
+        • 槓桿倍數較大
+        <br />• 可依照不同合約做交易選擇
+      </p>
+    ),
     good: true,
   },
   {
@@ -31,18 +30,19 @@ const data = [
     title: '手續費',
     domestic: '依股票市價%計算',
     foreign: '每口手續費固定',
+    good: true,
   },
   {
     title: '交易稅',
     domestic: '來回千分之三',
     domesticDesc: '(0.003)',
     foreign: '無交易稅',
-    good: true,
   },
   {
     title: '當沖',
     domestic: '需申請資格',
     foreign: '需申請資格 (保證金減半)',
+    good: true,
   },
   {
     title: '交易方式',
@@ -57,7 +57,13 @@ const data = [
   {
     title: '交易特性',
     domestic: '以做多為主，放空有限制',
-    foreign: '交易成本低，具槓桿效果，小資金可操作',
+    foreign: (
+      <p>
+        可多空雙向交易
+        <br />
+        交易成本低，具槓桿效果，小資金可操作
+      </p>
+    ),
   },
   {
     title: '交易限制',

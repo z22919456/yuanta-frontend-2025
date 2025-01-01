@@ -128,7 +128,7 @@ const Page = () => {
             </BounceOnScroll>
           </WallContent>
         </Wall>
-        <Wall title="速懂！差價契約的特性">
+        <Wall title="還沒開戶嗎？">
           <WallContent className="!pt-20 md:!pt-12">
             <div className="md:mb- mx-auto mb-3 grid w-full max-w-2xl grid-cols-1 gap-3 md:mt-5 md:grid-cols-3 lg:grid-cols-3">
               {steps.map((a, i) => (
@@ -170,7 +170,13 @@ const Page = () => {
               size="rounded"
               className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-16 py-5 text-xl font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
             >
-              立即開戶
+              <a
+                href="https://ltm.yuantafutures.com.tw/custom/30"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                立即開戶
+              </a>
             </Button>
           </WallContent>
         </Wall>

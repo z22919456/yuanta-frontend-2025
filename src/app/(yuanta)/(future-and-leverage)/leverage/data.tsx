@@ -57,7 +57,7 @@ export const products: ProductGroup[] = [
       },
       {
         name: 'USD/CHF',
-        code: '美元/瑞郎',
+        code: '美元/瑞朗',
         margin: 33.3,
         desc: '最小交易手數：0.01手',
       },
@@ -111,10 +111,11 @@ export const products: ProductGroup[] = [
       },
     ],
   },
+
   {
-    code: 'usCfdProducts',
-    title: '美股CFD商品',
-    desc: '註：美股CFD作業處理費為成交金額之千分之一；低收5美元。',
+    code: 'globalIndexProducts',
+    title: '國際指數商品',
+    desc: '註：國際指數作業處理費為成交金額之萬分之一。',
     products: [
       {
         name: 'US30',
@@ -155,9 +156,9 @@ export const products: ProductGroup[] = [
     ],
   },
   {
-    code: 'globalIndexProducts',
-    title: '國際指數商品',
-    desc: '註：國際指數作業處理費為成交金額之萬分之一。',
+    code: 'usCfdProducts',
+    title: '美股CFD商品',
+    desc: '註：美股CFD作業處理費為成交金額之千分之一；低收5美元。',
     products: [
       {
         name: 'Apple',
