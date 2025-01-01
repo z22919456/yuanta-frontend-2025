@@ -9,7 +9,7 @@ const Card = ({ children, className }: CardProps) => {
   return (
     <div
       className={cn(
-        'overflow-hidden rounded-xl border-4 border-y-bo bg-y-card p-3 md:col-span-2',
+        'overflow-hidden rounded-2xl border-4 border-y-bo bg-y-card p-3 md:col-span-2',
         className
       )}
     >

@@ -34,7 +34,7 @@ const FiveApple = ({ type }: Props) => {
         <strong className="text-xl text-y-secondary">{data[type].point}</strong>
         獲一次抽獎機會，抽獎機會無上限！
       </p>
-      <div className="mx-auto mt-5 flex max-w-md rounded-md bg-[#FFE0E0] p-3">
+      <div className="mx-auto mt-5 flex max-w-md rounded-lg bg-[#FFE0E0] p-3">
         <div className="hidden w-20 items-center justify-center sm:flex">
           <Image
             src={LightBulbImg}
