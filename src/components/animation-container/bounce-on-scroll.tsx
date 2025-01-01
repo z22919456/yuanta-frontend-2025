@@ -12,7 +12,7 @@ type BounceOnScrollProps = {
 const BounceOnScroll = ({
   children,
   className,
-  delay,
+  delay = 0.2,
 }: BounceOnScrollProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {
@@ -25,7 +25,7 @@ const BounceOnScroll = ({
       initial={{ opacity: 0, y: 70 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 70 }}
       transition={{
-        delay: delay || 0.2,
+        delay: delay,
         type: 'spring',
         stiffness: 100, // 彈簧剛性
         damping: 10, // 阻尼
