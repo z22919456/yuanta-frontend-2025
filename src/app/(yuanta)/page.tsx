@@ -10,7 +10,7 @@ export default function Home() {
       <StarBackground />
       <Banner />
       <section className="container relative z-10">
-        <div className="relative rounded-xl border-2 border-y-wall-bo bg-y-wall p-5 md:border-4">
+        <div className="relative rounded-3xl border-2 border-y-wall-bo bg-y-wall p-5 md:border-4">
           <GiftSwiper />
         </div>
       </section>

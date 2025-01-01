@@ -30,7 +30,7 @@ const Wall = ({ children, title, id, titleClassName }: WallProps) => {
         />
       </picture>
       {/*  */}
-      <div className="relative mb-12 rounded-b-xl border-4 border-y-wall-bo bg-y-wall p-3 pt-3 sm:px-4 sm:pt-6 lg:px-5 lg:pt-7 [&_>div:nth-child(2)]:pt-10 md:[&_>div:nth-child(2)]:pt-12 lg:[&_>div:nth-child(2)]:pt-16">
+      <div className="relative mb-12 rounded-b-[20px] border-4 border-y-wall-bo bg-y-wall p-3 pt-3 sm:px-4 sm:pt-6 lg:px-5 lg:pt-7 [&_>div:nth-child(2)]:pt-10 md:[&_>div:nth-child(2)]:pt-12 lg:[&_>div:nth-child(2)]:pt-16">
         {/* title */}
         {title && (
           <div className="absolute -top-1 left-1/2 z-10 mx-auto -translate-x-1/2 border-4 border-y-bo bg-gradient-band pt-1 text-center md:w-[30rem]">
@@ -67,7 +67,7 @@ export const WallContent = ({ children, className }: WallContentProps) => {
   return (
     <div
       className={cn(
-        'rounded-lg border-2 border-y-bo bg-y-bg p-3 text-center text-lg md:border-4 md:p-8',
+        'rounded-2xl border-2 border-y-bo bg-y-bg p-3 text-center text-lg md:border-4 md:p-8',
         className
       )}
     >

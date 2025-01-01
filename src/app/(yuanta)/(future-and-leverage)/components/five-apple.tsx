@@ -1,6 +1,7 @@
 import airPodsImg from '@/app/(yuanta)/(future-and-leverage)/assets/airpods.png';
 import envelopeImg from '@/app/(yuanta)/(future-and-leverage)/assets/envelope.png';
 import iphoneImg from '@/app/(yuanta)/(future-and-leverage)/assets/iphone.png';
+import LightBulbImg from '@/app/(yuanta)/(future-and-leverage)/assets/light.png';
 import BounceRightOnScroll from '@/components/animation-container/bounce-right-on-scroll';
 import Card from '@/components/card';
 import { WallContent } from '@/components/wall';
@@ -33,13 +34,23 @@ const FiveApple = ({ type }: Props) => {
         <strong className="text-xl text-y-secondary">{data[type].point}</strong>
         獲一次抽獎機會，抽獎機會無上限！
       </p>
-      <p className="mt-3 text-base leading-4">
-        <small>
-          *抽獎次數，依照整個活動期間計算！
-          <br />
-          *第一次中獎者，口數將重新計算！
-        </small>
-      </p>
+      <div className="mx-auto mt-5 flex max-w-md rounded-md bg-[#FFE0E0] p-3">
+        <div className="hidden w-20 items-center justify-center sm:flex">
+          <Image
+            src={LightBulbImg}
+            alt="light"
+            className="object-contain"
+          ></Image>
+        </div>
+        <p className="ml-3 text-left md:text-xl">
+          <small>
+            *抽獎次數，依照整個活動期間計算！
+            <br />
+            *第一次中獎者，口數將重新計算！
+          </small>
+        </p>
+      </div>
+      <p className="mt-3 text-base leading-4"></p>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-7">
         {/* AirPods */}
         <BounceRightOnScroll className="col-span-2">

@@ -23,7 +23,7 @@ const GiftSwiper = ({ controlClassPrefix }: Props) => {
     <>
       <Swiper
         modules={[Navigation]}
-        className="mt-3 w-full !pb-5"
+        className="-my-5 w-full"
         pagination={{ clickable: true }}
         loop
         navigation={{
@@ -46,7 +46,7 @@ const GiftSwiper = ({ controlClassPrefix }: Props) => {
         }}
       >
         {/* 黃金 */}
-        <SwiperSlide>
+        <SwiperSlide className="py-5">
           <Card number={1} primary className="">
             <div className="h-24 w-full sm:w-1/2 md:w-full">
               <h2 className="text-2xl">指定交易</h2>
@@ -70,7 +70,7 @@ const GiftSwiper = ({ controlClassPrefix }: Props) => {
         </SwiperSlide>
 
         {/* 蘋果 */}
-        <SwiperSlide className="p-1">
+        <SwiperSlide className="py-5">
           <Card number={2}>
             <div className="h-24 w-full sm:w-1/2 md:w-full">
               <h2 className="text-2xl">封關前+活動結束</h2>
@@ -92,7 +92,7 @@ const GiftSwiper = ({ controlClassPrefix }: Props) => {
         </SwiperSlide>
 
         {/* 禮券 */}
-        <SwiperSlide>
+        <SwiperSlide className="py-5">
           <Card number={3}>
             <div className="h-24 w-full sm:w-1/2 md:w-full">
               <h2 className="text-2xl leading-none">
