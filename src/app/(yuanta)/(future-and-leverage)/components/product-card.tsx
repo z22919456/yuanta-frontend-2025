@@ -30,7 +30,8 @@ const ProductCard = ({ product, index = 0 }: Props) => {
         <div className="pl-2 text-left text-lg font-bold md:pt-3 md:text-center md:text-2xl">
           <p>保證金</p>
           <p className="mb-3 text-y-secondary">
-            ${product.margin.toLocaleString()}
+            {product.currencyCode}
+            {product.margin.toLocaleString()}
           </p>
           <p className="text-xs md:-mx-3">
             最小跳動點：{value}

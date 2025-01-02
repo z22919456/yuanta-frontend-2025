@@ -4,6 +4,7 @@ import StarBackground from '@/components/start-background';
 import { Button } from '@/components/ui/button';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
+import LoginDialog from '../../components/buttons/login-dialog';
 import FiveApple from '../components/five-apple';
 import stepImgMobile from './assets/stage4-mobil.png';
 import stepImg from './assets/stage4.png';
@@ -29,7 +30,7 @@ const Page = () => {
             <p>
               活動期間，
               <strong className="text-xl font-semibold text-y-secondary">
-                不論新舊戶累積交易達指定口數門檻
+                不論新舊戶累積交易達指定點數門檻
               </strong>
               ，即可獲得指定好禮！ 
             </p>
@@ -49,12 +50,14 @@ const Page = () => {
                       </span>{' '}
                       步
                     </h2>
-                    <Button
-                      size="rounded"
-                      className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
-                    >
-                      點我查詢
-                    </Button>
+                    <LoginDialog>
+                      <Button
+                        size="rounded"
+                        className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+                      >
+                        點我查詢
+                      </Button>
+                    </LoginDialog>
                   </CardHeader>
                   <div className="w-full px-0 py-3 md:px-8">
                     <Image

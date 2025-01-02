@@ -4,7 +4,7 @@ import thumbImg from '../../assets/thumb.png';
 const data = [
   {
     title: '資金安全',
-    domestic: '極低',
+    domestic: '低',
     foreign: '高',
     good: true,
   },

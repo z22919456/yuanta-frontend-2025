@@ -161,6 +161,15 @@ body {
       @apply absolute -left-0 top-1 size-full;
     }
   }
+  .mark {
+    background: linear-gradient(
+      transparent 70%,
+      #ffb75daa 70%,
+      #ffb75daa 90%,
+      transparent 90%
+    );
+    @apply py-1;
+  }
 }
 
 /* Swiper Pagination */

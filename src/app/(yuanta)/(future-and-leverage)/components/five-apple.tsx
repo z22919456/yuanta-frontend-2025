@@ -13,12 +13,14 @@ type Props = {
 
 const data = {
   futures: {
+    word: '口',
     point: '交易10口',
     airPods: 2,
     iphone: 5,
     redEnvelope: '交易1筆',
   },
   leverage: {
+    word: '點',
     point: '交易1點',
     airPods: 2,
     iphone: 3,
@@ -46,12 +48,12 @@ const FiveApple = ({ type }: Props) => {
           <small>
             *抽獎次數，依照整個活動期間計算！
             <br />
-            *第一次中獎者，口數將重新計算！
+            *第一次中獎者，{data[type].word}數將重新計算！
           </small>
         </p>
       </div>
       <p className="mt-3 text-base leading-4"></p>
-      <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-7">
+      <div className="mx-auto grid max-w-3xl grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-4">
         {/* AirPods */}
         <BounceRightOnScroll className="col-span-2">
           <Card className="relative h-full overflow-visible p-3">
@@ -61,7 +63,7 @@ const FiveApple = ({ type }: Props) => {
             <p className="absolute left-1/2 top-full z-10 -mt-2 -translate-x-1/2 text-4xl text-y-bo md:hidden">
               ▼
             </p>
-            <h2 className="mb-2 text-2xl leading-tight">
+            <h2 className="mb-2 text-2xl leading-tight md:text-3xl">
               第一次抽獎
               <br className="hidden md:block" />
               【封關前】
@@ -80,7 +82,7 @@ const FiveApple = ({ type }: Props) => {
                 alt="AirPods Pro 2"
               />
               <div>
-                <h3 className="text-xl leading-tight">
+                <h3 className="text-xl leading-tight md:text-2xl">
                   AirPods <br /> Pro2
                 </h3>
                 <p className="text-sm">(價值7,490元)</p>
@@ -92,7 +94,7 @@ const FiveApple = ({ type }: Props) => {
         {/* Iphone */}
         <BounceRightOnScroll className="col-span-2" delay={0.4}>
           <Card className="col-span-2 h-full p-3">
-            <h2 className="mb-2 text-2xl leading-tight">
+            <h2 className="mb-2 text-2xl leading-tight md:text-3xl">
               第二次抽獎
               <br className="hidden md:block" />
               【活動結束】
@@ -111,7 +113,7 @@ const FiveApple = ({ type }: Props) => {
                 alt="Iphone 16 Pro Max 256G"
               />
               <div>
-                <h3 className="text-xl leading-tight">
+                <h3 className="text-xl leading-tight md:text-2xl">
                   iPhone 16 <br className="block md:hidden" /> Pro{' '}
                   <br className="hidden md:block" />
                   Max <br className="block md:hidden" />
@@ -123,13 +125,10 @@ const FiveApple = ({ type }: Props) => {
           </Card>
         </BounceRightOnScroll>
         {/* em */}
-        <BounceRightOnScroll
-          className="col-span-2 md:col-span-4 lg:col-span-3"
-          delay={0.6}
-        >
+        <BounceRightOnScroll className="col-span-2 md:col-span-4" delay={0.6}>
           <Card className="h-full border-y-tab-active-bo">
             <h1
-              className="main-title-secondary my-2 mb-6 text-4xl"
+              className="main-title-secondary my-2 mb-6 text-5xl"
               data-stroke="新春送紅包"
             >
               新春送紅包

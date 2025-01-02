@@ -6,6 +6,7 @@ import StarBackground from '@/components/start-background';
 import { Button } from '@/components/ui/button';
 import Wall, { WallContent } from '@/components/wall';
 import Image from '@/lib/image';
+import LoginDialog from '../../components/buttons/login-dialog';
 import flowerImg from '../assets/flower.png';
 import FiveApple from '../components/five-apple';
 import InfoTabs from '../components/InfoTabs';
@@ -58,12 +59,14 @@ const Page = () => {
                       </span>{' '}
                       步
                     </h2>
-                    <Button
-                      size="rounded"
-                      className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
-                    >
-                      點我查詢
-                    </Button>
+                    <LoginDialog>
+                      <Button
+                        size="rounded"
+                        className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+                      >
+                        點我查詢
+                      </Button>
+                    </LoginDialog>
                   </CardHeader>
                   <div className="flex w-full items-center justify-center px-0 py-3 md:px-8">
                     <BounceInOnScroll delay={0.5} initialSize={1.5}>
@@ -180,13 +183,14 @@ const Page = () => {
                 controlClassPrefix="p2"
               />
             </div>
+            <p className="text-right text-sm md:-mb-5">資料日期 2024.11.19</p>
           </WallContent>
         </Wall>
 
         {/* 交易外期請先參閱 */}
         <Wall title="交易外期請先參閱">
           <WallContent>
-            <div className="mx-auto w-full max-w-3xl p-0 md:p-4">
+            <div className="[&_strong]:mark mx-auto w-full max-w-3xl p-0 md:p-4">
               <ReadingTabs />
             </div>
           </WallContent>
@@ -194,7 +198,7 @@ const Page = () => {
 
         {/* 期貨選擇權  投資新趨勢*/}
         <Wall title="期貨選擇權 投資新趨勢">
-          <WallContent className="mb-4 !pt-16 md:!pt-10">
+          <WallContent className="[&_strong]:mark mb-4 !pt-16 md:!pt-10">
             <div className="mx-auto w-full max-w-3xl p-0 md:p-4">
               <InfoTabs />
             </div>
