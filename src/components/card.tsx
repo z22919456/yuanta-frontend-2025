@@ -22,7 +22,7 @@ export const CardHeader = ({ children, className }: CardProps) => {
   return (
     <div
       className={cn(
-        '-mx-3 -mt-3 mb-2 border-b-4 border-y-bo bg-y-card-header px-3 py-2 text-2xl text-white',
+        '-mx-3 -mt-3 mb-2 rounded-t-xl border-b-4 border-y-bo bg-y-card-header px-3 py-2 text-2xl text-white',
         className
       )}
     >

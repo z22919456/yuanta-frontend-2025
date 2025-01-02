@@ -83,13 +83,15 @@ const Page = () => {
               {/* 齊聚五燈獎 */}
               <BounceOnScroll delay={0.4} className="md:col-span-2">
                 <Card className="relative h-full overflow-visible">
-                  <div className="absolute -right-8 -top-8 z-10 rotate-12 rounded-2xl border-4 border-y-bo bg-[#FFD400] p-2 shadow-lg md:p-3">
-                    <h2
-                      className="main-title-secondary -mt-1 mb-0 text-2xl text-white md:text-3xl"
-                      data-stroke="加碼"
-                    >
-                      加碼
-                    </h2>
+                  <div className="absolute -right-8 -top-8 z-10 rotate-12">
+                    <div className="md:p-3animate-wiggle animate-wiggle rounded-2xl border-4 border-y-bo bg-[#FFD400] p-2 shadow-lg animate-infinite">
+                      <h2
+                        className="main-title-secondary -mt-1 mb-0 text-2xl text-white md:text-3xl"
+                        data-stroke="加碼"
+                      >
+                        加碼
+                      </h2>
+                    </div>
                   </div>
                   <CardHeader className="relative py-4">
                     <h2
