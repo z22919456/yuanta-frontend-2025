@@ -59,6 +59,14 @@ const Information = () => {
               <strong className="text-lg">新春送紅包</strong>
               <br />
               活動期間，新戶/靜止戶交易1筆，可獲 200元獎勵金！
+              <br />
+              <small>
+                *新開戶資格-2025/01/01-02/28期間，於元大期貨完成開立槓桿交易帳戶，且從未於元大期貨槓桿交易商開立帳戶，首次交易即為符合資格。
+              </small>
+              <br />
+              <small>
+                *靜止戶資格-已於元大期貨完成開立槓桿交易帳戶，且2024/06/01-2024/12/31從未交易活動商品者，交易即符合資格。
+              </small>
             </li>
             <li>
               <strong className="text-lg">步行萬里，滿額送禮</strong>
@@ -67,6 +75,12 @@ const Information = () => {
               (每ID限領乙次)
             </li>
           </ol>
+          <p className="mt-3">
+            <strong className="text-lg">加碼、五燈獎期聚CME</strong>
+          </p>
+          <p className="pl-6">
+            活動期間，不論新舊戶累積交易指定美盤商品類(CME指數類、CME金屬類、CME匯率類、CME債券類、CME能源類)，跨交易３類商品可獲得指定好禮1,000元(美盤需188口以上)；跨交易5商品可獲得指定好禮1,500元(美盤需288口以上)。
+          </p>
         </div>
 
         <h2>槓桿規則</h2>
@@ -114,6 +128,39 @@ const Information = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+
+        <div className="section">
+          <h3>★ 槓桿春節活動說明：</h3>
+
+          <ol className="list-decimal space-y-1 pl-6">
+            <li>
+              <strong className="text-lg">五告蘋安啦</strong>
+              <br />
+              活動期間，交易1點獲一次抽獎機會，抽獎機會無上限。本次活動分2階段抽獎，封關前1/22抽出AirPods
+              Pro 2兩名、活動結束後抽出iPhone 16 Pro Max
+              256G三名。抽獎次數，依照整個活動期間計算，第一次封關前中獎者，點數將重新計算。
+            </li>
+            <li>
+              <strong className="text-lg">新春送紅包</strong>
+              <br />
+              活動期間，新戶/靜止戶交易2點，可獲 200元獎勵金！。
+              <br />
+              <small>
+                *新開戶資格-2025/01/01-02/28期間，於元大期貨完成開立槓桿交易帳戶，且從未於元大期貨槓桿交易商開立帳戶，首次交易即為符合資格。
+              </small>
+              <br />
+              <small>
+                *靜止戶資格-已於元大期貨完成開立槓桿交易帳戶，且2024/06/01-2024/12/31從未交易活動商品者，交易即符合資格。
+              </small>
+            </li>
+            <li>
+              <strong className="text-lg">步行萬里，滿額送禮</strong>
+              <br />
+              活動期間，不論新舊戶累積交易達指定點數門檻，即可獲得指定好禮！
+              (每ID限領乙次)
+            </li>
+          </ol>
         </div>
 
         <div className="section">
