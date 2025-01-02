@@ -48,14 +48,14 @@ const Banner = () => {
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="animate-duration-[20s] absolute -left-10 -top-1 w-[48%] animate-spin"
+              className="absolute -left-10 -top-1 w-[48%] animate-spin animate-duration-[20s]"
             />
             {/* firework */}
             <Image
               placeholder="empty"
               src={firework}
               alt="firework"
-              className="animate-duration-[20s] absolute -right-10 -top-3 w-[52%] animate-spin"
+              className="absolute -right-10 -top-3 w-[52%] animate-spin animate-duration-[20s]"
             />
             {/* title image */}
             <Image
@@ -152,25 +152,27 @@ const Banner = () => {
         </div>
 
         {/* Desktop Only */}
-        <div className="-z-10 hidden md:block">
+        <div className="container absolute inset-0 -z-10 hidden md:block">
           <Image
             placeholder="empty"
             src={coinLeft}
             alt="moneyLeft"
-            className="absolute -left-20 top-10 -z-10 animate-floating lg:left-20"
+            className="absolute -left-72 top-10 -z-10 animate-floating lg:-left-48 xl:-left-14"
           />
           <Image
             placeholder="empty"
             src={coinRight}
             alt="moneyRight"
-            className="absolute -right-20 top-16 -z-10 animate-floating [animation-delay:1.5s] lg:right-20"
+            className="absolute -right-72 top-16 -z-10 animate-floating [animation-delay:1.5s] lg:-right-48 xl:right-10"
           />
+        </div>
+        <div className="absolute inset-0 -z-10 hidden md:block">
           {/* Cloud */}
           <Image
             placeholder="empty"
             src={cloudLeft}
             alt="cloudLeft"
-            className="absolute -left-40 bottom-10 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:0s]"
+            className="absolute -left-44 bottom-10 -z-10 max-w-[35vw] animate-sliding opacity-80 [animation-delay:0s]"
           />
           <Image
             placeholder="empty"
