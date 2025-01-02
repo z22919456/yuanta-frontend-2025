@@ -1,6 +1,7 @@
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import NextTopLoader from 'nextjs-toploader';
+import Information from './components/Information';
 
 const Layout = ({
   children,
@@ -12,6 +13,7 @@ const Layout = ({
       <NextTopLoader />
       <Navbar />
       {children}
+      <Information />
       <Footer />
     </>
   );

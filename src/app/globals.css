@@ -117,6 +117,7 @@ body {
       word-break: keep-all;
       text-stroke: var(--stroke-width) var(--stroke-color);
       -webkit-text-stroke: var(--stroke-width) var(--stroke-color);
+      border-radius: 0.5rem;
       color: transparent;
       @apply absolute -left-0 top-0 size-full;
     }
