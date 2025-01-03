@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useState } from 'react';
-import LoginInForm, { LoginInFormData } from './login-form';
+import { LoginInFormData } from './login-form';
 
 type FormState = 'Login' | 'Register' | 'Completed';
 
@@ -67,9 +67,13 @@ const LoginDialog = ({ children }: Props) => {
           <DialogDescription className="text-yuan-blue-800 space-y-6 text-base">
             {/* h-[calc(100vh-108px)] */}
             <ScrollArea className="max-h-[calc(100vh-108px)] overflow-y-auto">
-              <div className="text-center md:px-4">
-                {state === 'Login' && <LoginInForm onSubmit={handleLogin} />}
+              <div className="space-y-3 rounded-xl border-2 border-y-bo bg-y-card p-2 py-5 text-center">
+                <p className="text-xl font-bold">活動尚未開始</p>
+                <p className="text-xl font-bold">敬請期待</p>
               </div>
+              {/* <div className="text-center md:px-4">
+                {state === 'Login' && <LoginInForm onSubmit={handleLogin} />}
+              </div> */}
             </ScrollArea>
           </DialogDescription>
         </DialogHeader>
