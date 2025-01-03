@@ -1,9 +1,7 @@
-import read1Img from '@/app/(yuanta)/(future-and-leverage)/assets/read1.png';
 import BounceOnScroll from '@/components/animation-container/bounce-on-scroll';
 import BounceRightOnScroll from '@/components/animation-container/bounce-right-on-scroll';
 import { ScrollArea, ScrollBar } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import Image from '@/lib/image';
 import { infoContexts } from '../future/data';
 
 const InfoTabs = () => {
@@ -46,13 +44,6 @@ const InfoTabs = () => {
           <ScrollBar orientation="horizontal" />
         </ScrollArea>
       </BounceRightOnScroll>
-
-      <TabsContent
-        value="research"
-        className="flex items-center justify-center"
-      >
-        <Image src={read1Img} alt="價值連城的研究報告下載" />
-      </TabsContent>
 
       {tabValues.map((tab) => (
         <TabsContent key={tab} value={tab}>
