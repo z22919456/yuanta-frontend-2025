@@ -8,48 +8,48 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { useState } from 'react';
-import { LoginInFormData } from './login-form';
+// import { useState } from 'react';
+// import { LoginInFormData } from './login-form';
 
-type FormState = 'Login' | 'Register' | 'Completed';
+// type FormState = 'Login' | 'Register' | 'Completed';
 
-const API_HOST =
-  process.env.NEXT_PUBLIC_API_HOST || process.env.NEXT_PUBLIC_BASE_PATH || '';
+// const API_HOST =
+//   process.env.NEXT_PUBLIC_API_HOST || process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 type Props = {
   children?: React.ReactNode;
 };
 
 const LoginDialog = ({ children }: Props) => {
-  const [state, setState] = useState<FormState>('Login');
+  // const [state, setState] = useState<FormState>('Login');
 
   const handleInitState = (open: boolean) => {
     if (!open) {
-      setState('Login');
+      // setState('Login');
     }
   };
 
   // 登入API
-  async function handleLogin(values: LoginInFormData) {
-    const data = await fetch(`${API_HOST}/api/login`, {
-      method: 'POST',
-      body: JSON.stringify(values),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-    if (!data.ok) {
-      const errorBody = await data.json();
-      throw new Error(errorBody.message);
-    }
-    const body = await data.json();
+  // async function handleLogin(values: LoginInFormData) {
+  //   const data = await fetch(`${API_HOST}/api/login`, {
+  //     method: 'POST',
+  //     body: JSON.stringify(values),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   });
+  //   if (!data.ok) {
+  //     const errorBody = await data.json();
+  //     throw new Error(errorBody.message);
+  //   }
+  //   const body = await data.json();
 
-    if (body.success == false) {
-      throw new Error(body.message);
-    }
-    setState('Register');
-    return;
-  }
+  //   if (body.success == false) {
+  //     throw new Error(body.message);
+  //   }
+  //   setState('Register');
+  //   return;
+  // }
 
   return (
     <Dialog onOpenChange={handleInitState}>
