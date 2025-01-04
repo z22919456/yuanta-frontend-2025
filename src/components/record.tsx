@@ -247,7 +247,7 @@ type TitleProps = {
 
 const Title = ({ title, word, rightWord }: TitleProps) => (
   <div className="absolute left-1/2 top-0 z-10 mx-auto w-[calc(100%-5rem)] -translate-x-1/2 -translate-y-[calc(50%+1px)] border-4 border-y-bo bg-gradient-band pt-1 text-center md:-translate-y-[calc(50%+2px)]">
-    <div className="absolute -left-6 top-1 flex aspect-square h-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
+    <div className="absolute -left-6 top-1 flex aspect-square h-11 w-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
       <p
         className="main-title -rotate-45 font-title text-2xl leading-none text-white [--stroke-color:#472600] [--stroke-width:1px]"
         data-stroke={word}
@@ -264,7 +264,7 @@ const Title = ({ title, word, rightWord }: TitleProps) => (
       </h1>
     </div>
     <div className="w-full border-t-4 border-y-bo bg-y-bg pt-1"></div>
-    <div className="absolute -right-6 top-1 flex aspect-square h-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
+    <div className="absolute -right-6 top-1 flex aspect-square h-11 w-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
       <p
         className="main-title -rotate-45 font-title text-2xl leading-none text-white [--stroke-color:#472600] [--stroke-width:1px]"
         data-stroke={rightWord || word}
