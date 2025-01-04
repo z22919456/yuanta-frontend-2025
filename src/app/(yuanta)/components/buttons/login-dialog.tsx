@@ -1,4 +1,5 @@
 'use client';
+import Record from '@/components/record';
 import {
   Dialog,
   DialogContent,
@@ -8,75 +9,91 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { ScrollArea } from '@/components/ui/scroll-area';
-// import { useState } from 'react';
-// import { LoginInFormData } from './login-form';
+import { useState } from 'react';
+import LoginInForm, { LoginInFormData } from './login-form';
 
-// type FormState = 'Login' | 'Register' | 'Completed';
-
-// const API_HOST =
-//   process.env.NEXT_PUBLIC_API_HOST || process.env.NEXT_PUBLIC_BASE_PATH || '';
+const API_HOST =
+  process.env.NEXT_PUBLIC_API_HOST || process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 type Props = {
   children?: React.ReactNode;
+  type: 'leverage' | 'futures';
 };
 
-const LoginDialog = ({ children }: Props) => {
-  // const [state, setState] = useState<FormState>('Login');
+type TData = {
+  tradeType: 0 | 1;
+  name: string;
+  accumulatedTransactionPoints: number;
+  lotteryDrawCount: number;
+  isRedEnvelopeEligible: boolean;
+  transactionLevel: number;
+  crossCMETradeTypes: number;
+  cmeContractCount: number;
+};
 
-  const handleInitState = (open: boolean) => {
-    if (!open) {
-      // setState('Login');
-    }
-  };
+const LoginDialog = ({ children, type }: Props) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [data, setData] = useState<TData | undefined>(undefined);
 
   // 登入API
-  // async function handleLogin(values: LoginInFormData) {
-  //   const data = await fetch(`${API_HOST}/api/login`, {
-  //     method: 'POST',
-  //     body: JSON.stringify(values),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //   });
-  //   if (!data.ok) {
-  //     const errorBody = await data.json();
-  //     throw new Error(errorBody.message);
-  //   }
-  //   const body = await data.json();
+  async function handleLogin(values: LoginInFormData) {
+    const data = await fetch(`${API_HOST}/api/login/${type}`, {
+      method: 'POST',
+      body: JSON.stringify(values),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    if (!data.ok) {
+      const errorBody = await data.json();
 
-  //   if (body.success == false) {
-  //     throw new Error(body.message);
-  //   }
-  //   setState('Register');
-  //   return;
-  // }
+      throw new Error(errorBody.message);
+    }
+    const body = await data.json();
+
+    if (body.success == false) {
+      throw new Error(body.message);
+    }
+
+    setData(body);
+    return;
+  }
 
   return (
-    <Dialog onOpenChange={handleInitState}>
+    <Dialog onOpenChange={setIsOpen} open={isOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="rounded-lg border-4 border-y-tab-bo bg-y-bg">
         <DialogHeader>
-          <DialogTitle className="mb-5 text-center text-3xl !font-normal text-y-tab-t">
-            <h1
-              className="shadow-number text-3xl [--stroke-width:5px]"
-              data-stroke="帳號登入"
-            >
-              帳號登入
-            </h1>
+          <DialogTitle
+            className="mx-auto mb-5 w-fit text-center text-3xl !font-normal text-y-tab-t"
+            asChild
+          >
+            <div>
+              <h1
+                className="shadow-number text-3xl [--stroke-width:5px]"
+                data-stroke="帳號登入"
+              >
+                帳號登入
+              </h1>
+            </div>
           </DialogTitle>
           <DialogDescription className="text-yuan-blue-800 space-y-6 text-base">
             {/* h-[calc(100vh-108px)] */}
             <ScrollArea className="max-h-[calc(100vh-108px)] overflow-y-auto">
+              {/* 
               <div className="space-y-3 rounded-xl border-2 border-y-bo bg-y-card p-2 py-5 text-center">
                 <p className="text-xl font-bold">活動尚未開始</p>
                 <p className="text-xl font-bold">敬請期待</p>
-              </div>
-              {/* <div className="text-center md:px-4">
-                {state === 'Login' && <LoginInForm onSubmit={handleLogin} />}
               </div> */}
+              <div className="text-center md:px-4">
+                <LoginInForm onSubmit={handleLogin} />
+              </div>
             </ScrollArea>
           </DialogDescription>
         </DialogHeader>
+        {data && (
+          <Record type={type} onClose={() => setIsOpen(false)} data={data} />
+        )}
       </DialogContent>
     </Dialog>
   );

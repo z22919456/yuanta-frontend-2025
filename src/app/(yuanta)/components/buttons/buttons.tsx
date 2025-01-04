@@ -6,7 +6,7 @@ import LoginDialog from './login-dialog';
 
 export const LeverageSideButton = () => {
   return (
-    <LoginDialog>
+    <LoginDialog type="leverage">
       <SideButton>槓桿成績</SideButton>
     </LoginDialog>
   );
@@ -14,7 +14,7 @@ export const LeverageSideButton = () => {
 
 export const FutureSideButton = () => {
   return (
-    <LoginDialog>
+    <LoginDialog type="futures">
       <SideButton>外期成績</SideButton>
     </LoginDialog>
   );
@@ -38,7 +38,7 @@ export const OpenAccountSideButton = () => {
 
 export const FutureBottomButton = () => {
   return (
-    <LoginDialog>
+    <LoginDialog type="futures">
       <Button
         size="lg"
         className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
@@ -51,7 +51,7 @@ export const FutureBottomButton = () => {
 
 export const LeverageBottomButton = () => {
   return (
-    <LoginDialog>
+    <LoginDialog type="leverage">
       <Button
         size="lg"
         className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
