@@ -250,7 +250,7 @@ const Title = ({ title, word, rightWord }: TitleProps) => (
     <div className="absolute -left-6 top-1 flex aspect-square h-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
       <p
         className="main-title -rotate-45 font-title text-2xl leading-none text-white [--stroke-color:#472600] [--stroke-width:1px]"
-        data-stroke="送"
+        data-stroke={word}
       >
         {word}
       </p>
@@ -267,7 +267,7 @@ const Title = ({ title, word, rightWord }: TitleProps) => (
     <div className="absolute -right-6 top-1 flex aspect-square h-11 rotate-45 items-center justify-center border-4 border-y-bo bg-[#D73A3A] text-white">
       <p
         className="main-title -rotate-45 font-title text-2xl leading-none text-white [--stroke-color:#472600] [--stroke-width:1px]"
-        data-stroke="送"
+        data-stroke={rightWord || word}
       >
         {rightWord || word}
       </p>
