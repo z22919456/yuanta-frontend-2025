@@ -50,7 +50,7 @@ const Page = () => {
                       </span>{' '}
                       步
                     </h2>
-                    <LoginDialog>
+                    <LoginDialog type="leverage">
                       <Button
                         size="rounded"
                         className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-5 py-4 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
