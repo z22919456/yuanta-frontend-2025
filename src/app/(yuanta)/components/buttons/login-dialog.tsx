@@ -59,6 +59,24 @@ const LoginDialog = ({ children, type }: Props) => {
     return;
   }
 
+  function handleFakeLogin() {
+    setData({
+      tradeType: 0,
+      name: '王小明',
+      accumulatedTransactionPoints: 0,
+      lotteryDrawCount: 0,
+      isRedEnvelopeEligible: false,
+      transactionLevel: 0,
+      crossCMETradeTypes: 0,
+      cmeContractCount: 0,
+    });
+  }
+
+  const handleReset = () => {
+    setData(undefined);
+    setIsOpen(false);
+  };
+
   return (
     <Dialog onOpenChange={setIsOpen} open={isOpen}>
       <DialogTrigger asChild>{children}</DialogTrigger>
@@ -75,6 +93,12 @@ const LoginDialog = ({ children, type }: Props) => {
               >
                 帳號登入
               </h1>
+              <button
+                className="rounded-md border border-black px-3 py-2 text-base"
+                onClick={handleFakeLogin}
+              >
+                登入測試
+              </button>
             </div>
           </DialogTitle>
           <DialogDescription className="text-yuan-blue-800 space-y-6 text-base">
@@ -91,9 +115,7 @@ const LoginDialog = ({ children, type }: Props) => {
             </ScrollArea>
           </DialogDescription>
         </DialogHeader>
-        {data && (
-          <Record type={type} onClose={() => setIsOpen(false)} data={data} />
-        )}
+        {data && <Record type={type} onClose={handleReset} data={data} />}
       </DialogContent>
     </Dialog>
   );

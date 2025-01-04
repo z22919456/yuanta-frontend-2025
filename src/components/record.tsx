@@ -28,7 +28,7 @@ type Props = {
 };
 
 const levelPrice: Record<TType, Record<number, number>> = {
-  leverage: {
+  futures: {
     1: 2000,
     2: 6000,
     3: 15_000,
@@ -37,7 +37,7 @@ const levelPrice: Record<TType, Record<number, number>> = {
     6: 40_000,
     7: 50_000,
   },
-  futures: {
+  leverage: {
     1: 1_000,
     2: 10_000,
     3: 35_000,
@@ -47,18 +47,18 @@ const levelPrice: Record<TType, Record<number, number>> = {
 
 const isGold = (type: TType, value: number) => {
   if (
-    (type === 'leverage' && value === 7) ||
-    (type === 'futures' && value === 4)
+    (type === 'futures' && value === 7) ||
+    (type === 'leverage' && value === 4)
   ) {
     return true;
   }
 };
 
 const isAdd = (countType: number, count: number) => {
-  if (countType === 3 && count >= 188) {
-    return 1000;
-  } else if (countType === 5 && count >= 288) {
+  if (countType === 5 && count >= 288) {
     return 1500;
+  } else if (countType >= 3 && count >= 188) {
+    return 1000;
   }
   return 0;
 };
@@ -171,24 +171,30 @@ const Record = ({ type, data, onClose }: Props) => {
                   </span>
                   {unit}
                   <br />
-                  交易獎勵達到
-                  <span className="font-bold text-y-secondary">
-                    第{transactionLevel}獎
-                  </span>
-                  <br />
-                  目前可獲得 <br className="block sm:hidden" />
-                  <span className="text-xl font-bold text-[#EE7F00]">
-                    【{levelPrice[type][transactionLevel].toLocaleString()}
-                    元享樂券】
-                  </span>{' '}
-                  {isGold(type, transactionLevel) && (
+                  {transactionLevel > 0 ? (
                     <>
-                      <br />
-                      以及
-                      <span className="text-xl font-bold text-[#EE7F00]">
-                        【黃金牌】
+                      交易獎勵達到
+                      <span className="font-bold text-y-secondary">
+                        第{transactionLevel}獎
                       </span>
+                      <br />
+                      目前可獲得 <br className="block sm:hidden" />
+                      <span className="text-xl font-bold text-[#EE7F00]">
+                        【{levelPrice[type][transactionLevel].toLocaleString()}
+                        元享樂券】
+                      </span>{' '}
+                      {isGold(type, transactionLevel) && (
+                        <>
+                          <br />
+                          以及
+                          <span className="text-xl font-bold text-[#EE7F00]">
+                            【黃金牌】
+                          </span>
+                        </>
+                      )}
                     </>
+                  ) : (
+                    <>交易獎勵尚未達標，請再接再厲</>
                   )}
                 </p>
               </div>

@@ -142,7 +142,7 @@ const LoginInForm = ({ onSubmit }: Props) => {
               )}
             </Button>
             {form.formState.errors.root && (
-              <p className="!mt-0 text-red-600">
+              <p className="mt-2 text-red-600">
                 {form.formState.errors.root.message}
               </p>
             )}
