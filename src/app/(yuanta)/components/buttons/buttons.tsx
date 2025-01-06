@@ -28,7 +28,24 @@ export const SeminarSideButton = () => {
   );
 };
 
-export const OpenAccountSideButton = () => {
+export const OpenAccountSideButton = ({
+  type,
+}: {
+  type: 'leverage' | 'future';
+}) => {
+  if (type === 'leverage') {
+    return (
+      <SideButton>
+        <a
+          href="https://ltm.yuantafutures.com.tw/custom/30"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          我要開戶
+        </a>
+      </SideButton>
+    );
+  }
   return (
     <CreateAccountDialog>
       <SideButton>我要開戶</SideButton>
@@ -75,7 +92,27 @@ export const SeminarBottomButton = () => {
   );
 };
 
-export const OpenAccountBottomButton = () => {
+export const OpenAccountBottomButton = ({
+  type,
+}: {
+  type: 'leverage' | 'future';
+}) => {
+  if (type === 'leverage') {
+    return (
+      <Button
+        size="lg"
+        className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+      >
+        <a
+          href="https://ltm.yuantafutures.com.tw/custom/30"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          我要開戶
+        </a>
+      </Button>
+    );
+  }
   return (
     <CreateAccountDialog>
       <Button

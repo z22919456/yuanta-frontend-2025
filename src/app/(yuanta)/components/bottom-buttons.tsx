@@ -29,7 +29,7 @@ const BottomButtons = ({ page }: Props) => {
         </div>
         <div className="bg-blur-xl w-screen bg-black/40 px-2 py-3 pt-2 backdrop-blur">
           <div className="grid w-full grid-cols-3 gap-2">
-            <OpenAccountBottomButton />
+            <OpenAccountBottomButton type={page} />
             {page === 'leverage' ? (
               <LeverageBottomButton />
             ) : (
