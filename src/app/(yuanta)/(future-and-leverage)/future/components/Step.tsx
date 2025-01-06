@@ -193,7 +193,7 @@ const Info = ({ currentStep }: { currentStep: number }) => {
                     看漲→
                     <span className="text-[#42AC38]">買進買權(buy Call)</span>
                     <br />
-                    類似「買彩券」，擁有中頭彩的希望
+                    最大獲利無限大，最大風險為損失權利金
                   </p>,
                   <p key="2">
                     看跌→
@@ -212,7 +212,7 @@ const Info = ({ currentStep }: { currentStep: number }) => {
                     看不漲→
                     <span className="text-[#42AC38]">賣出買權(sell Call)</span>
                     <br />
-                    類似「台灣彩券」，當莊家收買方的賭金
+                    最大獲利就是收到的權利金，最大風險則為無限
                   </p>,
                   <p key="2">
                     看不跌→
