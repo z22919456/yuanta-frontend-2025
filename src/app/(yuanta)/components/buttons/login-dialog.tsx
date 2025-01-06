@@ -59,18 +59,18 @@ const LoginDialog = ({ children, type }: Props) => {
     return;
   }
 
-  function handleFakeLogin() {
-    setData({
-      tradeType: 0,
-      name: '王小明',
-      accumulatedTransactionPoints: 0,
-      lotteryDrawCount: 0,
-      isRedEnvelopeEligible: false,
-      transactionLevel: 0,
-      crossCMETradeTypes: 0,
-      cmeContractCount: 0,
-    });
-  }
+  // function handleFakeLogin() {
+  //   setData({
+  //     tradeType: 0,
+  //     name: '王小明',
+  //     accumulatedTransactionPoints: 0,
+  //     lotteryDrawCount: 0,
+  //     isRedEnvelopeEligible: false,
+  //     transactionLevel: 0,
+  //     crossCMETradeTypes: 0,
+  //     cmeContractCount: 0,
+  //   });
+  // }
 
   const handleReset = () => {
     setData(undefined);
@@ -93,12 +93,12 @@ const LoginDialog = ({ children, type }: Props) => {
               >
                 帳號登入
               </h1>
-              <button
+              {/* <button
                 className="rounded-md border border-black px-3 py-2 text-base"
                 onClick={handleFakeLogin}
               >
                 登入測試
-              </button>
+              </button> */}
             </div>
           </DialogTitle>
           <DialogDescription className="text-yuan-blue-800 space-y-6 text-base">
