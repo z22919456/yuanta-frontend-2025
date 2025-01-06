@@ -110,7 +110,7 @@ const LoginDialog = ({ children, type }: Props) => {
                 <p className="text-xl font-bold">敬請期待</p>
               </div> */}
               <div className="text-center md:px-4">
-                <LoginInForm onSubmit={handleLogin} />
+                <LoginInForm onSubmit={handleLogin} type={type} />
               </div>
             </ScrollArea>
           </DialogDescription>
