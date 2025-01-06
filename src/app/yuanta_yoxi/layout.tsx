@@ -1,4 +1,6 @@
+import Footer from '@/components/footer';
 import Image from '@/lib/image';
+import { ArrowBigDown } from 'lucide-react';
 import Background from '../(yuanta)/components/background';
 import EventBanner from '../(yuanta)/components/banner';
 import logo from './assets/yoxi_yuanta.png';
@@ -29,11 +31,34 @@ const YoxiLayout = ({
             </div>
           </section>
         </div>
-        <section className="relative z-10 overflow-hidden">
-          <Background />
-          <EventBanner />
+        <section className="relative z-10 -mb-1">
+          <div className="absolute left-1/2 flex w-fit -translate-x-1/2 -translate-y-1/2 items-center justify-center whitespace-nowrap rounded-full border-4 border-y-bo bg-gradient-band px-0 py-1 shadow-xl">
+            <ArrowBigDown
+              color="#472600"
+              strokeWidth={2}
+              fill="yellow"
+              className="ml-3 mr-2 size-10 rounded-xl md:size-12"
+            />
+            <h1
+              data-stroke="點選熱門活動"
+              className="main-title font-title text-2xl leading-tight md:text-3xl lg:text-4xl lg:leading-normal"
+            >
+              點選熱門活動
+            </h1>
+            <ArrowBigDown
+              color="#472600"
+              strokeWidth={2}
+              fill="yellow"
+              className="ml-2 mr-3 size-10 rounded-xl md:size-12"
+            />
+          </div>
+          <div className="overflow-hidden pt-6">
+            <Background />
+            <EventBanner />
+          </div>
         </section>
       </main>
+      <Footer />
     </LoadingProvider>
   );
 };
