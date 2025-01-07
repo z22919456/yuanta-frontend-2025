@@ -10,7 +10,7 @@ const ReadingTabs = () => {
   return (
     <Tabs defaultValue="CFD" className="w-full">
       <ScrollArea className="-mx-3 md:mx-0">
-        <div className="w-[487px] md:w-auto">
+        <div className="mx-auto w-[487px] sm:w-auto">
           <BounceRightOnScroll delay={0.4}>
             <TabsList className="mb-4 grid w-full grid-cols-3 px-3 md:px-0">
               <TabsTrigger value={tabValues[0]}>
@@ -36,7 +36,11 @@ const ReadingTabs = () => {
         >
           <div className="col-span-1">
             <BounceRightOnScroll>
-              <Image src={readContexts[tab].image} alt="小資族首選" />
+              <Image
+                src={readContexts[tab].image}
+                alt="小資族首選"
+                className="mx-auto"
+              />
             </BounceRightOnScroll>
           </div>
           <div className="col-span-1 whitespace-pre-wrap text-left">
