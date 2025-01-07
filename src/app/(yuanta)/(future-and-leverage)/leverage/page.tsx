@@ -43,7 +43,7 @@ const Page = () => {
                 <Card className="mx-auto w-full max-w-3xl">
                   <CardHeader className="items-be flex justify-center gap-2 px-1 py-3">
                     <h2 className="font-default text-xl">
-                      我己經達到地{' '}
+                      我己經達到第{' '}
                       <span className="text-2xl font-extrabold text-y-t-light">
                         {' '}
                         ???{' '}
@@ -62,12 +62,12 @@ const Page = () => {
                   <div className="w-full px-0 py-3 md:px-8">
                     <Image
                       src={stepImgMobile}
-                      alt="我達到地幾步"
+                      alt="我達到第幾步"
                       className="mx-auto block md:hidden"
                     />
                     <Image
                       src={stepImg}
-                      alt="我達到地幾步"
+                      alt="我達到第幾步"
                       className="mx-auto -mb-6 hidden md:block"
                     />
                   </div>
@@ -77,7 +77,7 @@ const Page = () => {
           </WallContent>
         </Wall>
         {/* 大家都在做什麼價差交易？ */}
-        <Wall title="大家都在做什麼價差交易？">
+        <Wall title="大家都在做什麼槓桿交易？">
           <WallContent className="relative mb-4">
             <ProductsSlider />
           </WallContent>
@@ -174,7 +174,7 @@ const Page = () => {
               className="ml-2 border-4 border-y-tab-bo bg-y-tab-active-bg px-16 py-5 text-xl font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
             >
               <a
-                href="https://ltm.yuantafutures.com.tw/custom/30"
+                href="https://ltm.yuantafutures.com.tw/member/openaccount"
                 target="_blank"
                 rel="noreferrer noopener"
               >

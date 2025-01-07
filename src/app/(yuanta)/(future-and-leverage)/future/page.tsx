@@ -52,7 +52,7 @@ const Page = () => {
                 <Card className="h-full">
                   <CardHeader className="items-be flex justify-center gap-2 px-1 py-3">
                     <h2 className="font-default text-xl">
-                      我己經達到地{' '}
+                      我己經達到第{' '}
                       <span className="text-2xl font-extrabold text-y-t-light">
                         {' '}
                         ???{' '}
@@ -72,7 +72,7 @@ const Page = () => {
                     <BounceInOnScroll delay={0.5} initialSize={1.5}>
                       <Image
                         src={stage7}
-                        alt="我達到地幾步"
+                        alt="我達到第幾步"
                         className="mx-auto sm:pt-5 lg:pt-0"
                       />
                     </BounceInOnScroll>
