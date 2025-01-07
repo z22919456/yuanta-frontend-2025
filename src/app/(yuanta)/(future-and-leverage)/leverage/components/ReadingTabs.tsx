@@ -14,7 +14,7 @@ const ReadingTabs = () => {
           <BounceRightOnScroll delay={0.4}>
             <TabsList className="mb-4 grid w-full grid-cols-3 px-3 md:px-0">
               <TabsTrigger value={tabValues[0]}>
-                每果CFD 升溫的新趨勢
+                美股 CFD 升溫的新趨勢
               </TabsTrigger>
               <TabsTrigger value={tabValues[1]}>
                 注意到了嗎？ 日本的崛起！

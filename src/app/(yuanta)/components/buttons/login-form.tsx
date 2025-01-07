@@ -165,7 +165,7 @@ const LoginInForm = ({ onSubmit, type }: Props) => {
               非元大期貨槓桿交易商客戶？立即
               <a
                 className="text-blue-500 underline"
-                href="https://ltm.yuantafutures.com.tw/custom/30"
+                href="https://ltm.yuantafutures.com.tw/member/openaccount"
               >
                 <strong className="">槓桿交易線上開戶</strong>
               </a>

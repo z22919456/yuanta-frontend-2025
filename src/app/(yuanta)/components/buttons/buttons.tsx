@@ -37,7 +37,7 @@ export const OpenAccountSideButton = ({
     return (
       <SideButton>
         <a
-          href="https://ltm.yuantafutures.com.tw/custom/30"
+          href="https://ltm.yuantafutures.com.tw/member/openaccount"
           target="_blank"
           rel="noreferrer noopener"
         >
@@ -104,7 +104,7 @@ export const OpenAccountBottomButton = ({
         className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
       >
         <a
-          href="https://ltm.yuantafutures.com.tw/custom/30"
+          href="https://ltm.yuantafutures.com.tw/member/openaccount"
           target="_blank"
           rel="noreferrer noopener"
         >
