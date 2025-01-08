@@ -17,6 +17,7 @@ import ReadingTabs from '../components/ReadingTabs';
 import WhichOne from '../components/WhichOne';
 import Banner from './components/banner';
 import ComparisonTable from './components/comparison-table';
+import FiveTypeDialog from './components/five-type-dialog';
 import Start from './components/star.svg';
 import Step from './components/Step';
 import { products } from './data';
@@ -102,13 +103,15 @@ const Page = () => {
                     </h2>
                   </CardHeader>
 
-                  <div className="flex h-full flex-col justify-around p-5">
+                  <div className="relative flex h-full flex-col justify-around p-5">
+                    <FiveTypeDialog />
+
                     {/* 五種交易類型 */}
                     <BounceInOnScroll delay={0.5} initialSize={1.5}>
                       <Image
                         src={flowerImg}
                         alt="金屬｜能源｜匯率｜指數｜債券"
-                        className="mx-auto w-4/5"
+                        className="mx-auto mt-5 w-4/5"
                       />
                     </BounceInOnScroll>
 

@@ -175,7 +175,7 @@ const Record = ({ type, data, onClose }: Props) => {
                     <>
                       交易獎勵達到
                       <span className="font-bold text-y-secondary">
-                        第{transactionLevel}獎
+                        第{transactionLevel}步
                       </span>
                       <br />
                       目前可獲得 <br className="block sm:hidden" />
