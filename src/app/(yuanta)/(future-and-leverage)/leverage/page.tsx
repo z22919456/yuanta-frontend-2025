@@ -80,6 +80,18 @@ const Page = () => {
         <Wall title="大家都在做什麼槓桿交易？">
           <WallContent className="relative mb-4">
             <ProductsSlider />
+            <Button
+              size="rounded"
+              className="right-2 top-8 my-3 ml-2 border-4 border-y-bo bg-y-tab-active-bg px-3 py-2 text-xl font-semibold hover:bg-y-tab-bg hover:text-y-tab-t md:absolute lg:right-8 lg:px-7 lg:py-6 xl:top-2"
+            >
+              <a
+                href="https://ltm.yuantafutures.com.tw/#marginCalculator"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                即時保證金查詢
+              </a>
+            </Button>
           </WallContent>
         </Wall>
         {/* 交易外期請先參閱 */}

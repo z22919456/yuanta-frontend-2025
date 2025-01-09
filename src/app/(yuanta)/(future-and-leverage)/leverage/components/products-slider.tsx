@@ -8,7 +8,7 @@ import ProductCard from './product-card';
 
 const ProductsSlider = async () => {
   return (
-    <Tabs defaultValue={products[0].code} className="w-full">
+    <Tabs defaultValue={products[0].code} className="w-full md:mt-12 xl:mt-6">
       <ScrollArea className="-mx-3 md:mx-0">
         <div className="w-[720px] md:w-auto">
           <BounceRightOnScroll>

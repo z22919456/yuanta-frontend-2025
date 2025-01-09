@@ -1,6 +1,5 @@
 import SideButton from '@/app/(yuanta)/components/buttons/side-button';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 import CreateAccountDialog from './create-account-dialog';
 import LoginDialog from './login-dialog';
 
@@ -20,11 +19,27 @@ export const FutureSideButton = () => {
   );
 };
 
-export const SeminarSideButton = () => {
+export const FuturesSearchSideButton = () => {
   return (
-    <Link href="/seminar">
-      <SideButton>講座報名</SideButton>
-    </Link>
+    <a
+      href="https://www.yuantafutures.com.tw/margin_02"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <SideButton>查詢服務</SideButton>
+    </a>
+  );
+};
+
+export const LeverageSearchSideButton = () => {
+  return (
+    <a
+      href="https://ltm.yuantafutures.com.tw/#marginCalculator"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <SideButton>查詢服務</SideButton>
+    </a>
   );
 };
 
@@ -79,16 +94,37 @@ export const LeverageBottomButton = () => {
   );
 };
 
-export const SeminarBottomButton = () => {
+export const FutureSearchBottomButton = () => {
   return (
-    <Link href="/seminar">
+    <a
+      href="https://www.yuantafutures.com.tw/margin_02"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
       <Button
         size="lg"
         className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
       >
-        講座報名
+        保證金查詢
       </Button>
-    </Link>
+    </a>
+  );
+};
+
+export const LeverageSearchBottomButton = () => {
+  return (
+    <a
+      href="https://ltm.yuantafutures.com.tw/#marginCalculator"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      <Button
+        size="lg"
+        className="h-auto w-full border-2 border-y-tab-bo bg-y-tab-active-bg py-1 text-lg font-semibold hover:bg-y-tab-bg hover:text-y-tab-t"
+      >
+        保證金查詢
+      </Button>
+    </a>
   );
 };
 

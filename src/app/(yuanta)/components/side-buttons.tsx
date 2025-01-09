@@ -1,8 +1,9 @@
 import {
   FutureSideButton,
+  FuturesSearchSideButton,
+  LeverageSearchSideButton,
   LeverageSideButton,
   OpenAccountSideButton,
-  SeminarSideButton,
 } from './buttons/buttons';
 import ToTop from './to-top';
 
@@ -15,7 +16,11 @@ const SideButtons = ({ page }: Props) => {
     <div className="fixed right-5 top-1/4 z-[100] hidden flex-col space-y-5 opacity-70 hover:opacity-100 md:right-5 md:flex lg:right-10 xl:right-20">
       <OpenAccountSideButton type={page} />
       {page === 'leverage' ? <LeverageSideButton /> : <FutureSideButton />}
-      <SeminarSideButton />
+      {page === 'leverage' ? (
+        <LeverageSearchSideButton />
+      ) : (
+        <FuturesSearchSideButton />
+      )}
       <ToTop />
     </div>
   );

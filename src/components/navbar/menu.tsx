@@ -78,7 +78,12 @@ const Menu = () => {
                 onClick={() => setOpen((o) => !o)}
               >
                 <OnlyTwo />
-                <Link href="/seminar">講座報名</Link>
+                <Link
+                  href="/seminar"
+                  className="pointer-events-none text-gray-400"
+                >
+                  講座報名
+                </Link>
               </li>
             </ul>
             <ul className="flex justify-center space-x-6 text-blue-900">

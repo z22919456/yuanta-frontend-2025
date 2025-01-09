@@ -187,7 +187,7 @@ const Page = () => {
         {/* 大家都在交易什麼？ */}
         <Wall title="大家都在交易什麼？">
           <WallContent className="relative mb-4">
-            <div className="hidden md:block">
+            <div className="mt-12 hidden md:block xl:mt-8">
               <ProductSwiper products={products} controlClassPrefix="p1" />
             </div>
             <div className="-mx-3 block md:hidden">
@@ -196,7 +196,23 @@ const Page = () => {
                 controlClassPrefix="p2"
               />
             </div>
-            <p className="text-right text-sm md:-mb-5">資料日期 2024.11.19</p>
+
+            <Button
+              size="rounded"
+              className="right-2 top-8 my-3 ml-2 border-4 border-y-bo bg-y-tab-active-bg px-3 py-2 text-xl font-semibold hover:bg-y-tab-bg hover:text-y-tab-t md:absolute lg:right-8 lg:px-7 lg:py-6 xl:top-3"
+            >
+              <a
+                href="https://www.yuantafutures.com.tw/margin_02"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                即時保證金查詢
+              </a>
+            </Button>
+            <p className="text-left text-sm md:-mb-5">*資料日期 2025.1.9</p>
+            <p className="text-left text-sm md:-mb-5">
+              *實際保證金金額 請以交易所公告為準
+            </p>
           </WallContent>
         </Wall>
 

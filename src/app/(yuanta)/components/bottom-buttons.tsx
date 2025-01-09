@@ -4,9 +4,10 @@ import { useWindowScroll } from '@uidotdev/usehooks';
 import { motion } from 'framer-motion';
 import {
   FutureBottomButton,
+  FutureSearchBottomButton,
   LeverageBottomButton,
+  LeverageSearchBottomButton,
   OpenAccountBottomButton,
-  SeminarBottomButton,
 } from './buttons/buttons';
 import ToTop from './to-top';
 
@@ -31,11 +32,16 @@ const BottomButtons = ({ page }: Props) => {
           <div className="grid w-full grid-cols-3 gap-2">
             <OpenAccountBottomButton type={page} />
             {page === 'leverage' ? (
-              <LeverageBottomButton />
+              <>
+                <LeverageBottomButton />
+                <LeverageSearchBottomButton />
+              </>
             ) : (
-              <FutureBottomButton />
+              <>
+                <FutureBottomButton />
+                <FutureSearchBottomButton />
+              </>
             )}
-            <SeminarBottomButton />
           </div>
         </div>
       </motion.div>

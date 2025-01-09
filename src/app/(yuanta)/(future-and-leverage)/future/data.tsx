@@ -151,7 +151,7 @@ export const products = [
     name: '大阪小日經',
     code: 'JNM',
     currencyCode: '¥',
-    margin: 231649,
+    margin: 219691,
     tick: {
       value: 5,
       valueUnit: '點',
@@ -163,7 +163,7 @@ export const products = [
     name: '大阪微日經',
     code: 'JNU',
     currencyCode: '¥',
-    margin: 23165,
+    margin: 21970,
     tick: {
       value: 5,
       valueUnit: '點',
@@ -175,7 +175,7 @@ export const products = [
     name: '微DAX指數',
     code: 'FDXS',
     currencyCode: '€',
-    margin: 1420,
+    margin: 1495,
     tick: {
       value: 1,
       valueUnit: '點',
