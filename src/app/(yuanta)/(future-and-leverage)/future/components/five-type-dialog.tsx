@@ -156,7 +156,7 @@ const FiveTypeDialog = () => {
             {/* h-[calc(100vh-108px)] */}
             <div>
               <ScrollArea className="max-h-[calc(100vh-160px)] overflow-y-auto">
-                <div className="p-3 text-center md:px-4">
+                <div className="p-1 text-center md:px-4">
                   <Accordion
                     type="single"
                     collapsible
@@ -189,7 +189,7 @@ const FiveTypeDialog = () => {
                               )
                               .map((value, i) => (
                                 <div
-                                  className="grid grid-cols-2 gap-2 border-b pb-2 pt-1"
+                                  className="grid grid-cols-2 gap-2 border-b pb-2 pt-1 last-of-type:border-none"
                                   key={i}
                                 >
                                   <p className="text-lg">{value[0]}</p>
