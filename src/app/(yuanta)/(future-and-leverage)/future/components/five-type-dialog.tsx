@@ -173,11 +173,31 @@ const FiveTypeDialog = () => {
                         </AccordionTrigger>
                         <AccordionContent className="-mt-3 rounded-b-lg border-2 border-y-bo bg-y-card p-3 pt-6">
                           <div className="space-y-2">
-                            {item.values.map((value, i) => (
-                              <div className="border-b pb-2 pt-1" key={i}>
-                                <p className="text-lg">{value}</p>
-                              </div>
-                            ))}
+                            {item.values
+                              .reduce<string[][]>(
+                                (accumulator, currentValue, index) => {
+                                  if (index % 2 === 0) {
+                                    accumulator.push([currentValue]);
+                                  } else {
+                                    accumulator[accumulator.length - 1].push(
+                                      currentValue
+                                    );
+                                  }
+                                  return accumulator;
+                                },
+                                []
+                              )
+                              .map((value, i) => (
+                                <div
+                                  className="grid grid-cols-2 gap-2 border-b pb-2 pt-1"
+                                  key={i}
+                                >
+                                  <p className="text-lg">{value[0]}</p>
+                                  {value.length > 1 && (
+                                    <p className="text-lg">{value[1]}</p>
+                                  )}
+                                </div>
+                              ))}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
