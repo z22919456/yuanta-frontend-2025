@@ -1,9 +1,8 @@
 import Footer from '@/components/footer';
-import Image from '@/lib/image';
 import { ArrowBigDown } from 'lucide-react';
 import Background from '../(yuanta)/components/background';
 import EventBanner from '../(yuanta)/components/banner';
-import logo from './assets/yoxi_yuanta.png';
+import Logo from './assets/yoxi_yuanta.svg';
 import Banner from './components/banner';
 import { LoadingProvider } from './components/form/loading-context';
 import Navbar from './components/navbar';
@@ -21,12 +20,16 @@ const YoxiLayout = ({
         <div className="container relative z-10 mb-14">
           <section className="container rounded-xl border-2 border-[#513510] bg-white p-5 md:border-4 lg:rounded-3xl">
             <div className="mx-auto max-w-3xl space-y-5 py-5">
-              <Image
+              <Logo
+                className="mx-auto w-[200px] md:w-[300px]"
+                alt="yoxi x 元大期貨"
+              />
+              {/* <Image
                 placeholder="empty"
                 src={logo}
                 alt="yoxi x 元大期貨"
                 className="mx-auto md:!mb-8 lg:w-[500px]"
-              />
+              /> */}
               {children}
             </div>
           </section>

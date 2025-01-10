@@ -1,6 +1,5 @@
-import Image from '@/lib/image';
 import Link from 'next/link';
-import Logo from '../../assets/yoxi_yuanta.png';
+import Logo from '../../assets/yoxi_yuanta.svg';
 
 const Navbar = () => {
   return (
@@ -9,13 +8,14 @@ const Navbar = () => {
         <nav className="container flex items-center justify-between">
           <h1 className="">
             <Link href="/" className="">
-              <Image
+              <Logo className="w-64 cursor-pointer md:w-72" alt="Logo" />
+              {/* <Image
                 src={Logo}
                 className="w-64 cursor-pointer md:w-72"
                 alt="Logo"
                 placeholder="empty"
                 priority
-              />
+              /> */}
             </Link>
           </h1>
         </nav>
