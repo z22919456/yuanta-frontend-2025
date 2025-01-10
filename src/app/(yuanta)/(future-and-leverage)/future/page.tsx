@@ -209,10 +209,12 @@ const Page = () => {
                 即時保證金查詢
               </a>
             </Button>
-            <p className="text-left text-sm md:-mb-5">*資料日期 2025.1.9</p>
-            <p className="text-left text-sm md:-mb-5">
-              *實際保證金金額 請以交易所公告為準
-            </p>
+            <div className="md:-mb-5">
+              <p className="text-left text-sm">*資料日期 2025.1.9</p>
+              <p className="text-left text-sm">
+                *實際保證金金額 請以交易所公告為準
+              </p>
+            </div>
           </WallContent>
         </Wall>
 

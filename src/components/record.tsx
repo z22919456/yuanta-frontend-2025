@@ -80,6 +80,9 @@ const Record = ({ type, data, onClose }: Props) => {
   const typeName = type === 'leverage' ? '槓桿' : '外期';
   const unit = type === 'leverage' ? '點' : '口';
   const add = isAdd(crossCMETradeTypes, cmeContractCount);
+  const count = Number.isFinite(accumulatedTransactionPoints)
+    ? Math.round(accumulatedTransactionPoints * 100) / 100
+    : accumulatedTransactionPoints;
   return (
     <Dialog open={true} onOpenChange={(open) => !open && onClose?.()}>
       <DialogContent
@@ -107,7 +110,7 @@ const Record = ({ type, data, onClose }: Props) => {
                   <br className="block sm:hidden" />
                   您累積交易{unit}數為
                   <span className="text-xl font-bold text-y-secondary">
-                    {accumulatedTransactionPoints}
+                    {count}
                   </span>
                   {unit} <br />
                   可抽{' '}
@@ -134,9 +137,7 @@ const Record = ({ type, data, onClose }: Props) => {
                   春節活動期間，
                   <br className="block sm:hidden" />
                   您累積交易{unit}數為
-                  <span className="font-bold text-y-secondary">
-                    {accumulatedTransactionPoints}
-                  </span>
+                  <span className="font-bold text-y-secondary">{count}</span>
                   {unit}
                   <br />
                   {isRedEnvelopeEligible ? (
@@ -166,9 +167,7 @@ const Record = ({ type, data, onClose }: Props) => {
                   新春期間，
                   <br className="block sm:hidden" />
                   您累積交易{unit}數
-                  <span className="font-bold text-y-secondary">
-                    {accumulatedTransactionPoints}
-                  </span>
+                  <span className="font-bold text-y-secondary">{count}</span>
                   {unit}
                   <br />
                   {transactionLevel > 0 ? (
