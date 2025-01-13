@@ -23,7 +23,7 @@ const Banner = () => {
           className="animate-bounce-in"
         /> */}
       </div>
-      <Taxi className="absolute -right-5 bottom-0 w-[90%] animate-car md:w-[75%]" />
+      <Taxi className="absolute -right-5 bottom-0 w-[75%] animate-car md:w-[50%]" />
       {/* <Image
         placeholder="empty"
         src={taxiImg}
